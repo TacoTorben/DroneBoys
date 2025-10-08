@@ -1,5 +1,7 @@
-import cv2 as cv
+import cv2
+import numpy as np
 
-img = cv.imread('/home/droneboys/DroneBoys/Images/IMG_1361.jpg')
-cv.imshow("Dicks",img)
-cv.waitKey(0)
+
+img = cv2.imread('/home/snekkie/DroneBoys/Images/svamp.jpeg')
+cv2.imshow("img",img)
+cv2.waitKey(0)
