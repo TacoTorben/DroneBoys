@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv.imread("/home/jesper-kwame-jensen/DroneBoys/Images/flower.jpeg")   # you can read in images with opencv
+img = cv.imread("/home/jesper-kwame-jensen/DroneBoys/Images/flower.jpeg") 
 if img is None:
     raise FileNotFoundError("Image not found at the specified path.")
 
@@ -39,5 +39,5 @@ while True:
 cv.destroyAllWindows()
 
 
-#cv.imshow("Dicks",rezised_img)
+#cv.imshow("Pain",rezised_img)
 cv.waitKey(0)
