@@ -20,11 +20,18 @@ class edgedetection:
                 for k in range(-1,2):
                     if coords[i][0]+j < width and coords[i][0]+j >= 0 and coords[i][1]+k < height and coords[i][1]+k >= 0:
                         rezised[coords[i][1]+k, coords[i][0]+j] = [255, 255, 255]
-        return rezised
+        return rezised, edges
+
+rezised, edges = edgedetection.edgedetection(cv2.imread("/home/snekkie/DroneBoys/Images/rbg.jpg"), 270, 11, 18)
+
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
+closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel, iterations=10)
+
+
 
 #cv2.imshow("PRESS Q",rezised) #Show the final image
-#cv2.imshow("PLS", edges)
+cv2.imshow("PLS", closed)
 #cv2.imshow("denoised", denoised)
 #cv2.imshow("blur", blur)
 ##cv2.imshow("img", img)
-#cv2.waitKey(0)
+cv2.waitKey(0)
