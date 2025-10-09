@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 
+#picture mist be binary to work with blob detection
 # Read and binarize
 img = cv2.imread("shapes.png", cv2.IMREAD_GRAYSCALE)
 # Prettyfy picture
