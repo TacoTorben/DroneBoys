@@ -28,7 +28,7 @@ class edgedetection:
                         rezised[coords[i][1]+k, coords[i][0]+j] = [255, 255, 255]
         
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
-        closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel, iterations=1)
+        closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel, iterations=3)
         #print(f"morph time = {time.time() - start_time}")
         num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(closed)
         print(f"total time = {time.time() - start_time}")
