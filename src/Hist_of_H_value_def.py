@@ -1,8 +1,8 @@
 import cv2 as cv, numpy as np, matplotlib.pyplot as plt
 
-img = cv.imread("flower.jpeg")
-class oliver_biatch:
-    def get_dat(img):
+
+class average_hue:
+    def calculate_average_hue(img):
         def remove_dominant_hues(
             bgr,
             k=1,                 # how many dominant hues to remove (1 = single most common)
