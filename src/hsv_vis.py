@@ -78,3 +78,5 @@ class damn_son:
     #cv2.imshow("wtf", resized_img)
     #cv2.imshow("dick", blurred)
     #cv2.waitKey(0)
+
+    

@@ -17,27 +17,26 @@ full_object_detect = 0
 #objects in all 85
 start_time = time.time()
 size = (815,815) #Size to resize the image to
-num_images = 30
+num_images = 1
 img_arr = np.empty((8, 1), dtype=object) #Array to hold the images
 results = [] 
 j = 1
-for i in range(1, num_images + 1):
-    img_path = image_dir / f"{i}.png"
-    
-    img = cv2.imread(str(img_path))
-    num_labels, elapsed, mask, hsv_img, blu, reversed_mask = object_finder_HSV.ObjectFinderHSV.objecfinder(img , start_time, 60)
-    num_labels2, elapsed2, mask2, hsv_img2, blu2, reversed_mask2 = object_finder_HSV.ObjectFinderHSV.objecfinder(img , start_time, 30)
-    if j != 0 and i == 2:
-        cv2.imshow(f"PLS{j}", mask)
-        print(num_labels)
-        cv2.imshow(f"PLS3{j}", mask2)
-        print(num_labels2)
-        cv2.waitKey(0)
-    print(f"detected {num_labels + num_labels2} objects")   
-    print(f" At image {i}")
-    print(f"number of objects: {num_labels + num_labels2}")
-    results.append([round(elapsed,2), num_labels + num_labels2, i, 3])
-    start_time = time.time()
+#for i in range(100, num_images + 101):
+#    img_path = image_dir / f"{i}.JPG"
+#    print(i)
+#    
+#    img = cv2.imread(str(img_path))
+#    num_labels, elapsed, mask, hsv_img, blu, reversed_mask = object_finder_HSV.ObjectFinderHSV.objecfinder(img , start_time, 60)
+#    num_labels2, elapsed2, mask2, hsv_img2, blu2, reversed_mask2 = object_finder_HSV.ObjectFinderHSV.objecfinder(img , start_time, 30)
+#    if j != 0:
+#        cv2.imshow(f"PLS{j}", mask)
+#        print(num_labels)
+#        cv2.waitKey(0)
+#    print(f"detected {num_labels + num_labels2} objects")   
+#    print(f" At image {i}")
+#    print(f"number of objects: {num_labels + num_labels2}")
+#    results.append([round(elapsed,2), num_labels + num_labels2, i, 3])
+#    start_time = time.time()
     
 
 
