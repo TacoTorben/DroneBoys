@@ -19,15 +19,16 @@ size = (815,815) #Size to resize the image to
 num_images = 30
 img_arr = np.empty((8, 1), dtype=object) #Array to hold the images
 results = [] 
-j = 0
+j = 1
 for i in range(1, num_images + 1):
-    img_path = image_dir / f"{i}.png"
+    img_path = image_dir / f"10{i}.JPG"
     
     img = cv2.imread(str(img_path))
     rezised, edges, num_labels, closed, elapsed = og_pic.edgedetection.edgedetection(img, cmax, blurvalue, denoisevalue, start_time, size)
    
     if j != 0:
         cv2.imshow(f"PLS{j}", closed)
+        cv2.waitKey(0)
     print(f"detected {num_labels-1} objects")   
     print(f" At image {i}")
     results.append([round(elapsed,2), num_labels-1, i, 3])
@@ -41,7 +42,7 @@ csv_path = "/home/dksoren/DroneBoys/src/object_results.csv"
 df.to_csv(csv_path, index=False, sep=";")
 
 print(f"✅ Saved results to {csv_path}")
-cv2.waitKey(0)
+
 
 
 #
@@ -50,6 +51,4 @@ cv2.waitKey(0)
 #cv2.imshow("PLS", closed)
 #cv2.imshow("edges", edges)
 #print(f"detected {num_labels-1} objects")
-
-cv2.waitKey(0)
 
