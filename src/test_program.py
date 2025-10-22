@@ -24,6 +24,7 @@ for i in range(1, num_images + 1):
     img_path = image_dir / f"10{i}.JPG"
     
     img = cv2.imread(str(img_path))
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     rezised, edges, num_labels, closed, elapsed = og_pic.edgedetection.edgedetection(img, cmax, blurvalue, denoisevalue, start_time, size)
    
     if j != 0:

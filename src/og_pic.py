@@ -11,21 +11,29 @@ class edgedetection:
          #Define the size of the IMAGE
         #img = cv2.imread("/home/snekkie/DroneBoys/Images/rbg.jpg") #Path to the image
         rezised = cv2.resize(img, (size)) #Resize the image to the defined size
-        #print(f"resized time = {time.time() - start_time}")
+       
         blur = cv2.medianBlur(rezised,blurvalue) #Apply median blur to the image
-        #print(f"blur time = {time.time() - start_time}")
-        denoised = cv2.fastNlMeansDenoisingColored(blur,None,denoisevalue,10,7,21) #Apply denoising to the image
-        #print(f"denoised time = {time.time() - start_time}")
-        edges = cv2.Canny(denoised, 100, cmax) #Apply Canny edge detection to the image
-        #print(f"edges time = {time.time() - start_time}")
+       
+        grey_denoised = cv2.fastNlMeansDenoising(blur,None,denoisevalue,7,21) #Apply denoising to the image
+        #denoised = cv2.fastNlMeansDenoisingColored(blur,None,denoisevalue,10,7,21) #Apply denoising to the image
+
+       
+        edges = cv2.Canny(grey_denoised, 100, cmax) #Apply Canny edge detection to the image
+        
         ys, xs = np.where(edges ==255) #Get the coordinates of the edges
         coords = np.column_stack((xs, ys)).astype(np.int32) #Stack the coordinates into a single array
         #print(f"coords time = {time.time() - start_time}")
-        for i in range(int(len(coords))): #Loop through the coordinates
-            for j in range(-1,2):
-                for k in range(-1,2):
-                    if coords[i][0]+j < size[0] and coords[i][0]+j >= 0 and coords[i][1]+k < size[1] and coords[i][1]+k >= 0:
-                        rezised[coords[i][1]+k, coords[i][0]+j] = [255, 255, 255]
+        #for i in range(int(len(coords))): #Loop through the coordinates
+        #    for j in range(-1,2):
+        #        for k in range(-1,2):
+        #            if coords[i][0]+j < size[0] and coords[i][0]+j >= 0 and coords[i][1]+k < size[1] and coords[i][1]+k >= 0:
+        #                rezised[coords[i][1]+k, coords[i][0]+j] = [255, 255, 255]
+
+        # Greyscale version (keeps the original color code above)
+        # Create a greyscale copy of the resized image and mark neighboring pixels white
+        
+        # If you want to keep using the greyscale image later, you can replace rezised with grey_resized
+        # rezised = cv2.cvtColor(grey_resized, cv2.COLOR_GRAY2BGR)  # optional: convert back to BGR if needed
         
         kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
         closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel, iterations=3)
