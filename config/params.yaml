@@ -15,7 +15,7 @@ bilateral_filter:
    sigmaColor: 75
    sigmaSpace: 75
 median_filter:
-   kernel_size: 5
+   kernel_size: 7
 brightness_contrast:
    brightness: 200
    contrast: 126

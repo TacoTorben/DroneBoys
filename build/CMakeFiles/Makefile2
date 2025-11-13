@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dksoren/Visual
+CMAKE_SOURCE_DIR = /home/dksoren/DroneBoys
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dksoren/Visual/build
+CMAKE_BINARY_DIR = /home/dksoren/DroneBoys/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/VisualApp.dir/clean
 CMakeFiles/VisualLib.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VisualLib.dir/build.make CMakeFiles/VisualLib.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VisualLib.dir/build.make CMakeFiles/VisualLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dksoren/Visual/build/CMakeFiles --progress-num=3,4,5 "Built target VisualLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dksoren/DroneBoys/build/CMakeFiles --progress-num=3,4,5 "Built target VisualLib"
 .PHONY : CMakeFiles/VisualLib.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VisualLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/Visual/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/DroneBoys/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/VisualLib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/Visual/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/DroneBoys/build/CMakeFiles 0
 .PHONY : CMakeFiles/VisualLib.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/VisualLib.dir/clean:
 CMakeFiles/VisualApp.dir/all: CMakeFiles/VisualLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VisualApp.dir/build.make CMakeFiles/VisualApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VisualApp.dir/build.make CMakeFiles/VisualApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dksoren/Visual/build/CMakeFiles --progress-num=1,2 "Built target VisualApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dksoren/DroneBoys/build/CMakeFiles --progress-num=1,2 "Built target VisualApp"
 .PHONY : CMakeFiles/VisualApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VisualApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/Visual/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/DroneBoys/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/VisualApp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/Visual/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/DroneBoys/build/CMakeFiles 0
 .PHONY : CMakeFiles/VisualApp.dir/rule
 
 # Convenience name for target.

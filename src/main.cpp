@@ -30,6 +30,7 @@ int main() {
     cv::Mat brightness_contrast_image = brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
     
     cv::Mat RedEnhanced = BGR_channel_changer(image, 0, 0);
+    
     cv::Mat medianFiltered = median_filter(RedEnhanced, cfg.median_filter.kernel_size);
     //cv::Mat bilateralImage = bilateralFilter(image, cfg.bilateral_filter.d, cfg.bilateral_filter.sigmaColor, cfg.bilateral_filter.sigmaSpace);
     //cv::Mat denoisedImage = denoise_algorithm(bilateralImage, cfg.denoise.h, cfg.denoise.hColor, cfg.denoise.templateWindowSize, cfg.denoise.searchWindowSize);
@@ -55,7 +56,8 @@ int main() {
     //cv::imshow("Bilateral Filtered Image", bilateralImage); 
     //cv::imshow("Denoised Image", denoisedImage);
     //cv::imshow("Brightness & Contrast Adjusted Image", brightness_contrast_image);
-    //cv::imshow("Median Filtered Image", medianFiltered);
+    cv::imshow("Median Filtered Image", medianFiltered);
+  
     cv::imshow("Red Enhanced Image", RedEnhanced);
     cv::imshow("Edges", edges);
     cv::imshow("Labeled Blobs", closedImage);
@@ -66,7 +68,7 @@ int main() {
 
 
     //!! Tuning test
-    tuning(image, 4);
+    //tuning(image, 4);
     return 0;
 
 }
