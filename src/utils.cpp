@@ -78,6 +78,28 @@ namespace fs = std::filesystem;
 
     }
 
+     BlobData ImageProcessingPipeline::sky_sorting(const cv::Mat& inputImage, BlobData blobs, double percentageThreshold) {
+         double yThreshold = inputImage.rows * percentageThreshold;
+
+        BlobData data = blobs;
+        cv::Mat newCentroids;
+        cv::Mat newStats;
+        int newNumLabels = 0;
+        for (int i = 0; i < data.centroids.rows; ++i) {
+                double y = data.centroids.at<double>(i, 1);
+                if (y >= yThreshold) { // keep only those above threshold
+                    newCentroids.push_back(data.centroids.row(i));
+                    newStats.push_back(data.stats.row(i));
+                    newNumLabels++;
+                }
+            }
+        
+        data.centroids = newCentroids;
+        data.stats = newStats;
+        data.numLabels = newNumLabels;
+        return data;
+    }
+
 //!! Just for testing
 
 void tuning(const cv::Mat& inputImage, int mode) {

@@ -54,6 +54,8 @@
         "__nullptr": "cpp",
         "semaphore": "cpp",
         "stop_token": "cpp",
-        "__mutex_base": "cpp"
+        "__mutex_base": "cpp",
+        "bitset": "cpp",
+        "mutex": "cpp"
     }
 }

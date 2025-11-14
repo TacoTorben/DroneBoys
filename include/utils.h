@@ -61,10 +61,12 @@ class ImageProcessingPipeline {
     public:
         Config loadConfig(const std::string& path); 
         cv::Mat fetch_image(const std::string& filename);
-    
+
         BlobData blob_detection(const cv::Mat& inputImage, int connectivity = 8);
-    
+
         cv::Mat draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i = 0);
+
+        BlobData sky_sorting(const cv::Mat& inputImage, BlobData blobs, double yThreshold);
 
 };
 void tuning(const cv::Mat& inputImage, int mode = 0);
