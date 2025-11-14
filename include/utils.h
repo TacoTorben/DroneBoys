@@ -4,8 +4,6 @@
 
 using namespace cv;
 
-
-
 struct CannyParameters {
     struct threshold {
         double low_threshold;
@@ -49,7 +47,7 @@ struct Config {
 
 
 
-Config loadConfig(const std::string& path);
+
 
 
 struct BlobData {
@@ -59,11 +57,15 @@ struct BlobData {
     int numLabels;       // Number of detected labels
 };
 
-cv::Mat fetch_image(const std::string& filename);
+class ImageProcessingPipeline {
+    public:
+        Config loadConfig(const std::string& path); 
+        cv::Mat fetch_image(const std::string& filename);
+    
+        BlobData blob_detection(const cv::Mat& inputImage, int connectivity = 8);
+    
+        cv::Mat draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i = 0);
 
-BlobData blob_detection(const cv::Mat& inputImage, int connectivity = 8);
-
-cv::Mat draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i = 0);
-
+};
 void tuning(const cv::Mat& inputImage, int mode = 0);
 

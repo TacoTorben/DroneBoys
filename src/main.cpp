@@ -5,7 +5,10 @@
 
 using namespace std;
 using namespace cv;
-
+ImageProcessingPipeline pipeline;
+NoiseReducer noiseReducer;
+MorphologyProcessor morphologyProcessor;
+ColorManipulator colorManipulator;
 
 
 int radius = 15;
@@ -16,29 +19,30 @@ int main() {
     
     // Load configuration file 
     std::string configPath = CONFIG_PATH;
-    Config cfg = loadConfig(configPath);
+    Config cfg = pipeline.loadConfig(configPath);
     // Load image
     string filename = "jesper2.jpeg";
-    cv::Mat image = fetch_image(filename);
+    
+    cv::Mat image = pipeline.fetch_image(filename);
     std::cout << cfg.median_filter.kernel_size << std::endl;
 
     // Process image
 
-    cv::Mat saturatedImage = saturation(image, 2);
+    cv::Mat saturatedImage = colorManipulator.saturation(image, 2);
 
 
-    cv::Mat brightness_contrast_image = brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
+    cv::Mat brightness_contrast_image = colorManipulator.brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
     
-    cv::Mat RedEnhanced = BGR_channel_changer(image, 0, 0);
+    cv::Mat RedEnhanced = colorManipulator.BGR_channel_changer(image, 0, 0);
     
-    cv::Mat medianFiltered = median_filter(RedEnhanced, cfg.median_filter.kernel_size);
-    //cv::Mat bilateralImage = bilateralFilter(image, cfg.bilateral_filter.d, cfg.bilateral_filter.sigmaColor, cfg.bilateral_filter.sigmaSpace);
-    //cv::Mat denoisedImage = denoise_algorithm(bilateralImage, cfg.denoise.h, cfg.denoise.hColor, cfg.denoise.templateWindowSize, cfg.denoise.searchWindowSize);
+    cv::Mat medianFiltered = noiseReducer.median_filter(RedEnhanced, cfg.median_filter.kernel_size);
+    //cv::Mat bilateralImage = noiseReducer.bilateralFilter(image, cfg.bilateral_filter.d, cfg.bilateral_filter.sigmaColor, cfg.bilateral_filter.sigmaSpace);
+    //cv::Mat denoisedImage = noiseReducer.denoise_algorithm(bilateralImage, cfg.denoise.h, cfg.denoise.hColor, cfg.denoise.templateWindowSize, cfg.denoise.searchWindowSize);
     cv::Mat edges = canny_edge_detection(medianFiltered, cfg.canny_parameters.threshold.low_threshold, cfg.canny_parameters.threshold.max_threshold);
     //
-    cv::Mat closedImage = closing_morphology(edges, cfg.blob_detection.connectivity);
-    cv::Mat openingImage = opening_morphology(closedImage, 1);
-    BlobData blobs = blob_detection(openingImage, 4);
+    cv::Mat closedImage = morphologyProcessor.closing_morphology(edges, cfg.blob_detection.connectivity);
+    cv::Mat openingImage = morphologyProcessor.opening_morphology(closedImage, 1);
+    BlobData blobs = pipeline.blob_detection(openingImage, 4);
     cout << "Total labels (including background): " << blobs.numLabels << endl;
     //Draw circles around detected blobs (excluding background aka label 0)
     for(int i = 1; i < blobs.numLabels; ++i) {
@@ -47,7 +51,7 @@ int main() {
             blobs.centroids.at<double>(i, 1)
         );
         cv::Point center(static_cast<int>(centroid.x), static_cast<int>(centroid.y));
-        image = draw_circles(image, center, radius, i);
+        image = pipeline.draw_circles(image, center, radius, i);
     }
   
     cout << "Number of blobs detected: " << blobs.numLabels -1 << endl;

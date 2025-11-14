@@ -2,20 +2,20 @@
 
 
 
-cv::Mat denoise_algorithm(const cv::Mat& inputImage, int h, int hColor, int templateWindowSize, int searchWindowSize) {
+cv::Mat NoiseReducer::denoise_algorithm(const cv::Mat& inputImage, int h, int hColor, int templateWindowSize, int searchWindowSize) {
     // Placeholder for de-noising algorithm implementation
     cv::Mat outputImage;
     cv::fastNlMeansDenoisingColored(inputImage, outputImage, h, hColor, templateWindowSize, searchWindowSize);
     return outputImage;
 }
 
-cv::Mat bilateralFilter(const cv::Mat& inputImage, int d, double sigmaColor, double sigmaSpace) {
+cv::Mat NoiseReducer::bilateralFilter(const cv::Mat& inputImage, int d, double sigmaColor, double sigmaSpace) {
     cv::Mat outputImage;
     cv::bilateralFilter(inputImage, outputImage, d, sigmaColor, sigmaSpace);
     return outputImage;
 }
 
-cv::Mat median_filter(const cv::Mat& inputImage, int kernelSize) {
+cv::Mat NoiseReducer::median_filter(const cv::Mat& inputImage, int kernelSize) {
     cv::Mat outputImage;
     cv::medianBlur(inputImage, outputImage, kernelSize);
     return outputImage;
@@ -28,14 +28,14 @@ cv::Mat canny_edge_detection(const cv::Mat& inputImage, double lowThreshold, dou
 }
 
 
-cv::Mat closing_morphology(const cv::Mat& inputImage, int kernelSize) {
+cv::Mat MorphologyProcessor::closing_morphology(const cv::Mat& inputImage, int kernelSize) {
     cv::Mat outputImage;
     cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT, cv::Size(kernelSize, kernelSize));
     cv::morphologyEx(inputImage, outputImage, cv::MORPH_CLOSE, element);
     return outputImage;
 }
 
-cv::Mat brightnees_contrast(const cv::Mat& inputImage, double contrast, int brightness) {
+cv::Mat ColorManipulator::brightnees_contrast(const cv::Mat& inputImage, double contrast, int brightness) {
     cv::Mat output;
     double alpha = contrast / 100.0;
     double beta = brightness - 100;
@@ -43,7 +43,7 @@ cv::Mat brightnees_contrast(const cv::Mat& inputImage, double contrast, int brig
     return output;
 }
 
-cv::Mat erosion_morphology(const cv::Mat& inputImage, int kernel_size) {
+cv::Mat MorphologyProcessor::erosion_morphology(const cv::Mat& inputImage, int kernel_size) {
     cv::Mat output;
     cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT,
                         cv::Size(2 * kernel_size + 1, 2 * kernel_size + 1),
@@ -52,7 +52,7 @@ cv::Mat erosion_morphology(const cv::Mat& inputImage, int kernel_size) {
     return output;
 }
 
-cv::Mat opening_morphology(const cv::Mat& inputImage, int kernel_size) {
+cv::Mat MorphologyProcessor::opening_morphology(const cv::Mat& inputImage, int kernel_size) {
     cv::Mat outputImage;
     cv::Mat element = cv::getStructuringElement(cv::MORPH_RECT,
                         cv::Size(2 * kernel_size + 1, 2 * kernel_size + 1),
@@ -61,7 +61,7 @@ cv::Mat opening_morphology(const cv::Mat& inputImage, int kernel_size) {
     return outputImage;
 }
 
-cv::Mat saturation(const cv::Mat& inputImage, double saturationScale) {
+cv::Mat ColorManipulator::saturation(const cv::Mat& inputImage, double saturationScale) {
     cv::Mat hsvImage;
     cv::cvtColor(inputImage, hsvImage, cv::COLOR_BGR2HSV);
 
@@ -77,7 +77,7 @@ cv::Mat saturation(const cv::Mat& inputImage, double saturationScale) {
     return outputImage;
 }
 
-cv::Mat BGR_channel_changer(const cv::Mat& inputImage, int channelIndex, double scale) {
+cv::Mat ColorManipulator::BGR_channel_changer(const cv::Mat& inputImage, int channelIndex, double scale) {
     cv::Mat outputImage;
     std::vector<cv::Mat> bgrChannels;
     cv::split(inputImage, bgrChannels);

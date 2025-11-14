@@ -8,77 +8,75 @@ using namespace cv;
 namespace fs = std::filesystem;
 
 
+    cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
+
+        fs::path imagePath = fs::current_path() / "../images" / filename;
+
+        cv::Mat img = cv::imread(imagePath.string());
+
+        if (img.empty()) {
+            cerr << "Error: Could not load image: " << filename << endl;
+        }
 
 
-cv::Mat fetch_image(const std::string& filename) {
-    
-    fs::path imagePath = fs::current_path() / "../images" / filename;
-
-    cv::Mat img = cv::imread(imagePath.string());
-
-    if (img.empty()) {
-        cerr << "Error: Could not load image: " << filename << endl;
-    }
-    
-    
-    return img;
-}
-
-Config loadConfig(const std::string& path) {
-    Config cfg{};
-    cv::FileStorage fs(path, cv::FileStorage::READ);
-    if (!fs.isOpened()) {
-        throw std::runtime_error("Cannot open config file: " + path);
+        return img;
     }
 
-
-    fs["denoise"]["h"] >> cfg.denoise.h;
-    fs["denoise"]["hColor"] >> cfg.denoise.hColor;
-    fs["denoise"]["templateWindowSize"] >> cfg.denoise.templateWindowSize;
-    fs["denoise"]["searchWindowSize"] >> cfg.denoise.searchWindowSize;
-
-    fs["canny_parameters"]["threshold_low"] >> cfg.canny_parameters.threshold.low_threshold;
-    fs["canny_parameters"]["threshold_max"] >> cfg.canny_parameters.threshold.max_threshold;
-
-    fs["blob_detection"]["kernel_size"] >> cfg.blob_detection.kernel_size;
-    fs["blob_detection"]["connectivity"] >> cfg.blob_detection.connectivity;
-
-    fs["bilateral_filter"]["d"] >> cfg.bilateral_filter.d;
-    fs["bilateral_filter"]["sigmaColor"] >> cfg.bilateral_filter.sigmaColor;
-    fs["bilateral_filter"]["sigmaSpace"] >> cfg.bilateral_filter.sigmaSpace;
-
-    fs["brightness_contrast"]["brightness"] >> cfg.brightness_contrast.brightness;
-    fs["brightness_contrast"]["contrast"] >> cfg.brightness_contrast.contrast;
-
-    fs["median_filter"]["kernel_size"] >> cfg.median_filter.kernel_size;
-
-    fs.release();
-    return cfg;
-}
+    Config ImageProcessingPipeline::loadConfig(const std::string& path) {
+        Config cfg{};
+        cv::FileStorage fs(path, cv::FileStorage::READ);
+        if (!fs.isOpened()) {
+            throw std::runtime_error("Cannot open config file: " + path);
+        }
 
 
+        fs["denoise"]["h"] >> cfg.denoise.h;
+        fs["denoise"]["hColor"] >> cfg.denoise.hColor;
+        fs["denoise"]["templateWindowSize"] >> cfg.denoise.templateWindowSize;
+        fs["denoise"]["searchWindowSize"] >> cfg.denoise.searchWindowSize;
 
-BlobData blob_detection(const cv::Mat& inputImage, int connectivity) {
+        fs["canny_parameters"]["threshold_low"] >> cfg.canny_parameters.threshold.low_threshold;
+        fs["canny_parameters"]["threshold_max"] >> cfg.canny_parameters.threshold.max_threshold;
 
-    cv::Mat binary;
-    // Threshold to ensure binary
-    cv::threshold(inputImage, binary, 128, 255, cv::THRESH_BINARY);
+        fs["blob_detection"]["kernel_size"] >> cfg.blob_detection.kernel_size;
+        fs["blob_detection"]["connectivity"] >> cfg.blob_detection.connectivity;
+
+        fs["bilateral_filter"]["d"] >> cfg.bilateral_filter.d;
+        fs["bilateral_filter"]["sigmaColor"] >> cfg.bilateral_filter.sigmaColor;
+        fs["bilateral_filter"]["sigmaSpace"] >> cfg.bilateral_filter.sigmaSpace;
+
+        fs["brightness_contrast"]["brightness"] >> cfg.brightness_contrast.brightness;
+        fs["brightness_contrast"]["contrast"] >> cfg.brightness_contrast.contrast;
+
+        fs["median_filter"]["kernel_size"] >> cfg.median_filter.kernel_size;
+
+        fs.release();
+        return cfg;
+    }
 
 
-    cv::Mat labels, stats, centroids;
-    int numLabels = cv::connectedComponentsWithStats(binary, labels, stats, centroids, connectivity, CV_32S);
 
-    return {labels, stats, centroids, numLabels};
-}
+    BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int connectivity) {
 
-cv::Mat draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i) {
-    
-    cv::Mat output;
-    inputImage.copyTo(output);
-    cv::circle(output, centroids, radius, cv::Scalar(0, 0, 255), 4); // Red circle
-    return output;
+        cv::Mat binary;
+        // Threshold to ensure binary
+        cv::threshold(inputImage, binary, 128, 255, cv::THRESH_BINARY);
 
-}
+
+        cv::Mat labels, stats, centroids;
+        int numLabels = cv::connectedComponentsWithStats(binary, labels, stats, centroids, connectivity, CV_32S);
+
+        return {labels, stats, centroids, numLabels};
+    }
+
+    cv::Mat ImageProcessingPipeline::draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i) {
+
+        cv::Mat output;
+        inputImage.copyTo(output);
+        cv::circle(output, centroids, radius, cv::Scalar(0, 0, 255), 4); // Red circle
+        return output;
+
+    }
 
 //!! Just for testing
 
@@ -283,3 +281,4 @@ void tuning(const cv::Mat& inputImage, int mode) {
         } 
     }
 }
+
