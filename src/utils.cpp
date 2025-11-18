@@ -100,6 +100,12 @@ namespace fs = std::filesystem;
         return data;
     }
 
+    void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string& filename) {
+        fs::path outputPath = fs::current_path() / "../output" / filename;
+        if (!cv::imwrite(outputPath.string(), image)) {
+            cerr << "Error: Could not save image to: " << outputPath.string() << endl;
+        }
+    }
 //!! Just for testing
 
 void tuning(const cv::Mat& inputImage, int mode) {

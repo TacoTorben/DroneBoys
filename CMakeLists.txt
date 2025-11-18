@@ -20,7 +20,7 @@ target_link_libraries(VisualLib ${OpenCV_LIBS})
 #Define config path
 add_definitions(-DCONFIG_PATH="${CMAKE_CURRENT_SOURCE_DIR}/config/params.yaml")
 
-#Build main app
+#Build main app ----------------- this part
 add_executable(VisualApp src/main.cpp)
 target_compile_features(VisualApp PUBLIC cxx_std_20)
 target_link_libraries(VisualApp VisualLib ${OpenCV_LIBS})

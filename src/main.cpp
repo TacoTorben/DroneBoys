@@ -12,7 +12,7 @@ ColorManipulator colorManipulator;
 cv::Point nonBackground_point; // For storing non-background point in blob detection
 
 
-void field_coloredshirt(cv::Mat& image, const Config& cfg) {
+cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
     /**
     Takes in an image, do a series of processing steps to detect red shirts in a field setting.
     First adjusts saturation, brightness/contrast, enhances red channel, applies median filtering,
@@ -26,18 +26,18 @@ void field_coloredshirt(cv::Mat& image, const Config& cfg) {
     cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
     cv::Mat brightness_contrast_image = colorManipulator.brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
     cv::Mat RedEnhanced = colorManipulator.BGR_channel_changer(brightness_contrast_image, 0, 0);
-    cv::imshow("Red Enhanced Image", RedEnhanced);
+    //cv::imshow("Red Enhanced Image", RedEnhanced);
     cv::Mat medianFiltered = noiseReducer.median_filter(RedEnhanced, cfg.median_filter.kernel_size);
-    cv::imshow("Median Filtered Image", medianFiltered);
+    //cv::imshow("Median Filtered Image", medianFiltered);
     cv::Mat edges = canny_edge_detection(medianFiltered, cfg.canny_parameters.threshold.low_threshold, cfg.canny_parameters.threshold.max_threshold);
-    cv::imshow("Edges", edges);
+    //cv::imshow("Edges", edges);
     cv::Mat closedImage = morphologyProcessor.closing_morphology(edges, cfg.blob_detection.connectivity);
-    cv::imshow("Labeled Blobs", closedImage);
+    //cv::imshow("Labeled Blobs", closedImage);
     cv::Mat openingImage = morphologyProcessor.opening_morphology(closedImage, kernel_size);
-    cv::imshow("Opening Morphology Image", openingImage);
+    //cv::imshow("Opening Morphology Image", openingImage);
     BlobData blobs = pipeline.blob_detection(openingImage, connectivity);
 
-    cout << "Total labels (including background): " << blobs.numLabels << endl;
+    
     //Draw circles around detected blobs (excluding background aka label 0)
     for(int i = 1; i < blobs.numLabels; ++i) {
         cv::Point2d centroid(
@@ -45,13 +45,13 @@ void field_coloredshirt(cv::Mat& image, const Config& cfg) {
             blobs.centroids.at<double>(i, 1)
         );
         cv::Point center(static_cast<int>(centroid.x), static_cast<int>(centroid.y));
-        std::cout << "centroid y" << centroid.y << std::endl;
+        //std::cout << "centroid y" << centroid.y << std::endl;
         image = pipeline.draw_circles(image, center, radius, i);
     }
 
     cout << "Number of blobs detected: " << blobs.numLabels -1 << endl;
-    cv::imshow("Final Labeled Image", image);
-    cv::waitKey(0);
+
+    return image;
 }
 
 void sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) {
@@ -115,10 +115,12 @@ int main() {
     
    
     
-    field_coloredshirt(image, cfg);
+    image = field_coloredshirt(image, cfg);
+    cv::imshow("WTF", image);
+    cv::waitKey(0);
     //sky_sorted_coloredshirt(image, cfg);
     
-    
+    pipeline.save_image(image, "output.jpg");
     ////cv::imshow("Saturation Adjusted Image", saturatedImage);
     
 

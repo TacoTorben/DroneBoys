@@ -68,6 +68,8 @@ class ImageProcessingPipeline {
 
         BlobData sky_sorting(const cv::Mat& inputImage, BlobData blobs, double yThreshold);
 
+        void save_image(const cv::Mat& image, const std::string& filename);
+
 };
 void tuning(const cv::Mat& inputImage, int mode = 0);
 
