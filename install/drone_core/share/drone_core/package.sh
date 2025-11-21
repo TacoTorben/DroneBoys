@@ -81,10 +81,7 @@ _colcon_package_sh_source_script() {
 _colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/cmake_prefix_path.sh"
 _colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/ld_library_path_lib.sh"
 _colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/pythonpath.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/ros_package_path.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/catkin_pythonpath.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/pkg_config_path.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/hook/pkg_config_path_multiarch.sh"
+_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/drone_core/local_setup.sh"
 
 unset _colcon_package_sh_source_script
 unset COLCON_CURRENT_PREFIX

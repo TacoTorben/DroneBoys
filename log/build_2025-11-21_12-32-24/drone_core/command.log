@@ -1,0 +1,2 @@
+Invoking command in '/home/dksoren/drone_boys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12
+Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12

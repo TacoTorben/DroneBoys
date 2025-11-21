@@ -1,1 +1,1 @@
-include("${CMAKE_CURRENT_LIST_DIR}/glfw3Targets.cmake")
+/home/dksoren/drone_boys/build/drone_gui/_deps/glfw-build/src/glfw3Config.cmake

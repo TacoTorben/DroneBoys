@@ -1,0 +1,12 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:4[m[K:
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:126:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kdo[m[K’
+  126 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Loading config from: %s", configPath.c_str());
+      |     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:126:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kwhile[m[K’
+  126 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Loading config from: %s", configPath.c_str());
+      |     [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:655: CMakeFiles/finder.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

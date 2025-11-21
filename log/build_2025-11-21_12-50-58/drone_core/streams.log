@@ -1,0 +1,165 @@
+[0.008s] Invoking command in '/home/dksoren/drone_boys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12
+[0.054s] [  2%] Built target drone_core__rosidl_generator_type_description
+[0.055s] [  9%] Built target drone_core_lib
+[0.062s] [  9%] Built target ament_cmake_python_copy_drone_core
+[0.070s] [ 12%] Built target drone_core__cpp
+[0.070s] [ 24%] Built target drone_core__rosidl_generator_c
+[0.091s] [ 46%] Built target drone_core__rosidl_typesupport_introspection_cpp
+[0.091s] [ 46%] Built target drone_core__rosidl_typesupport_c
+[0.091s] [ 46%] Built target drone_core__rosidl_typesupport_fastrtps_c
+[0.092s] [ 53%] Built target drone_core__rosidl_typesupport_introspection_c
+[0.093s] [ 68%] Built target drone_core__rosidl_typesupport_cpp
+[0.093s] [ 68%] Built target drone_core__rosidl_typesupport_fastrtps_cpp
+[0.115s] [ 68%] Built target drone_core
+[0.133s] [ 70%] Built target drone_core__py
+[0.150s] [ 73%] [32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o[0m
+[0.156s] [ 78%] Built target drone_core__rosidl_generator_py
+[0.176s] [ 92%] Built target drone_core_s__rosidl_typesupport_c
+[0.176s] [ 92%] Built target drone_core_s__rosidl_typesupport_introspection_c
+[0.177s] [ 92%] Built target drone_core_s__rosidl_typesupport_fastrtps_c
+[0.235s] running egg_info
+[0.252s] writing drone_core.egg-info/PKG-INFO
+[0.252s] writing dependency_links to drone_core.egg-info/dependency_links.txt
+[0.252s] writing top-level names to drone_core.egg-info/top_level.txt
+[0.299s] reading manifest file 'drone_core.egg-info/SOURCES.txt'
+[0.300s] writing manifest file 'drone_core.egg-info/SOURCES.txt'
+[0.327s] [ 92%] Built target ament_cmake_python_build_drone_core_egg
+[4.650s] [ 95%] [32m[1mLinking CXX executable finder[0m
+[5.116s] [100%] Built target finder
+[5.128s] Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12
+[5.137s] Invoking command in '/home/dksoren/drone_boys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_core
+[5.145s] -- Install configuration: ""
+[5.145s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/rosidl_interfaces/drone_core
+[5.145s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/action/FinderAction.json
+[5.145s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core
+[5.145s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__functions.h
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__description.c
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__functions.c
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.c
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.h
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__struct.h
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/finder_action.h
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_generator_c__visibility_control.h
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/library_path.sh
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/library_path.dsv
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_generator_c.so
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail
+[5.146s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_fastrtps_c.h
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_fastrtps_c.so
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/finder_action.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__traits.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__struct.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__builder.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_generator_cpp__visibility_control.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/dds_fastrtps
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_fastrtps_cpp.hpp
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg
+[5.147s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_fastrtps_cpp.so
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.c
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_introspection_c.h
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_introspection_c.so
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_c.so
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_introspection_cpp.hpp
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.cpp
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_introspection_cpp.so
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_cpp.so
+[5.148s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/pythonpath.sh
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/pythonpath.dsv
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info
+[5.149s] -- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/top_level.txt
+[5.149s] -- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/PKG-INFO
+[5.149s] -- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/SOURCES.txt
+[5.149s] -- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/dependency_links.txt
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action/__init__.py
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action/_finder_action.py
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action/_finder_action_s.c
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/__init__.py
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_introspection_c.c
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_c.c
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_c.so
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.149s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so
+[5.175s] Listing '/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core'...
+[5.175s] Listing '/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action'...
+[5.179s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so
+[5.179s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so
+[5.179s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_c.so
+[5.179s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_generator_py.so
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/action/FinderAction.idl
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/action/FinderAction.action
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/manipulator.h
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/utils.h
+[5.180s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/drone_core/libdrone_core_lib.so
+[5.180s] -- Installing: /home/dksoren/drone_boys/install/drone_core/lib/drone_core/finder
+[5.181s] -- Set non-toolchain portion of runtime path of "/home/dksoren/drone_boys/install/drone_core/lib/drone_core/finder" to ""
+[5.181s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core//config
+[5.181s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core//config/params.yaml
+[5.181s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/package_run_dependencies/drone_core
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/parent_prefix_path/drone_core
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.sh
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.dsv
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.sh
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.dsv
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.bash
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.sh
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.zsh
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.dsv
+[5.182s] -- Installing: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.dsv
+[5.182s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/packages/drone_core
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cExport-noconfig.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cppExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cExport-noconfig.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cppExport.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[5.183s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cppExport.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cppExport-noconfig.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_pyExport.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_pyExport-noconfig.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/rosidl_cmake-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_libraries-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_targets-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig-version.cmake
+[5.184s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.xml
+[5.185s] Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_core

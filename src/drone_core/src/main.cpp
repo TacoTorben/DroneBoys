@@ -3,12 +3,12 @@
 #include <ament_index_cpp/get_package_share_directory.hpp>
 #include "rclcpp/rclcpp.hpp"
 #include <rclcpp_action/rclcpp_action.hpp>
-
-
 #include "drone_core/action/finder_action.hpp"
 
 
 #include <filesystem>
+#include <iostream>
+#include <string>
 
 using namespace std;
 using namespace cv;
@@ -120,11 +120,12 @@ public:
     }
 
 private:
-    std::string package_share_directory = ament_index_cpp::get_package_share_directory("drone");
+    
+   
+    
+    std::string config_path = ament_index_cpp::get_package_share_directory("drone_core") + "/config/params.yaml";
+    Config cfg = pipeline.loadConfig(config_path);
 
-    std::string configPath = package_share_directory + "/config/params.yaml";
-
-    Config cfg = pipeline.loadConfig(configPath);
     rclcpp_action::Server<DroneCommand>::SharedPtr action_server_;
 
     rclcpp_action::GoalResponse handleDroneCommand(

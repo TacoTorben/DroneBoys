@@ -1,0 +1,229 @@
+[0.000000] (-) TimerEvent: {}
+[0.000483] (-) JobUnselected: {'identifier': 'drone_gui'}
+[0.000759] (drone_core) JobQueued: {'identifier': 'drone_core', 'dependencies': OrderedDict()}
+[0.000813] (drone_core) JobStarted: {'identifier': 'drone_core'}
+[0.008567] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'cmake'}
+[0.009126] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'build'}
+[0.009710] (drone_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dksoren/drone_boys/build/drone_core', '--', '-j12', '-l12'], 'cwd': '/home/dksoren/drone_boys/build/drone_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'dksoren', 'ROS_PACKAGE_PATH': '/home/dksoren/drone_boys/install/drone_core/share:/home/dksoren/drone_boys/install/drone/share', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/dksoren/drone_boys/install/drone_core/lib:/home/dksoren/drone_boys/install/drone/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/dksoren', 'OLDPWD': '/home/dksoren/drone_boys/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SYSTEMD_EXEC_PID': '3141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/dksoren/drone_boys/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'dksoren', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig:/home/dksoren/drone_boys/install/drone/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone/lib/pkgconfig', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/home/dksoren/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/MATLAB/R2025a/bin', 'SESSION_MANAGER': 'local/dksoren:@/tmp/.ICE-unix/2937,unix/dksoren:/tmp/.ICE-unix/2937', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/3a3dadec_2e03_42d2_90f9_2866d4fbf472', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/home/dksoren/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.105', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/dksoren', 'AMENT_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/dksoren/drone_boys/build/drone_core', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/dksoren/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:/home/dksoren/drone_boys/install/drone/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}), 'shell': False}
+[0.075754] (drone_core) StdoutLine: {'line': b'[  2%] Built target drone_core__rosidl_generator_type_description\n'}
+[0.079685] (drone_core) StdoutLine: {'line': b'[  9%] Built target drone_core_lib\n'}
+[0.088808] (drone_core) StdoutLine: {'line': b'[  9%] Built target ament_cmake_python_copy_drone_core\n'}
+[0.098876] (-) TimerEvent: {}
+[0.102765] (drone_core) StdoutLine: {'line': b'[ 12%] Built target drone_core__cpp\n'}
+[0.104095] (drone_core) StdoutLine: {'line': b'[ 24%] Built target drone_core__rosidl_generator_c\n'}
+[0.137015] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_fastrtps_c\n'}
+[0.137255] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_introspection_cpp\n'}
+[0.137455] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_introspection_c\n'}
+[0.137575] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_cpp\n'}
+[0.137694] (drone_core) StdoutLine: {'line': b'[ 60%] Built target drone_core__rosidl_typesupport_c\n'}
+[0.138149] (drone_core) StdoutLine: {'line': b'[ 68%] Built target drone_core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.167555] (drone_core) StdoutLine: {'line': b'[ 68%] Built target drone_core\n'}
+[0.194481] (drone_core) StdoutLine: {'line': b'[ 70%] Built target drone_core__py\n'}
+[0.198955] (-) TimerEvent: {}
+[0.205856] (drone_core) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o\x1b[0m\n'}
+[0.222070] (drone_core) StdoutLine: {'line': b'[ 78%] Built target drone_core__rosidl_generator_py\n'}
+[0.251067] (drone_core) StdoutLine: {'line': b'[ 92%] Built target drone_core_s__rosidl_typesupport_fastrtps_c\n'}
+[0.251286] (drone_core) StdoutLine: {'line': b'[ 92%] Built target drone_core_s__rosidl_typesupport_introspection_c\n'}
+[0.251447] (drone_core) StdoutLine: {'line': b'[ 92%] Built target drone_core_s__rosidl_typesupport_c\n'}
+[0.299049] (-) TimerEvent: {}
+[0.361679] (drone_core) StdoutLine: {'line': b'running egg_info\n'}
+[0.392862] (drone_core) StdoutLine: {'line': b'writing drone_core.egg-info/PKG-INFO\n'}
+[0.393239] (drone_core) StdoutLine: {'line': b'writing dependency_links to drone_core.egg-info/dependency_links.txt\n'}
+[0.393445] (drone_core) StdoutLine: {'line': b'writing top-level names to drone_core.egg-info/top_level.txt\n'}
+[0.399165] (-) TimerEvent: {}
+[0.470907] (drone_core) StdoutLine: {'line': b"reading manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[0.471570] (drone_core) StdoutLine: {'line': b"writing manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[0.499278] (-) TimerEvent: {}
+[0.509174] (drone_core) StdoutLine: {'line': b'[ 92%] Built target ament_cmake_python_build_drone_core_egg\n'}
+[0.599418] (-) TimerEvent: {}
+[0.699699] (-) TimerEvent: {}
+[0.799985] (-) TimerEvent: {}
+[0.900273] (-) TimerEvent: {}
+[1.000609] (-) TimerEvent: {}
+[1.100884] (-) TimerEvent: {}
+[1.201171] (-) TimerEvent: {}
+[1.301510] (-) TimerEvent: {}
+[1.401806] (-) TimerEvent: {}
+[1.502079] (-) TimerEvent: {}
+[1.602369] (-) TimerEvent: {}
+[1.702669] (-) TimerEvent: {}
+[1.802976] (-) TimerEvent: {}
+[1.903274] (-) TimerEvent: {}
+[2.003550] (-) TimerEvent: {}
+[2.103843] (-) TimerEvent: {}
+[2.204115] (-) TimerEvent: {}
+[2.304419] (-) TimerEvent: {}
+[2.404691] (-) TimerEvent: {}
+[2.504968] (-) TimerEvent: {}
+[2.605253] (-) TimerEvent: {}
+[2.705536] (-) TimerEvent: {}
+[2.805810] (-) TimerEvent: {}
+[2.906050] (-) TimerEvent: {}
+[3.006310] (-) TimerEvent: {}
+[3.106641] (-) TimerEvent: {}
+[3.206952] (-) TimerEvent: {}
+[3.307266] (-) TimerEvent: {}
+[3.407561] (-) TimerEvent: {}
+[3.507881] (-) TimerEvent: {}
+[3.608130] (-) TimerEvent: {}
+[3.708397] (-) TimerEvent: {}
+[3.808641] (-) TimerEvent: {}
+[3.908984] (-) TimerEvent: {}
+[4.009260] (-) TimerEvent: {}
+[4.109546] (-) TimerEvent: {}
+[4.209792] (-) TimerEvent: {}
+[4.310072] (-) TimerEvent: {}
+[4.410343] (-) TimerEvent: {}
+[4.510749] (-) TimerEvent: {}
+[4.611087] (-) TimerEvent: {}
+[4.711380] (-) TimerEvent: {}
+[4.811669] (-) TimerEvent: {}
+[4.912034] (-) TimerEvent: {}
+[5.010712] (drone_core) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX executable finder\x1b[0m\n'}
+[5.012114] (-) TimerEvent: {}
+[5.112341] (-) TimerEvent: {}
+[5.212733] (-) TimerEvent: {}
+[5.313010] (-) TimerEvent: {}
+[5.413294] (-) TimerEvent: {}
+[5.489319] (drone_core) StdoutLine: {'line': b'[100%] Built target finder\n'}
+[5.501496] (drone_core) CommandEnded: {'returncode': 0}
+[5.502409] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'install'}
+[5.510537] (drone_core) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/dksoren/drone_boys/build/drone_core'], 'cwd': '/home/dksoren/drone_boys/build/drone_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'dksoren', 'ROS_PACKAGE_PATH': '/home/dksoren/drone_boys/install/drone_core/share:/home/dksoren/drone_boys/install/drone/share', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/dksoren/drone_boys/install/drone_core/lib:/home/dksoren/drone_boys/install/drone/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/dksoren', 'OLDPWD': '/home/dksoren/drone_boys/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SYSTEMD_EXEC_PID': '3141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/dksoren/drone_boys/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'dksoren', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig:/home/dksoren/drone_boys/install/drone/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone/lib/pkgconfig', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/home/dksoren/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/MATLAB/R2025a/bin', 'SESSION_MANAGER': 'local/dksoren:@/tmp/.ICE-unix/2937,unix/dksoren:/tmp/.ICE-unix/2937', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/3a3dadec_2e03_42d2_90f9_2866d4fbf472', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/home/dksoren/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.105', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/dksoren', 'AMENT_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/dksoren/drone_boys/build/drone_core', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/dksoren/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:/home/dksoren/drone_boys/install/drone/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}), 'shell': False}
+[5.513351] (-) TimerEvent: {}
+[5.518747] (drone_core) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.518882] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/rosidl_interfaces/drone_core\n'}
+[5.519010] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/action/FinderAction.json\n'}
+[5.519110] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core\n'}
+[5.519174] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action\n'}
+[5.519232] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[5.519385] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__functions.h\n'}
+[5.519527] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__description.c\n'}
+[5.519586] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__functions.c\n'}
+[5.519648] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.c\n'}
+[5.519722] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.h\n'}
+[5.519776] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__struct.h\n'}
+[5.519837] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/finder_action.h\n'}
+[5.519912] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[5.519981] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_generator_c__visibility_control.h\n'}
+[5.520053] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/library_path.sh\n'}
+[5.520157] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/library_path.dsv\n'}
+[5.520219] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_generator_c.so\n'}
+[5.520278] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core\n'}
+[5.520350] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action\n'}
+[5.520418] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[5.520488] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_fastrtps_c.h\n'}
+[5.520556] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[5.520629] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[5.520767] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_fastrtps_c.so\n'}
+[5.520838] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core\n'}
+[5.520907] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action\n'}
+[5.520979] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/finder_action.hpp\n'}
+[5.521052] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[5.521126] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__traits.hpp\n'}
+[5.521243] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.hpp\n'}
+[5.521296] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__struct.hpp\n'}
+[5.521358] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__builder.hpp\n'}
+[5.521415] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[5.521468] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[5.521555] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core\n'}
+[5.521614] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action\n'}
+[5.521683] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[5.521737] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/dds_fastrtps\n'}
+[5.521791] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.521906] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[5.521960] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[5.522010] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_fastrtps_cpp.so\n'}
+[5.522065] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core\n'}
+[5.522119] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action\n'}
+[5.522172] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[5.522225] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.c\n'}
+[5.522278] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_introspection_c.h\n'}
+[5.522366] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[5.522440] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[5.522497] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_introspection_c.so\n'}
+[5.522553] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_c.so\n'}
+[5.522604] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core\n'}
+[5.522687] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action\n'}
+[5.522740] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[5.522795] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.522849] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.cpp\n'}
+[5.522903] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_introspection_cpp.so\n'}
+[5.522957] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_typesupport_cpp.so\n'}
+[5.523012] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/pythonpath.sh\n'}
+[5.523099] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/pythonpath.dsv\n'}
+[5.523179] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info\n'}
+[5.523234] (drone_core) StdoutLine: {'line': b'-- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/top_level.txt\n'}
+[5.523288] (drone_core) StdoutLine: {'line': b'-- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/PKG-INFO\n'}
+[5.523341] (drone_core) StdoutLine: {'line': b'-- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/SOURCES.txt\n'}
+[5.523393] (drone_core) StdoutLine: {'line': b'-- Installing: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/dependency_links.txt\n'}
+[5.523446] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core\n'}
+[5.523498] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action\n'}
+[5.523551] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action/__init__.py\n'}
+[5.523604] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action/_finder_action.py\n'}
+[5.523695] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action/_finder_action_s.c\n'}
+[5.523750] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/__init__.py\n'}
+[5.523803] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[5.523861] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_c.c\n'}
+[5.523911] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_c.so\n'}
+[5.523960] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so\n'}
+[5.524009] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[5.524054] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so\n'}
+[5.549685] (drone_core) StdoutLine: {'line': b"Listing '/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core'...\n"}
+[5.549887] (drone_core) StdoutLine: {'line': b"Listing '/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/action'...\n"}
+[5.554237] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so\n'}
+[5.554623] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so\n'}
+[5.554910] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_c.so\n'}
+[5.555213] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core__rosidl_generator_py.so\n'}
+[5.555417] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/action/FinderAction.idl\n'}
+[5.555545] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/action/FinderAction.action\n'}
+[5.555643] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include\n'}
+[5.555696] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core\n'}
+[5.555746] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/manipulator.h\n'}
+[5.555791] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/utils.h\n'}
+[5.555880] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/drone_core/libdrone_core_lib.so\n'}
+[5.556019] (drone_core) StdoutLine: {'line': b'-- Installing: /home/dksoren/drone_boys/install/drone_core/lib/drone_core/finder\n'}
+[5.557835] (drone_core) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/dksoren/drone_boys/install/drone_core/lib/drone_core/finder" to ""\n'}
+[5.557940] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core//config\n'}
+[5.558021] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core//config/params.yaml\n'}
+[5.558161] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/package_run_dependencies/drone_core\n'}
+[5.558333] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/parent_prefix_path/drone_core\n'}
+[5.558440] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.sh\n'}
+[5.558542] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.dsv\n'}
+[5.558676] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.sh\n'}
+[5.558777] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.dsv\n'}
+[5.558876] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.bash\n'}
+[5.558971] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.sh\n'}
+[5.559071] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.zsh\n'}
+[5.559204] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.dsv\n'}
+[5.559261] (drone_core) StdoutLine: {'line': b'-- Installing: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.dsv\n'}
+[5.559310] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/packages/drone_core\n'}
+[5.559357] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cExport.cmake\n'}
+[5.559424] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cExport-noconfig.cmake\n'}
+[5.559474] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[5.559527] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[5.559577] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cppExport.cmake\n'}
+[5.559632] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[5.559713] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[5.559765] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cExport.cmake\n'}
+[5.559821] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[5.559871] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cExport.cmake\n'}
+[5.559936] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[5.560003] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[5.560064] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[5.560164] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cppExport.cmake\n'}
+[5.560258] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[5.560363] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_pyExport.cmake\n'}
+[5.560434] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_pyExport-noconfig.cmake\n'}
+[5.560490] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/rosidl_cmake-extras.cmake\n'}
+[5.560546] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[5.560651] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[5.560727] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[5.560788] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[5.560854] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[5.560904] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[5.560953] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig.cmake\n'}
+[5.561002] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig-version.cmake\n'}
+[5.561050] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.xml\n'}
+[5.562517] (drone_core) CommandEnded: {'returncode': 0}
+[5.578905] (drone_core) JobEnded: {'identifier': 'drone_core', 'rc': 0}
+[5.579621] (-) EventReactorShutdown: {}

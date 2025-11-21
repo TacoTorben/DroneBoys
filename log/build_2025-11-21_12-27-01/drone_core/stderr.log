@@ -1,0 +1,15 @@
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:126:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ in namespace ‘[01m[Kstd[m[K’ does not name a type
+  126 |     std::[01;31m[Kcout[m[K << "Trying to open config: " << configPath << std::endl;
+      |          [01;31m[K^~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/flann/params.h:37[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/flann/flann_base.hpp:41[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/flann.hpp:48[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/opencv.hpp:65[m[K,
+                 from [01m[K/home/dksoren/drone_boys/src/drone_core/include/drone_core/utils.h:3[m[K,
+                 from [01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:1[m[K:
+[01m[K/usr/include/c++/13/iostream:63:18:[m[K [01;36m[Knote: [m[K‘[01m[Kstd::cout[m[K’ declared here
+   63 |   extern ostream [01;36m[Kcout[m[K;          ///< Linked to standard output
+      |                  [01;36m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:655: CMakeFiles/finder.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

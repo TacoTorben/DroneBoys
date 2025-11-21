@@ -1,0 +1,91 @@
+[0.008s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui
+[0.020s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.184s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.190s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.212s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.218s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.227s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.236s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.283s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.284s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.341s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.389s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.321s] [0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+[1.321s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[1.321s]   CMake.
+[1.321s] 
+[1.321s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.321s]   CMake that the project does not need compatibility with older versions.
+[1.321s] 
+[1.321s] [0m
+[1.325s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[1.325s] -- Using X11 for window creation
+[1.452s] -- Configuring done (1.4s)
+[1.510s] -- Generating done (0.0s)
+[1.523s] -- Build files have been written to: /home/dksoren/drone_boys/build/drone_gui
+[1.534s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '0': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui
+[1.536s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
+[1.596s] [ 14%] Built target glfw
+[1.622s] [ 20%] Built target heightmap
+[1.622s] [ 20%] Built target sharing
+[1.623s] [ 20%] Built target gears
+[1.623s] [ 22%] Built target offscreen
+[1.623s] [ 26%] Built target particles
+[1.624s] [ 28%] Built target simple
+[1.625s] [ 30%] Built target boing
+[1.633s] [ 35%] Built target splitview
+[1.634s] [ 34%] Built target wave
+[1.634s] [ 41%] Built target clipboard
+[1.634s] [ 42%] Built target events
+[1.634s] [ 47%] Built target ImGuiLib
+[1.652s] [ 58%] Built target msaa
+[1.652s] [ 58%] Built target glfwinfo
+[1.652s] [ 58%] Built target monitors
+[1.652s] [ 60%] Built target iconify
+[1.654s] [ 65%] Built target cursor
+[1.655s] [ 66%] Built target empty
+[1.655s] [ 68%] Built target reopen
+[1.659s] [ 72%] Built target gamma
+[1.659s] [ 73%] Built target icon
+[1.660s] [ 75%] Built target joysticks
+[1.660s] [ 78%] Built target inputlag
+[1.665s] [ 80%] Built target opacity
+[1.676s] [ 87%] Built target tearing
+[1.676s] [ 87%] Built target timeout
+[1.676s] [ 89%] Built target title
+[1.676s] [ 90%] Built target threads
+[1.677s] [ 94%] Built target windows
+[1.678s] [ 96%] Built target triangle-vulkan
+[1.685s] [ 98%] Built target InterfaceLib
+[1.710s] [100%] Built target gui_app
+[1.721s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '0': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
+[1.722s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_gui
+[1.730s] -- Install configuration: ""
+[1.730s] -- Execute custom install script
+[1.730s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Config.cmake
+[1.730s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+[1.730s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/lib/pkgconfig/glfw3.pc
+[1.730s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/lib/drone_gui/gui_app
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/package_run_dependencies/drone_gui
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/parent_prefix_path/drone_gui
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.sh
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.dsv
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.sh
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.dsv
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.bash
+[1.731s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.sh
+[1.732s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.zsh
+[1.732s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.dsv
+[1.732s] -- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.dsv
+[1.741s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/packages/drone_gui
+[1.741s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.742s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig.cmake
+[1.742s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig-version.cmake
+[1.742s] -- Up-to-date symlink: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.xml
+[1.742s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW
+[1.742s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3.h
+[1.742s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3native.h
+[1.742s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets.cmake
+[1.743s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
+[1.743s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/libglfw3.a
+[1.746s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '0': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone_gui:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_gui

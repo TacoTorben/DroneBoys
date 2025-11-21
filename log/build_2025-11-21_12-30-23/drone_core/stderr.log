@@ -1,0 +1,6 @@
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:126:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcout[m[K’ does not name a type
+  126 |     [01;31m[Kcout[m[K << "Trying to open config: " << configPath << endl;
+      |     [01;31m[K^~~~[m[K
+gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:655: CMakeFiles/finder.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

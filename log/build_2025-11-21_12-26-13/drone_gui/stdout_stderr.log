@@ -1,0 +1,61 @@
+[ 14%] Built target glfw
+[ 24%] Built target boing
+[ 26%] Built target ImGuiLib
+[ 28%] Built target simple
+[ 34%] Built target heightmap
+[ 34%] Built target particles
+[ 24%] Built target sharing
+[ 34%] Built target splitview
+[ 36%] Built target wave
+[ 38%] Built target offscreen
+[ 41%] Built target clipboard
+[ 45%] Built target events
+[ 47%] Built target gears
+[ 50%] Built target iconify
+[ 53%] Built target glfwinfo
+[ 56%] Built target monitors
+[ 60%] Built target msaa
+[ 64%] Built target gamma
+[ 65%] Built target reopen
+[ 67%] Built target cursor
+[ 71%] Built target opacity
+[ 71%] Built target joysticks
+[ 77%] Built target empty
+[ 77%] Built target icon
+[ 80%] Built target inputlag
+[ 82%] Built target tearing
+[ 86%] Built target timeout
+[ 87%] Built target threads
+[ 98%] Built target InterfaceLib
+[ 98%] Built target title
+[ 98%] Built target windows
+[ 98%] Built target triangle-vulkan
+[100%] Built target gui_app
+-- Install configuration: ""
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3.h
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3native.h
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Config.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/pkgconfig/glfw3.pc
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/libglfw3.a
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/drone_gui/gui_app
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui//config
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/package_run_dependencies/drone_gui
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/parent_prefix_path/drone_gui
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.sh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.sh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.dsv
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.bash
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.sh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.zsh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.dsv
+-- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.dsv
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/packages/drone_gui
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig-version.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.xml

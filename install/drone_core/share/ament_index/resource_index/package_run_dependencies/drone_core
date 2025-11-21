@@ -1,1 +1,1 @@
-rclcpp;rclcpp_action;rosidl_default_generators;ament_index_cpp;rosidl_default_runtime
+rclcpp;rclcpp_action;rosidl_default_generators;ament_index_cpp;std_msgs;rosidl_default_runtime

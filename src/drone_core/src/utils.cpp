@@ -10,7 +10,7 @@ namespace fs = std::filesystem;
 
     cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
 
-        fs::path imagePath = fs::current_path() / "src/drone/images" / filename; //! fy fy
+        fs::path imagePath = fs::current_path() / "src/drone_core/images" / filename; //! fy fy
         
         cv::Mat img = cv::imread(imagePath.string());
 
@@ -101,7 +101,7 @@ namespace fs = std::filesystem;
     }
 
     void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string& filename) {
-        fs::path outputPath = fs::current_path() / "src/drone/output" / filename;
+        fs::path outputPath = fs::current_path() / "src/drone_core/output" / filename;
         if (!cv::imwrite(outputPath.string(), image)) {
             cerr << "Error: Could not save image to: " << outputPath.string() << endl;
         }

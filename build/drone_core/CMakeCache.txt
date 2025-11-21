@@ -45,6 +45,9 @@ BUILD_TESTING:BOOL=ON
 //No help, variable specified on the command line.
 CATKIN_INSTALL_INTO_PREFIX_ROOT:UNINITIALIZED=0
 
+//No help, variable specified on the command line.
+CATKIN_SYMLINK_INSTALL:UNINITIALIZED=ON
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -374,6 +377,9 @@ fastrtps_DIR:PATH=/opt/ros/jazzy/share/fastrtps/cmake
 
 //The directory containing a CMake configuration file for fastrtps_cmake_module.
 fastrtps_cmake_module_DIR:PATH=/opt/ros/jazzy/share/fastrtps_cmake_module/cmake
+
+//The directory containing a CMake configuration file for finder_action.
+finder_action_DIR:PATH=finder_action_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for foonathan_memory.
 foonathan_memory_DIR:PATH=/opt/ros/jazzy/lib/foonathan_memory/cmake

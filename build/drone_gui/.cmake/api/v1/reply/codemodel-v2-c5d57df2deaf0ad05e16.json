@@ -1,0 +1,450 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-ef8d4f0d5b3179963c62.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						5,
+						12,
+						32
+					]
+				},
+				{
+					"build" : "_deps/glfw-build",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.glfw-build-76e41c387af146bd20ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src"
+				},
+				{
+					"build" : "_deps/glfw-build/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.glfw-build.src-f8d0644024fb537175b4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/src",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "_deps/glfw-build/examples",
+					"jsonFile" : "directory-_deps.glfw-build.examples-4714932ff0ef3e74c25b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/examples",
+					"targetIndexes" : 
+					[
+						2,
+						9,
+						13,
+						20,
+						22,
+						24,
+						25,
+						26,
+						33
+					]
+				},
+				{
+					"build" : "_deps/glfw-build/tests",
+					"jsonFile" : "directory-_deps.glfw-build.tests-ac4e3286d72bb1dc5e08.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "/home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/tests",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						6,
+						7,
+						8,
+						11,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						21,
+						23,
+						27,
+						28,
+						29,
+						30,
+						31,
+						34
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "drone_gui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						5,
+						12,
+						32
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						33,
+						34
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ImGuiLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ImGuiLib-63d5a17545354f383957.json",
+					"name" : "ImGuiLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "InterfaceLib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-InterfaceLib-5c5798c4181a8578d5c9.json",
+					"name" : "InterfaceLib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "boing::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-boing-ff91a72aa6b192c21400.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "clipboard::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-clipboard-d58fab3bef49188833ab.json",
+					"name" : "clipboard",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cursor::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-cursor-25339e78dba26b8518eb.json",
+					"name" : "cursor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_gui_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_gui_uninstall-07c97409ad396451f930.json",
+					"name" : "drone_gui_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "empty::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-empty-e9dc7ccb568bb9cdf768.json",
+					"name" : "empty",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "events::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-events-f53fc519ec785529ea5c.json",
+					"name" : "events",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gamma::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-gamma-dfad95f1fc2c390c7c5c.json",
+					"name" : "gamma",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gears::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-gears-86fa7cf60692812d16a0.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@fa9f4482d3a2b070f206",
+					"jsonFile" : "target-glfw-e49fe9f731b86b396fe0.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfwinfo::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-glfwinfo-d82898a903e65b6e3f5a.json",
+					"name" : "glfwinfo",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gui_app::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gui_app-4ea1ce51fe0fef00160a.json",
+					"name" : "gui_app",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "heightmap::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-heightmap-8dd0a529a9522102c14d.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "icon::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-icon-16827fd69c120224371a.json",
+					"name" : "icon",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "iconify::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-iconify-b22820020fa57ace4c15.json",
+					"name" : "iconify",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "inputlag::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-inputlag-a40bc14ec39811b4d792.json",
+					"name" : "inputlag",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "joysticks::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-joysticks-11b2eacb495ce1df7cbf.json",
+					"name" : "joysticks",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "monitors::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-monitors-5af5b9d9144899e7cad7.json",
+					"name" : "monitors",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "msaa::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-msaa-d82e5ef208971c8c1dc3.json",
+					"name" : "msaa",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "offscreen::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-offscreen-5783663f0dc413509128.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "opacity::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-opacity-947bab271c196c816f97.json",
+					"name" : "opacity",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "particles::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-particles-caf7a71953066cde74ea.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "reopen::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-reopen-ad77fd63feb6fb519152.json",
+					"name" : "reopen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sharing::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-sharing-eafe85c5fefaf31f4552.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "simple::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-simple-597f2d7b3e630bcb1251.json",
+					"name" : "simple",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "splitview::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-splitview-68451282eb8062178c2e.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tearing::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-tearing-d2c974ada051385db793.json",
+					"name" : "tearing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "threads::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-threads-82baffed8a21757ddb36.json",
+					"name" : "threads",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "timeout::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-timeout-99800edb1ee4a8cf7626.json",
+					"name" : "timeout",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "title::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-title-27d8087ce2a79a810b25.json",
+					"name" : "title",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-vulkan::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-triangle-vulkan-4c659f591c17534eaca2.json",
+					"name" : "triangle-vulkan",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-3f30ba3612442d47ce74.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "wave::@c62c2157a01e8bae2628",
+					"jsonFile" : "target-wave-6cb2aeb80b6797bb99f5.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@469ee0266844ee2d64e7",
+					"jsonFile" : "target-windows-24f0348b6a40fd8041d3.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dksoren/drone_boys/build/drone_gui",
+		"source" : "/home/dksoren/drone_boys/src/drone_gui"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

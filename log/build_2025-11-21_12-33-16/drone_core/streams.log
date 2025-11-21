@@ -1,0 +1,39 @@
+[0.009s] Invoking command in '/home/dksoren/drone_boys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12
+[0.056s] [  2%] Built target drone_core__rosidl_generator_type_description
+[0.059s] [  9%] Built target drone_core_lib
+[0.064s] [  9%] Built target ament_cmake_python_copy_drone_core
+[0.073s] [ 14%] Built target drone_core__cpp
+[0.073s] [ 24%] Built target drone_core__rosidl_generator_c
+[0.093s] [ 41%] Built target drone_core__rosidl_typesupport_cpp
+[0.093s] [ 41%] Built target drone_core__rosidl_typesupport_introspection_cpp
+[0.093s] [ 46%] Built target drone_core__rosidl_typesupport_c
+[0.093s] [ 60%] Built target drone_core__rosidl_typesupport_fastrtps_c
+[0.093s] [ 60%] Built target drone_core__rosidl_typesupport_fastrtps_cpp
+[0.094s] [ 68%] Built target drone_core__rosidl_typesupport_introspection_c
+[0.117s] [ 68%] Built target drone_core
+[0.139s] [ 70%] Built target drone_core__py
+[0.159s] [ 73%] [32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o[0m
+[0.168s] [ 78%] Built target drone_core__rosidl_generator_py
+[0.198s] [ 87%] Built target drone_core_s__rosidl_typesupport_c
+[0.198s] [ 87%] Built target drone_core_s__rosidl_typesupport_introspection_c
+[0.200s] [ 92%] Built target drone_core_s__rosidl_typesupport_fastrtps_c
+[0.253s] running egg_info
+[0.270s] writing drone_core.egg-info/PKG-INFO
+[0.270s] writing dependency_links to drone_core.egg-info/dependency_links.txt
+[0.270s] writing top-level names to drone_core.egg-info/top_level.txt
+[0.318s] reading manifest file 'drone_core.egg-info/SOURCES.txt'
+[0.319s] writing manifest file 'drone_core.egg-info/SOURCES.txt'
+[0.347s] [ 92%] Built target ament_cmake_python_build_drone_core_egg
+[3.164s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[3.164s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[3.164s]                  from [01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:4[m[K:
+[3.165s] [01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:126:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kdo[m[K’
+[3.165s]   126 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Loading config from: %s", configPath.c_str());
+[3.165s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[3.165s] [01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:126:5:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kwhile[m[K’
+[3.165s]   126 |     [01;31m[KRCLCPP_INFO[m[K(this->get_logger(), "Loading config from: %s", configPath.c_str());
+[3.165s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[4.354s] gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+[4.354s] gmake[1]: *** [CMakeFiles/Makefile2:655: CMakeFiles/finder.dir/all] Error 2
+[4.355s] gmake: *** [Makefile:146: all] Error 2
+[4.358s] Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12

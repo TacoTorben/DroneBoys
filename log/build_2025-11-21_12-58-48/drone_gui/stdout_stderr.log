@@ -1,0 +1,86 @@
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using X11 for window creation
+-- Configuring done (1.4s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dksoren/drone_boys/build/drone_gui
+[ 14%] Built target glfw
+[ 29%] Built target simple
+[ 29%] Built target offscreen
+[ 29%] Built target heightmap
+[ 29%] Built target boing
+[ 29%] Built target sharing
+[ 30%] Built target particles
+[ 32%] Built target events
+[ 37%] Built target wave
+[ 37%] Built target splitview
+[ 39%] Built target gears
+[ 42%] Built target clipboard
+[ 47%] Built target ImGuiLib
+[ 53%] Built target reopen
+[ 53%] Built target monitors
+[ 59%] Built target msaa
+[ 58%] Built target cursor
+[ 62%] Built target iconify
+[ 71%] Built target glfwinfo
+[ 71%] Built target inputlag
+[ 71%] Built target icon
+[ 73%] Built target gamma
+[ 76%] Built target empty
+[ 78%] Built target joysticks
+[ 80%] Built target opacity
+[ 84%] Built target timeout
+[ 87%] Built target threads
+[ 87%] Built target tearing
+[ 90%] Built target title
+[ 95%] Built target triangle-vulkan
+[ 96%] Built target windows
+[ 98%] Built target InterfaceLib
+[ 99%] [32m[1mLinking CXX executable gui_app[0m
+[100%] Built target gui_app
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Config.cmake
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/lib/pkgconfig/glfw3.pc
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/lib/drone_gui/gui_app
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/package_run_dependencies/drone_gui
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/parent_prefix_path/drone_gui
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.sh
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.dsv
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.sh
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.dsv
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.bash
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.sh
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.zsh
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.dsv
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.dsv
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/packages/drone_gui
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig.cmake
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig-version.cmake
+-- Symlinking: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.xml
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3.h
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3native.h
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_gui/lib/libglfw3.a
