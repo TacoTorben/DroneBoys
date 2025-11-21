@@ -1,4 +1,15 @@
 
+### Before use:
+1. Make sure you have ros2 jazzy installed
+    https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
+2. Install missing dependencies:
+```bash 
+    sudo apt install python3-rosdep
+    sudo rosdep init || true  
+    rosdep update
+    rosdep install --from-paths src --ignore-src -r -y
+    ```
+﻿
 
 
 
@@ -7,7 +18,7 @@
 *** First open 1 terminal write: ***
 ```bash
 cd DroneBoys
-colcon build
+colcon build  ## Until GUI works use colcon build --packages-select drone_core
 source install/setup.bash
 ```
 *** To run finder "aka main file in drone_core": ***
@@ -27,3 +38,6 @@ ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_ty
 
     target pose: [1,1] is name of input image and name of output image (without .jpeg)
     input images are those from images folder, and output you decise yourself (but only a number)
+
+
+if still not use, stop being an ass
