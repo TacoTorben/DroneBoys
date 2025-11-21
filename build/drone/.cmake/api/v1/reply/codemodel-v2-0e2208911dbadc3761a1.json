@@ -1,0 +1,251 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2fb359e53b0f8e324706.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "drone__py",
+					"jsonFile" : "directory-drone__py-a2be9884341af7a1b1d4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/dksoren/drone_boys/build/drone/drone__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "drone",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_drone_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_drone_egg-9b3c3c44928eddd3a336.json",
+					"name" : "ament_cmake_python_build_drone_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_drone::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_drone-9d31e4bfa2f952d3a0e6.json",
+					"name" : "ament_cmake_python_symlink_drone",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone-b63dd578afd804dbb3f1.json",
+					"name" : "drone",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__cpp-265cb58ff702ad69b1bb.json",
+					"name" : "drone__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "drone__py::@87cc3b85df7f3fb23315",
+					"jsonFile" : "target-drone__py-029981481e884f26f83b.json",
+					"name" : "drone__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_generator_c-776eb0bf4869eca71cca.json",
+					"name" : "drone__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_generator_py-35bdf88fe6a44130296a.json",
+					"name" : "drone__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_generator_type_description-434041938c2a9b917217.json",
+					"name" : "drone__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_typesupport_c-132046e3aeace8035902.json",
+					"name" : "drone__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_typesupport_cpp-da74aed378f94cb78179.json",
+					"name" : "drone__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_typesupport_fastrtps_c-57883ea9a9e8140ba7e1.json",
+					"name" : "drone__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_typesupport_fastrtps_cpp-c44e157a02dd3908d65f.json",
+					"name" : "drone__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_typesupport_introspection_c-2e5d6d61544dd1b5fca0.json",
+					"name" : "drone__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone__rosidl_typesupport_introspection_cpp-080d0a2672777386ed55.json",
+					"name" : "drone__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_s__rosidl_typesupport_c-3f8cf92fef10f0293241.json",
+					"name" : "drone_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_s__rosidl_typesupport_fastrtps_c-fafdae646d1dec3b41a4.json",
+					"name" : "drone_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_s__rosidl_typesupport_introspection_c-888e47825a03a1730c64.json",
+					"name" : "drone_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_uninstall-22890a47809c06406f57.json",
+					"name" : "drone_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "finder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-finder-6e472e21afd2a02351ed.json",
+					"name" : "finder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-c4d2b28e60aa02b2aec0.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dksoren/drone_boys/build/drone",
+		"source" : "/home/dksoren/drone_boys/src/drone"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

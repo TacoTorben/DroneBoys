@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "drone__py",
+		"source" : "/home/dksoren/drone_boys/build/drone/drone__py"
+	}
+}

@@ -1,0 +1,56 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "drone/action/FinderAction_GetResult_Response",
+      "fields": [
+        {
+          "name": "status",
+          "type": {
+            "type_id": 2,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "result",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "drone/action/FinderAction_Result"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "drone/action/FinderAction_Result",
+        "fields": [
+          {
+            "name": "success",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "drone/action/FinderAction_GetResult_Response",
+      "hash_string": "RIHS01_600ecd1f7b1b04049423ff4b1b8002737d1549d4ec5f58d3d4374d71f1a551c5"
+    },
+    {
+      "type_name": "drone/action/FinderAction_Result",
+      "hash_string": "RIHS01_7b9d8b82771671e266837fa9cbd380eb1832a2c725d0d53833a04876900c06d6"
+    }
+  ]
+}
