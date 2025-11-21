@@ -6,6 +6,7 @@
 
 *** First open 1 terminal write: ***
 ```bash
+cd DroneBoys
 colcon build
 source install/setup.bash
 ```
