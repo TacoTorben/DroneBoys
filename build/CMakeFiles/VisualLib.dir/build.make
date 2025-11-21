@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dksoren/DroneBoys
+CMAKE_SOURCE_DIR = /home/valdemar-linus/DroneBoys
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dksoren/DroneBoys/build
+CMAKE_BINARY_DIR = /home/valdemar-linus/DroneBoys/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/VisualLib.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/VisualLib.dir/progress.make
 include CMakeFiles/VisualLib.dir/flags.make
 
 CMakeFiles/VisualLib.dir/src/utils.cpp.o: CMakeFiles/VisualLib.dir/flags.make
-CMakeFiles/VisualLib.dir/src/utils.cpp.o: /home/dksoren/DroneBoys/src/utils.cpp
+CMakeFiles/VisualLib.dir/src/utils.cpp.o: /home/valdemar-linus/DroneBoys/src/utils.cpp
 CMakeFiles/VisualLib.dir/src/utils.cpp.o: CMakeFiles/VisualLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dksoren/DroneBoys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VisualLib.dir/src/utils.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VisualLib.dir/src/utils.cpp.o -MF CMakeFiles/VisualLib.dir/src/utils.cpp.o.d -o CMakeFiles/VisualLib.dir/src/utils.cpp.o -c /home/dksoren/DroneBoys/src/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/valdemar-linus/DroneBoys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VisualLib.dir/src/utils.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VisualLib.dir/src/utils.cpp.o -MF CMakeFiles/VisualLib.dir/src/utils.cpp.o.d -o CMakeFiles/VisualLib.dir/src/utils.cpp.o -c /home/valdemar-linus/DroneBoys/src/utils.cpp
 
 CMakeFiles/VisualLib.dir/src/utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VisualLib.dir/src/utils.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dksoren/DroneBoys/src/utils.cpp > CMakeFiles/VisualLib.dir/src/utils.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valdemar-linus/DroneBoys/src/utils.cpp > CMakeFiles/VisualLib.dir/src/utils.cpp.i
 
 CMakeFiles/VisualLib.dir/src/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VisualLib.dir/src/utils.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dksoren/DroneBoys/src/utils.cpp -o CMakeFiles/VisualLib.dir/src/utils.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valdemar-linus/DroneBoys/src/utils.cpp -o CMakeFiles/VisualLib.dir/src/utils.cpp.s
 
 CMakeFiles/VisualLib.dir/src/manipulator.cpp.o: CMakeFiles/VisualLib.dir/flags.make
-CMakeFiles/VisualLib.dir/src/manipulator.cpp.o: /home/dksoren/DroneBoys/src/manipulator.cpp
+CMakeFiles/VisualLib.dir/src/manipulator.cpp.o: /home/valdemar-linus/DroneBoys/src/manipulator.cpp
 CMakeFiles/VisualLib.dir/src/manipulator.cpp.o: CMakeFiles/VisualLib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/dksoren/DroneBoys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VisualLib.dir/src/manipulator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VisualLib.dir/src/manipulator.cpp.o -MF CMakeFiles/VisualLib.dir/src/manipulator.cpp.o.d -o CMakeFiles/VisualLib.dir/src/manipulator.cpp.o -c /home/dksoren/DroneBoys/src/manipulator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/valdemar-linus/DroneBoys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VisualLib.dir/src/manipulator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VisualLib.dir/src/manipulator.cpp.o -MF CMakeFiles/VisualLib.dir/src/manipulator.cpp.o.d -o CMakeFiles/VisualLib.dir/src/manipulator.cpp.o -c /home/valdemar-linus/DroneBoys/src/manipulator.cpp
 
 CMakeFiles/VisualLib.dir/src/manipulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VisualLib.dir/src/manipulator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dksoren/DroneBoys/src/manipulator.cpp > CMakeFiles/VisualLib.dir/src/manipulator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/valdemar-linus/DroneBoys/src/manipulator.cpp > CMakeFiles/VisualLib.dir/src/manipulator.cpp.i
 
 CMakeFiles/VisualLib.dir/src/manipulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VisualLib.dir/src/manipulator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dksoren/DroneBoys/src/manipulator.cpp -o CMakeFiles/VisualLib.dir/src/manipulator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/valdemar-linus/DroneBoys/src/manipulator.cpp -o CMakeFiles/VisualLib.dir/src/manipulator.cpp.s
 
 # Object files for target VisualLib
 VisualLib_OBJECTS = \
@@ -109,7 +109,7 @@ libVisualLib.a: CMakeFiles/VisualLib.dir/src/utils.cpp.o
 libVisualLib.a: CMakeFiles/VisualLib.dir/src/manipulator.cpp.o
 libVisualLib.a: CMakeFiles/VisualLib.dir/build.make
 libVisualLib.a: CMakeFiles/VisualLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/dksoren/DroneBoys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libVisualLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/valdemar-linus/DroneBoys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libVisualLib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/VisualLib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VisualLib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -122,6 +122,6 @@ CMakeFiles/VisualLib.dir/clean:
 .PHONY : CMakeFiles/VisualLib.dir/clean
 
 CMakeFiles/VisualLib.dir/depend:
-	cd /home/dksoren/DroneBoys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dksoren/DroneBoys /home/dksoren/DroneBoys /home/dksoren/DroneBoys/build /home/dksoren/DroneBoys/build /home/dksoren/DroneBoys/build/CMakeFiles/VisualLib.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/valdemar-linus/DroneBoys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valdemar-linus/DroneBoys /home/valdemar-linus/DroneBoys /home/valdemar-linus/DroneBoys/build /home/valdemar-linus/DroneBoys/build /home/valdemar-linus/DroneBoys/build/CMakeFiles/VisualLib.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/VisualLib.dir/depend
 

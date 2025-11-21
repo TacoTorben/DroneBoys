@@ -1,6 +1,7 @@
 CMakeFiles/VisualLib.dir/src/manipulator.cpp.o: \
- /home/dksoren/DroneBoys/src/manipulator.cpp /usr/include/stdc-predef.h \
- /home/dksoren/DroneBoys/include/manipulator.h \
+ /home/valdemar-linus/DroneBoys/src/manipulator.cpp \
+ /usr/include/stdc-predef.h \
+ /home/valdemar-linus/DroneBoys/include/manipulator.h \
  /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \

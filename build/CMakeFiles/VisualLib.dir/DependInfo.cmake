@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/dksoren/DroneBoys/src/manipulator.cpp" "CMakeFiles/VisualLib.dir/src/manipulator.cpp.o" "gcc" "CMakeFiles/VisualLib.dir/src/manipulator.cpp.o.d"
-  "/home/dksoren/DroneBoys/src/utils.cpp" "CMakeFiles/VisualLib.dir/src/utils.cpp.o" "gcc" "CMakeFiles/VisualLib.dir/src/utils.cpp.o.d"
+  "/home/valdemar-linus/DroneBoys/src/manipulator.cpp" "CMakeFiles/VisualLib.dir/src/manipulator.cpp.o" "gcc" "CMakeFiles/VisualLib.dir/src/manipulator.cpp.o.d"
+  "/home/valdemar-linus/DroneBoys/src/utils.cpp" "CMakeFiles/VisualLib.dir/src/utils.cpp.o" "gcc" "CMakeFiles/VisualLib.dir/src/utils.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
