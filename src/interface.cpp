@@ -11,6 +11,7 @@ Widgets widget;
 
 //setup
 int current_image = 1;
+int circle_state = 0;
 int max_images = 10;
 int button_width = 125;
 
@@ -53,11 +54,12 @@ int main() {
     glfwSwapInterval(1); 
 
     int my_image_width = 0;
-    int my_image_height = 0;
-    GLuint my_image_texture = 0;
-    std::string path = "images/jesper" + current_image + ".jpeg";   
-    std::cout << path << std::endl;
-    bool ret = LoadTextureFromFile("/home/valdemar-linus/DroneBoys/images/jesper1.jpeg", &my_image_texture, &my_image_width, &my_image_height);
+    int my_image_height =    0;
+    GLuint my_image_texture = 0;        
+    std::string path = "/home/valdemar-linus/DroneBoys/images/jesper" + std::to_string(current_image) + ".jpeg";
+    
+
+    bool ret = LoadTextureFromFile(path.c_str(), &my_image_texture, &my_image_width, &my_image_height);
     IM_ASSERT(ret);
 
 
@@ -82,26 +84,36 @@ int main() {
         ImGui::SetNextWindowSize(ImVec2(button_width ,200));
         ImGui::SetNextWindowPos(ImVec2(5, 5));
         ImGui::Begin("Image Control");
-        if (ImGui::Button("next image")) {;
+        if (ImGui::Button("next image", ImVec2(button_width -15, 20))) {;
             if (current_image <  max_images)
                 current_image++;
+                std::string path = "/home/valdemar-linus/DroneBoys/images/jesper" + std::to_string(current_image) + ".jpeg";
+                bool ret = LoadTextureFromFile(path.c_str(), &my_image_texture, &my_image_width, &my_image_height);
 
         }
-        if (ImGui::Button("previous image"))  {;
-            if (current_image > 1)
-                current_image--;
-
+        if (ImGui::Button("previous image", ImVec2(button_width -15, 20)))  {;
+            if (circle_state == 0){
+                if (current_image > 1)
+                    current_image--;
+                    std::string path = "/home/valdemar-linus/DroneBoys/images/jesper" + std::to_string(current_image) + ".jpeg";
+                    bool ret = LoadTextureFromFile(path.c_str(), &my_image_texture, &my_image_width, &my_image_height);
+            }
+            else if (circle_state == 1){
+                if (current_image > 1)
+                    current_image--;
+                    printf("wow this sure is a temporary print fuction");
+                    std::string path2 = "/home/valdemar-linus/DroneBoys/images/Jesper" + std::to_string(current_image) + ".jpeg";
+                    bool ret = LoadTextureFromFile(path2.c_str(), &my_image_texture, &my_image_width, &my_image_height);
+            }
         }
-         if (ImGui::Button("method 1")) {;
+    
+        if (ImGui::Button("method 2", ImVec2(button_width -15, 20)))  {;
             printf("wow this sure is a temporary print fuction");
 
-        }
-        if (ImGui::Button("method 2"))  {;
-            printf("wow this sure is a temporary print fuction");
-
 
         }
-
+        ImGui::SetNextItemWidth(20.0f);
+        ImGui::CheckboxFlags("Circle", (unsigned int*)&circle_state, 1);
         ImGui::End();
 
         //Image Window
@@ -117,7 +129,10 @@ int main() {
         ImGui::SetNextWindowPos(ImVec2(button_width+15, (float)fb_h * 0.7+10));
         ImGui::Begin("Description");
         ImGui::Text("This is image %d", current_image);
+        ImGui::Text("Current circle state is: %d", circle_state);
         ImGui::End();
+
+        //printf(path.c_str());
 
 
         ImGui::Render();
