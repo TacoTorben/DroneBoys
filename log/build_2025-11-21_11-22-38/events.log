@@ -1,0 +1,173 @@
+[0.000000] (-) TimerEvent: {}
+[0.000349] (drone_core) JobQueued: {'identifier': 'drone_core', 'dependencies': OrderedDict()}
+[0.000388] (drone_gui) JobQueued: {'identifier': 'drone_gui', 'dependencies': OrderedDict({'drone_core': '/home/dksoren/drone_boys/install/drone_core'})}
+[0.000418] (drone_core) JobStarted: {'identifier': 'drone_core'}
+[0.009029] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'cmake'}
+[0.009724] (drone_core) Command: {'cmd': ['/usr/bin/cmake', '/home/dksoren/drone_boys/src/drone_core', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_core'], 'cwd': '/home/dksoren/drone_boys/build/drone_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'dksoren', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/dksoren/drone_boys/install/drone/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/dksoren', 'OLDPWD': '/home/dksoren/drone_boys/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SYSTEMD_EXEC_PID': '3141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/dksoren/drone_boys/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'dksoren', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/home/dksoren/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/MATLAB/R2025a/bin', 'SESSION_MANAGER': 'local/dksoren:@/tmp/.ICE-unix/2937,unix/dksoren:/tmp/.ICE-unix/2937', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/3a3dadec_2e03_42d2_90f9_2866d4fbf472', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/home/dksoren/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.105', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/dksoren', 'AMENT_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/dksoren/drone_boys/build/drone_core', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/dksoren/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/dksoren/drone_boys/install/drone/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}), 'shell': False}
+[0.026985] (drone_core) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.057429] (drone_core) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.099159] (-) TimerEvent: {}
+[0.146030] (drone_core) StdoutLine: {'line': b'-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.179121] (drone_core) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.189027] (drone_core) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.199279] (-) TimerEvent: {}
+[0.201523] (drone_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.216997] (drone_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.288019] (drone_core) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.289390] (drone_core) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299411] (-) TimerEvent: {}
+[0.371471] (drone_core) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.399550] (-) TimerEvent: {}
+[0.439039] (drone_core) StdoutLine: {'line': b'-- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)\n'}
+[0.468764] (drone_core) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.474464] (drone_core) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[0.499664] (-) TimerEvent: {}
+[0.599952] (-) TimerEvent: {}
+[0.668030] (drone_core) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[0.700060] (-) TimerEvent: {}
+[0.796247] (drone_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.800298] (-) TimerEvent: {}
+[0.845092] (drone_core) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.845908] (drone_core) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[0.900396] (-) TimerEvent: {}
+[1.000722] (-) TimerEvent: {}
+[1.043449] (drone_core) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[1.053594] (drone_core) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):\n'}
+[1.053826] (drone_core) StderrLine: {'line': b'  Use rosidl_get_typesupport_target() and target_link_libraries() instead of\n'}
+[1.053970] (drone_core) StderrLine: {'line': b'  rosidl_target_interfaces().  i.e:\n'}
+[1.054086] (drone_core) StderrLine: {'line': b'\n'}
+[1.054190] (drone_core) StderrLine: {'line': b'    rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")\n'}
+[1.054296] (drone_core) StderrLine: {'line': b'    target_link_libraries(${PROJECT_NAME}_node "${cpp_typesupport_target}")\n'}
+[1.054391] (drone_core) StderrLine: {'line': b'\n'}
+[1.054436] (drone_core) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[1.054480] (drone_core) StderrLine: {'line': b'  CMakeLists.txt:54 (rosidl_target_interfaces)\n'}
+[1.054523] (drone_core) StderrLine: {'line': b'\n'}
+[1.054567] (drone_core) StderrLine: {'line': b'\x1b[0m\n'}
+[1.057273] (drone_core) StdoutLine: {'line': b'-- Configuring done (1.0s)\n'}
+[1.095957] (drone_core) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.100792] (-) TimerEvent: {}
+[1.107093] (drone_core) StdoutLine: {'line': b'-- Build files have been written to: /home/dksoren/drone_boys/build/drone_core\n'}
+[1.116789] (drone_core) CommandEnded: {'returncode': 0}
+[1.117189] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'build'}
+[1.117597] (drone_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/dksoren/drone_boys/build/drone_core', '--', '-j12', '-l12'], 'cwd': '/home/dksoren/drone_boys/build/drone_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'dksoren', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/dksoren/drone_boys/install/drone/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/dksoren', 'OLDPWD': '/home/dksoren/drone_boys/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'SYSTEMD_EXEC_PID': '3141', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/dksoren/drone_boys/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'dksoren', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/home/dksoren/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/MATLAB/R2025a/bin', 'SESSION_MANAGER': 'local/dksoren:@/tmp/.ICE-unix/2937,unix/dksoren:/tmp/.ICE-unix/2937', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/3a3dadec_2e03_42d2_90f9_2866d4fbf472', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/home/dksoren/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.105', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/dksoren', 'AMENT_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/dksoren/drone_boys/build/drone_core', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/home/dksoren/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/dksoren/drone_boys/install/drone/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}), 'shell': False}
+[1.162576] (drone_core) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/drone_core_lib.dir/src/utils.cpp.o\x1b[0m\n'}
+[1.162937] (drone_core) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[1.163005] (drone_core) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/drone_core_lib.dir/src/manipulator.cpp.o\x1b[0m\n'}
+[1.170419] (drone_core) StdoutLine: {'line': b'[  7%] Built target ament_cmake_python_copy_drone_core\n'}
+[1.200881] (-) TimerEvent: {}
+[1.301193] (-) TimerEvent: {}
+[1.337278] (drone_core) StdoutLine: {'line': b'[  7%] Built target drone_core__rosidl_generator_type_description\n'}
+[1.347089] (drone_core) StdoutLine: {'line': b'[  9%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.347732] (drone_core) StdoutLine: {'line': b'running egg_info\n'}
+[1.348444] (drone_core) StdoutLine: {'line': b'creating drone_core.egg-info\n'}
+[1.356823] (drone_core) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.366960] (drone_core) StdoutLine: {'line': b'writing drone_core.egg-info/PKG-INFO\n'}
+[1.367191] (drone_core) StdoutLine: {'line': b'writing dependency_links to drone_core.egg-info/dependency_links.txt\n'}
+[1.367340] (drone_core) StdoutLine: {'line': b'writing top-level names to drone_core.egg-info/top_level.txt\n'}
+[1.367487] (drone_core) StdoutLine: {'line': b"writing manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[1.401289] (-) TimerEvent: {}
+[1.418743] (drone_core) StdoutLine: {'line': b"reading manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[1.419187] (drone_core) StdoutLine: {'line': b"writing manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[1.443961] (drone_core) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_build_drone_core_egg\n'}
+[1.501423] (-) TimerEvent: {}
+[1.601707] (-) TimerEvent: {}
+[1.686988] (drone_core) StdoutLine: {'line': b'[ 12%] Built target drone_core__cpp\n'}
+[1.701851] (-) TimerEvent: {}
+[1.705325] (drone_core) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding C object CMakeFiles/drone_core__rosidl_generator_c.dir/rosidl_generator_c/drone_core/action/detail/finder_action__description.c.o\x1b[0m\n'}
+[1.705533] (drone_core) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding C object CMakeFiles/drone_core__rosidl_generator_c.dir/rosidl_generator_c/drone_core/action/detail/finder_action__functions.c.o\x1b[0m\n'}
+[1.705637] (drone_core) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding C object CMakeFiles/drone_core__rosidl_generator_c.dir/rosidl_generator_c/drone_core/action/detail/finder_action__type_support.c.o\x1b[0m\n'}
+[1.802007] (-) TimerEvent: {}
+[1.819737] (drone_core) StdoutLine: {'line': b'[ 21%] \x1b[32m\x1b[1mLinking C shared library libdrone_core__rosidl_generator_c.so\x1b[0m\n'}
+[1.856243] (drone_core) StdoutLine: {'line': b'[ 21%] Built target drone_core__rosidl_generator_c\n'}
+[1.865669] (drone_core) StdoutLine: {'line': b'[ 26%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.865964] (drone_core) StdoutLine: {'line': b'[ 26%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.866112] (drone_core) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.866530] (drone_core) StdoutLine: {'line': b'[ 31%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.866692] (drone_core) StdoutLine: {'line': b'[ 34%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.866869] (drone_core) StdoutLine: {'line': b'[ 36%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.902164] (-) TimerEvent: {}
+[2.002477] (-) TimerEvent: {}
+[2.102755] (-) TimerEvent: {}
+[2.119345] (drone_core) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/drone_core__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/drone_core/action/finder_action__type_support.cpp.o\x1b[0m\n'}
+[2.169893] (drone_core) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/drone_core__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/drone_core/action/detail/finder_action__type_support.cpp.o\x1b[0m\n'}
+[2.202858] (-) TimerEvent: {}
+[2.261483] (drone_core) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/drone_core__rosidl_typesupport_c.dir/rosidl_typesupport_c/drone_core/action/finder_action__type_support.cpp.o\x1b[0m\n'}
+[2.302974] (-) TimerEvent: {}
+[2.303703] (drone_core) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/drone_core__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/drone_core/action/detail/finder_action__type_support_c.cpp.o\x1b[0m\n'}
+[2.327601] (drone_core) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libdrone_core__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.340308] (drone_core) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/drone_core__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/drone_core/action/detail/finder_action__type_support.c.o\x1b[0m\n'}
+[2.390586] (drone_core) StdoutLine: {'line': b'[ 51%] Built target drone_core__rosidl_typesupport_c\n'}
+[2.403094] (-) TimerEvent: {}
+[2.417985] (drone_core) StdoutLine: {'line': b'[ 53%] \x1b[32m\x1b[1mLinking C shared library libdrone_core__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.427502] (drone_core) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/drone_core__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/drone_core/action/detail/dds_fastrtps/finder_action__type_support.cpp.o\x1b[0m\n'}
+[2.452346] (drone_core) StdoutLine: {'line': b'[ 56%] Built target drone_core__rosidl_typesupport_introspection_c\n'}
+[2.503205] (-) TimerEvent: {}
+[2.603535] (-) TimerEvent: {}
+[2.703853] (-) TimerEvent: {}
+[2.704098] (drone_core) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library libdrone_core__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.779975] (drone_core) StdoutLine: {'line': b'[ 58%] Built target drone_core__rosidl_typesupport_cpp\n'}
+[2.803980] (-) TimerEvent: {}
+[2.816113] (drone_core) StdoutLine: {'line': b'[ 60%] \x1b[32m\x1b[1mLinking CXX shared library libdrone_core__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.840040] (drone_core) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX shared library libdrone_core__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.893096] (drone_core) StdoutLine: {'line': b'[ 63%] Built target drone_core__rosidl_typesupport_fastrtps_c\n'}
+[2.904099] (-) TimerEvent: {}
+[2.917328] (drone_core) StdoutLine: {'line': b'[ 63%] Built target drone_core__rosidl_typesupport_introspection_cpp\n'}
+[3.004205] (-) TimerEvent: {}
+[3.104482] (-) TimerEvent: {}
+[3.204735] (-) TimerEvent: {}
+[3.256347] (drone_core) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking CXX shared library libdrone_core__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[3.294174] (drone_core) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking CXX shared library libdrone_core_lib.so\x1b[0m\n'}
+[3.304871] (-) TimerEvent: {}
+[3.322268] (drone_core) StdoutLine: {'line': b'[ 68%] Built target drone_core__rosidl_typesupport_fastrtps_cpp\n'}
+[3.342987] (drone_core) StdoutLine: {'line': b'[ 68%] Built target drone_core\n'}
+[3.365033] (drone_core) StdoutLine: {'line': b'[ 70%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.391327] (drone_core) StdoutLine: {'line': b'[ 70%] Built target drone_core_lib\n'}
+[3.404977] (-) TimerEvent: {}
+[3.410666] (drone_core) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o\x1b[0m\n'}
+[3.410889] (drone_core) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/finder.dir/src/utils.cpp.o\x1b[0m\n'}
+[3.411022] (drone_core) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/finder.dir/src/manipulator.cpp.o\x1b[0m\n'}
+[3.505075] (-) TimerEvent: {}
+[3.605331] (-) TimerEvent: {}
+[3.705582] (-) TimerEvent: {}
+[3.783182] (drone_core) StderrLine: {'line': b'\x1b[01m\x1b[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:8:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kdrone/action/finder_action.hpp: No such file or directory\n'}
+[3.783426] (drone_core) StderrLine: {'line': b'    8 | #include \x1b[01;31m\x1b[K"drone/action/finder_action.hpp"\x1b[m\x1b[K\n'}
+[3.783555] (drone_core) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.783659] (drone_core) StderrLine: {'line': b'compilation terminated.\n'}
+[3.789970] (drone_core) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1\n'}
+[3.790185] (drone_core) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[3.805695] (-) TimerEvent: {}
+[3.875070] (drone_core) StdoutLine: {'line': b'[ 78%] Built target drone_core__py\n'}
+[3.897246] (drone_core) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding C object CMakeFiles/drone_core__rosidl_generator_py.dir/rosidl_generator_py/drone_core/action/_finder_action_s.c.o\x1b[0m\n'}
+[3.905802] (-) TimerEvent: {}
+[4.006128] (-) TimerEvent: {}
+[4.061664] (drone_core) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking C shared library libdrone_core__rosidl_generator_py.so\x1b[0m\n'}
+[4.105130] (drone_core) StdoutLine: {'line': b'[ 82%] Built target drone_core__rosidl_generator_py\n'}
+[4.106187] (-) TimerEvent: {}
+[4.123575] (drone_core) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/drone_core_s__rosidl_typesupport_c.dir/rosidl_generator_py/drone_core/_drone_core_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[4.123814] (drone_core) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/drone_core_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/drone_core/_drone_core_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[4.123979] (drone_core) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/drone_core_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/drone_core/_drone_core_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[4.206341] (-) TimerEvent: {}
+[4.224064] (drone_core) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[4.224324] (drone_core) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/drone_core/drone_core_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[4.226796] (drone_core) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[4.253248] (drone_core) StdoutLine: {'line': b'[ 97%] Built target drone_core_s__rosidl_typesupport_c\n'}
+[4.253559] (drone_core) StdoutLine: {'line': b'[ 97%] Built target drone_core_s__rosidl_typesupport_introspection_c\n'}
+[4.256663] (drone_core) StdoutLine: {'line': b'[ 97%] Built target drone_core_s__rosidl_typesupport_fastrtps_c\n'}
+[4.306490] (-) TimerEvent: {}
+[4.406859] (-) TimerEvent: {}
+[4.507221] (-) TimerEvent: {}
+[4.607563] (-) TimerEvent: {}
+[4.707924] (-) TimerEvent: {}
+[4.808311] (-) TimerEvent: {}
+[4.908677] (-) TimerEvent: {}
+[5.009037] (-) TimerEvent: {}
+[5.109370] (-) TimerEvent: {}
+[5.209645] (-) TimerEvent: {}
+[5.309995] (-) TimerEvent: {}
+[5.410344] (-) TimerEvent: {}
+[5.442308] (drone_core) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:655: CMakeFiles/finder.dir/all] Error 2\n'}
+[5.442627] (drone_core) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.445544] (drone_core) CommandEnded: {'returncode': 2}
+[5.457792] (drone_core) JobEnded: {'identifier': 'drone_core', 'rc': 2}
+[5.468399] (drone_gui) JobSkipped: {'identifier': 'drone_gui'}
+[5.468478] (-) EventReactorShutdown: {}

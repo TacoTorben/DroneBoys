@@ -1,0 +1,26 @@
+[0.014s] Invoking command in '/home/dksoren/drone_boys/build/drone_core': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12
+[0.075s] [100%] Built target drone_core
+[0.088s] Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_core -- -j12 -l12
+[0.099s] Invoking command in '/home/dksoren/drone_boys/build/drone_core': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_core
+[0.111s] -- Install configuration: ""
+[0.111s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core.a
+[0.112s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include
+[0.112s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core
+[0.112s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/manipulator.h
+[0.112s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/utils.h
+[0.112s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/package_run_dependencies/drone_core
+[0.113s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/parent_prefix_path/drone_core
+[0.113s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.sh
+[0.113s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.dsv
+[0.113s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.sh
+[0.113s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.dsv
+[0.113s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.bash
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.sh
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.zsh
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.dsv
+[0.114s] -- Installing: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.dsv
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/packages/drone_core
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig.cmake
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig-version.cmake
+[0.114s] -- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.xml
+[0.116s] Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_core

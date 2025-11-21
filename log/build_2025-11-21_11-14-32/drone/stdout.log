@@ -1,0 +1,42 @@
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Configuring done (1.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dksoren/drone_boys/build/drone
+[  2%] Built target drone__rosidl_generator_type_description
+[  2%] Built target ament_cmake_python_symlink_drone
+[  5%] Built target drone__cpp
+[ 18%] Built target drone__rosidl_generator_c
+[ 35%] Built target drone__rosidl_typesupport_introspection_c
+[ 35%] Built target drone__rosidl_typesupport_c
+[ 56%] Built target drone__rosidl_typesupport_cpp
+[ 59%] Built target drone__rosidl_typesupport_fastrtps_c
+[ 59%] Built target drone__rosidl_typesupport_fastrtps_cpp
+[ 67%] Built target drone__rosidl_typesupport_introspection_cpp
+[ 67%] Built target drone
+[ 70%] [32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o[0m
+[ 72%] Built target drone__py
+running egg_info
+writing drone.egg-info/PKG-INFO
+writing dependency_links to drone.egg-info/dependency_links.txt
+writing top-level names to drone.egg-info/top_level.txt
+reading manifest file 'drone.egg-info/SOURCES.txt'
+writing manifest file 'drone.egg-info/SOURCES.txt'
+[ 72%] Built target ament_cmake_python_build_drone_egg

@@ -46,6 +46,7 @@
         "numbers": "cpp",
         "ostream": "cpp",
         "__nullptr": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "iostream": "cpp"
     }
 }

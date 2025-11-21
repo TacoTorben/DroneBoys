@@ -791,54 +791,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/manipulator.o: src/manipulator.cpp.o
-.PHONY : src/manipulator.o
-
-# target to build an object file
-src/manipulator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/manipulator.cpp.o
-.PHONY : src/manipulator.cpp.o
-
-src/manipulator.i: src/manipulator.cpp.i
-.PHONY : src/manipulator.i
-
-# target to preprocess a source file
-src/manipulator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/manipulator.cpp.i
-.PHONY : src/manipulator.cpp.i
-
-src/manipulator.s: src/manipulator.cpp.s
-.PHONY : src/manipulator.s
-
-# target to generate assembly for a file
-src/manipulator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/manipulator.cpp.s
-.PHONY : src/manipulator.cpp.s
-
-src/utils.o: src/utils.cpp.o
-.PHONY : src/utils.o
-
-# target to build an object file
-src/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/utils.cpp.o
-.PHONY : src/utils.cpp.o
-
-src/utils.i: src/utils.cpp.i
-.PHONY : src/utils.i
-
-# target to preprocess a source file
-src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/utils.cpp.i
-.PHONY : src/utils.cpp.i
-
-src/utils.s: src/utils.cpp.s
-.PHONY : src/utils.s
-
-# target to generate assembly for a file
-src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/src/utils.cpp.s
-.PHONY : src/utils.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -917,12 +869,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/manipulator.o"
-	@echo "... src/manipulator.i"
-	@echo "... src/manipulator.s"
-	@echo "... src/utils.o"
-	@echo "... src/utils.i"
-	@echo "... src/utils.s"
 .PHONY : help
 
 

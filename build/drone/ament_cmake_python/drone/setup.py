@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='drone',
-    version='0.1.0',
+    version='0.0.0',
     packages=find_packages(
         include=('drone', 'drone.*')),
 )

@@ -1,0 +1,30 @@
+[0.010s] Invoking command in '/home/dksoren/drone_boys/build/drone': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone -- -j12 -l12
+[0.067s] [  2%] Built target drone__rosidl_generator_type_description
+[0.078s] [  2%] Built target ament_cmake_python_symlink_drone
+[0.090s] [  5%] Built target drone__cpp
+[0.092s] [ 18%] Built target drone__rosidl_generator_c
+[0.121s] [ 27%] Built target drone__rosidl_typesupport_introspection_c
+[0.122s] [ 35%] Built target drone__rosidl_typesupport_c
+[0.123s] [ 43%] Built target drone__rosidl_typesupport_introspection_cpp
+[0.124s] [ 51%] Built target drone__rosidl_typesupport_fastrtps_c
+[0.124s] [ 59%] Built target drone__rosidl_typesupport_cpp
+[0.127s] [ 67%] Built target drone__rosidl_typesupport_fastrtps_cpp
+[0.152s] [ 67%] Built target drone
+[0.159s] [ 70%] [32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o[0m
+[0.170s] [01m[K/home/dksoren/drone_boys/src/drone/src/main.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kutils.h: No such file or directory
+[0.170s]     1 | #include [01;31m[K"utils.h"[m[K
+[0.170s]       |          [01;31m[K^~~~~~~~~[m[K
+[0.170s] compilation terminated.
+[0.171s] gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+[0.171s] gmake[1]: *** [CMakeFiles/Makefile2:625: CMakeFiles/finder.dir/all] Error 2
+[0.171s] gmake[1]: *** Waiting for unfinished jobs....
+[0.177s] [ 72%] Built target drone__py
+[0.291s] running egg_info
+[0.307s] writing drone.egg-info/PKG-INFO
+[0.307s] writing dependency_links to drone.egg-info/dependency_links.txt
+[0.308s] writing top-level names to drone.egg-info/top_level.txt
+[0.355s] reading manifest file 'drone.egg-info/SOURCES.txt'
+[0.356s] writing manifest file 'drone.egg-info/SOURCES.txt'
+[0.378s] [ 72%] Built target ament_cmake_python_build_drone_egg
+[0.380s] gmake: *** [Makefile:146: all] Error 2
+[0.382s] Invoked command in '/home/dksoren/drone_boys/build/drone' returned '2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone -- -j12 -l12

@@ -1,0 +1,4 @@
+-- Found drone_core: 0.0.1 (/home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake)
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using X11 for window creation
+-- Configuring incomplete, errors occurred!

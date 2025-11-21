@@ -1,0 +1,7 @@
+[01m[K/home/dksoren/drone_boys/src/drone_gui/src/interfaceUtil.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kstb_image.h: No such file or directory
+    4 | #include [01;31m[K"stb_image.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/InterfaceLib.dir/build.make:76: CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:290: CMakeFiles/InterfaceLib.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

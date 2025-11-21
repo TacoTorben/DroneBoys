@@ -1,0 +1,29 @@
+[0.015s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui
+[0.031s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.272s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.304s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.312s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.321s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.330s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.376s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.377s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.433s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.484s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.439s] [0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+[1.439s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[1.439s]   CMake.
+[1.439s] 
+[1.439s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.439s]   CMake that the project does not need compatibility with older versions.
+[1.439s] 
+[1.439s] [0m
+[1.444s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[1.444s] -- Using X11 for window creation
+[1.503s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+[1.503s]   ament_target_dependencies() the first argument must be a valid target name
+[1.503s] Call Stack (most recent call first):
+[1.503s]   CMakeLists.txt:47 (ament_target_dependencies)
+[1.504s] 
+[1.504s] [0m
+[1.504s] -- Configuring incomplete, errors occurred!
+[1.512s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '1': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui

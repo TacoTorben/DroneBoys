@@ -1,0 +1,16 @@
+-- Found drone_core: 0.0.1 (/home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake)
+[0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using X11 for window creation
+[31mCMake Error at CMakeLists.txt:79 (ament_package):
+  Unknown CMake command "ament_package".
+
+[0m
+-- Configuring incomplete, errors occurred!

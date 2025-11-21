@@ -1,0 +1,39 @@
+[0.008s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui
+[0.026s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.156s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.234s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.267s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.277s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.289s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.303s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.359s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.361s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.434s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.451s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.470s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.525s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.535s] -- Found drone_core: 0.0.1 (/home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake)
+[1.423s] [0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+[1.423s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[1.423s]   CMake.
+[1.424s] 
+[1.424s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.424s]   CMake that the project does not need compatibility with older versions.
+[1.424s] 
+[1.424s] [0m
+[1.428s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[1.428s] -- Using X11 for window creation
+[1.487s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:146 (target_link_libraries):
+[1.487s]   The keyword signature for target_link_libraries has already been used with
+[1.487s]   the target "gui_app".  All uses of target_link_libraries with a target must
+[1.487s]   be either all-keyword or all-plain.
+[1.487s] 
+[1.487s]   The uses of the keyword signature are here:
+[1.487s] 
+[1.488s]    * CMakeLists.txt:91 (target_link_libraries)
+[1.488s] 
+[1.488s] Call Stack (most recent call first):
+[1.488s]   CMakeLists.txt:100 (ament_target_dependencies)
+[1.488s] 
+[1.488s] [0m
+[1.552s] -- Configuring incomplete, errors occurred!

@@ -1,0 +1,68 @@
+[0.016s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
+[0.092s] [ 14%] Built target glfw
+[0.131s] [ 18%] Built target sharing
+[0.132s] [ 23%] Built target heightmap
+[0.132s] [ 23%] Built target ImGuiLib
+[0.132s] [ 26%] Built target wave
+[0.132s] [ 33%] Built target events
+[0.135s] [ 35%] Built target offscreen
+[0.135s] [ 37%] Built target simple
+[0.136s] [ 40%] Built target gears
+[0.136s] [ 31%] Built target particles
+[0.136s] [ 42%] Built target splitview
+[0.136s] [ 45%] Built target clipboard
+[0.136s] [ 47%] Built target boing
+[0.170s] [ 57%] Built target cursor
+[0.174s] [ 64%] Built target glfwinfo
+[0.175s] [ 65%] Built target monitors
+[0.175s] [ 65%] Built target reopen
+[0.175s] [ 65%] Built target msaa
+[0.175s] [ 65%] Built target inputlag
+[0.179s] [ 73%] Built target icon
+[0.179s] [ 73%] Built target gamma
+[0.179s] [ 71%] Built target empty
+[0.179s] [ 76%] Built target iconify
+[0.179s] [ 78%] Built target joysticks
+[0.181s] [ 80%] Built target opacity
+[0.202s] [ 88%] Built target threads
+[0.202s] [ 88%] Built target tearing
+[0.203s] [ 88%] Built target title
+[0.203s] [ 90%] Built target timeout
+[0.203s] [ 94%] Built target windows
+[0.205s] [ 96%] Built target triangle-vulkan
+[0.214s] [ 98%] Built target InterfaceLib
+[0.247s] [ 99%] [32mBuilding CXX object CMakeFiles/gui_app.dir/src/interface.cpp.o[0m
+[1.318s] [100%] [32m[1mLinking CXX executable gui_app[0m
+[1.475s] [100%] Built target gui_app
+[1.488s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
+[1.498s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_gui
+[1.505s] -- Install configuration: ""
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/include/GLFW
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3.h
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3native.h
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Config.cmake
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets.cmake
+[1.506s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
+[1.507s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/pkgconfig/glfw3.pc
+[1.507s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/libglfw3.a
+[1.508s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/lib/drone_gui/gui_app
+[1.510s] -- Set non-toolchain portion of runtime path of "/home/dksoren/drone_boys/install/drone_gui/lib/drone_gui/gui_app" to ""
+[1.510s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui//config
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/package_run_dependencies/drone_gui
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/parent_prefix_path/drone_gui
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.sh
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/ament_prefix_path.dsv
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.sh
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/environment/path.dsv
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.bash
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.sh
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.zsh
+[1.511s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/local_setup.dsv
+[1.512s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.dsv
+[1.512s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/ament_index/resource_index/packages/drone_gui
+[1.512s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.512s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig.cmake
+[1.512s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/cmake/drone_guiConfig-version.cmake
+[1.512s] -- Installing: /home/dksoren/drone_boys/install/drone_gui/share/drone_gui/package.xml
+[1.514s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --install /home/dksoren/drone_boys/build/drone_gui

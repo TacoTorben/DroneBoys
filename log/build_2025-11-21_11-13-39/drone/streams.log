@@ -1,0 +1,69 @@
+[0.010s] Invoking command in '/home/dksoren/drone_boys/build/drone': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone
+[0.024s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.054s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.136s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.144s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.179s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.188s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.202s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.216s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.270s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.271s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.324s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.374s] -- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[0.410s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.416s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.623s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.753s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.805s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.806s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.008s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[1.026s] -- Configuring done (1.0s)
+[1.065s] -- Generating done (0.0s)
+[1.077s] -- Build files have been written to: /home/dksoren/drone_boys/build/drone
+[1.087s] Invoked command in '/home/dksoren/drone_boys/build/drone' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone
+[1.088s] Invoking command in '/home/dksoren/drone_boys/build/drone': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone -- -j12 -l12
+[1.134s] [  2%] Built target drone__rosidl_generator_type_description
+[1.143s] [  2%] Built target ament_cmake_python_symlink_drone
+[1.152s] [  5%] Built target drone__cpp
+[1.153s] [  8%] [32mBuilding C object CMakeFiles/drone__rosidl_generator_c.dir/rosidl_generator_c/drone/action/detail/finder_action__description.c.o[0m
+[1.154s] [ 10%] [32mBuilding C object CMakeFiles/drone__rosidl_generator_c.dir/rosidl_generator_c/drone/action/detail/finder_action__functions.c.o[0m
+[1.155s] [ 13%] [32mBuilding C object CMakeFiles/drone__rosidl_generator_c.dir/rosidl_generator_c/drone/action/detail/finder_action__type_support.c.o[0m
+[1.272s] [ 16%] [32m[1mLinking C shared library libdrone__rosidl_generator_c.so[0m
+[1.307s] [ 18%] Built target drone__rosidl_generator_c
+[1.317s] running egg_info
+[1.328s] [ 27%] [32mBuilding CXX object CMakeFiles/drone__rosidl_typesupport_c.dir/rosidl_typesupport_c/drone/action/finder_action__type_support.cpp.o[0m
+[1.328s] [ 27%] [32mBuilding CXX object CMakeFiles/drone__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/drone/action/finder_action__type_support.cpp.o[0m
+[1.328s] [ 27%] [32mBuilding C object CMakeFiles/drone__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/drone/action/detail/finder_action__type_support.c.o[0m
+[1.329s] [ 29%] [32mBuilding CXX object CMakeFiles/drone__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/drone/action/detail/finder_action__type_support_c.cpp.o[0m
+[1.330s] [ 32%] [32mBuilding CXX object CMakeFiles/drone__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/drone/action/detail/dds_fastrtps/finder_action__type_support.cpp.o[0m
+[1.333s] [ 35%] [32mBuilding CXX object CMakeFiles/drone__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/drone/action/detail/finder_action__type_support.cpp.o[0m
+[1.335s] writing drone.egg-info/PKG-INFO
+[1.336s] writing dependency_links to drone.egg-info/dependency_links.txt
+[1.336s] writing top-level names to drone.egg-info/top_level.txt
+[1.388s] reading manifest file 'drone.egg-info/SOURCES.txt'
+[1.389s] writing manifest file 'drone.egg-info/SOURCES.txt'
+[1.398s] [ 37%] [32m[1mLinking CXX shared library libdrone__rosidl_typesupport_c.so[0m
+[1.404s] [ 40%] [32m[1mLinking C shared library libdrone__rosidl_typesupport_introspection_c.so[0m
+[1.423s] [ 40%] Built target ament_cmake_python_build_drone_egg
+[1.442s] [ 43%] Built target drone__rosidl_typesupport_introspection_c
+[1.449s] [ 45%] Built target drone__rosidl_typesupport_c
+[1.801s] [ 48%] [32m[1mLinking CXX shared library libdrone__rosidl_typesupport_fastrtps_c.so[0m
+[1.868s] [ 51%] Built target drone__rosidl_typesupport_fastrtps_c
+[1.895s] [ 54%] [32m[1mLinking CXX shared library libdrone__rosidl_typesupport_cpp.so[0m
+[1.959s] [ 59%] [32m[1mLinking CXX shared library libdrone__rosidl_typesupport_introspection_cpp.so[0m
+[1.960s] [ 59%] Built target drone__rosidl_typesupport_cpp
+[1.990s] [ 64%] [32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o[0m
+[1.990s] [ 64%] [32mBuilding CXX object CMakeFiles/finder.dir/src/interface.cpp.o[0m
+[1.999s] [01m[K/home/dksoren/drone_boys/src/drone/src/main.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kutils.h: No such file or directory
+[1.999s]     1 | #include [01;31m[K"utils.h"[m[K
+[1.999s]       |          [01;31m[K^~~~~~~~~[m[K
+[1.999s] compilation terminated.
+[2.000s] gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+[2.000s] gmake[2]: *** Waiting for unfinished jobs....
+[2.001s] gmake[1]: *** [CMakeFiles/Makefile2:625: CMakeFiles/finder.dir/all] Error 2
+[2.001s] gmake[1]: *** Waiting for unfinished jobs....
+[2.029s] [ 67%] Built target drone__rosidl_typesupport_introspection_cpp
+[2.149s] [ 70%] [32m[1mLinking CXX shared library libdrone__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.216s] [ 72%] Built target drone__rosidl_typesupport_fastrtps_cpp
+[2.217s] gmake: *** [Makefile:146: all] Error 2

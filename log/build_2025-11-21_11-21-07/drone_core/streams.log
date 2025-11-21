@@ -1,0 +1,49 @@
+[0.012s] Invoking command in '/home/dksoren/drone_boys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone_core -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_core
+[0.028s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.276s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.324s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.336s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.348s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.361s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.419s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.421s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.494s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.513s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.533s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.595s] -- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[0.632s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.643s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.111s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.687s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.915s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.922s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[2.031s] -- Found PythonExtra: /usr/bin/python3  
+[2.369s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.397s] [0mCMake Deprecation Warning at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[2.397s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[2.397s]   rosidl_target_interfaces().  i.e:
+[2.397s] 
+[2.397s]     rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+[2.397s]     target_link_libraries(${PROJECT_NAME}_node "${cpp_typesupport_target}")
+[2.398s] 
+[2.398s] Call Stack (most recent call first):
+[2.398s]   CMakeLists.txt:53 (rosidl_target_interfaces)
+[2.398s] 
+[2.398s] [0m
+[2.402s] -- Configuring done (2.4s)
+[2.407s] [31mCMake Error at CMakeLists.txt:34 (add_executable):
+[2.407s]   Cannot find source file:
+[2.407s] 
+[2.407s]     src/interface.cpp
+[2.407s] 
+[2.407s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+[2.407s]   .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+[2.407s]   .f95 .f03 .hip .ispc
+[2.407s] 
+[2.407s] [0m
+[2.411s] [31mCMake Error at CMakeLists.txt:34 (add_executable):
+[2.411s]   No SOURCES given to target: finder
+[2.411s] 
+[2.411s] [0m
+[2.411s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[2.420s] Invoked command in '/home/dksoren/drone_boys/build/drone_core' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone_core -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_core

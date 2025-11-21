@@ -1,0 +1,17 @@
+[0.006s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': AMENT_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/dksoren/drone_boys/install/drone_core:/home/dksoren/drone_boys/install/drone:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui
+[0.024s] -- Found drone_core: 0.0.1 (/home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake)
+[0.967s] [0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+[0.967s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[0.967s]   CMake.
+[0.967s] 
+[0.967s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.967s]   CMake that the project does not need compatibility with older versions.
+[0.967s] 
+[0.967s] [0m
+[0.971s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[0.971s] -- Using X11 for window creation
+[1.042s] [31mCMake Error at CMakeLists.txt:79 (ament_package):
+[1.043s]   Unknown CMake command "ament_package".
+[1.043s] 
+[1.043s] [0m
+[1.043s] -- Configuring incomplete, errors occurred!

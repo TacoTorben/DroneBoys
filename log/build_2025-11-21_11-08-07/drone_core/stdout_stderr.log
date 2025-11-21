@@ -1,0 +1,19 @@
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dksoren/drone_boys/build/drone_core
+[ 66%] [32mBuilding CXX object CMakeFiles/drone_core.dir/src/utils.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/drone_core.dir/src/manipulator.cpp.o[0m
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/manipulator.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kmanipulator.h: No such file or directory
+    1 | #include [01;31m[K"manipulator.h"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/utils.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kutils.h: No such file or directory
+    1 | #include [01;31m[K"utils.h"[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+compilation terminated.
+gmake[2]: *** [CMakeFiles/drone_core.dir/build.make:76: CMakeFiles/drone_core.dir/src/utils.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/drone_core.dir/build.make:90: CMakeFiles/drone_core.dir/src/manipulator.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/drone_core.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

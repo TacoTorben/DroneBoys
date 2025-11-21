@@ -1,0 +1,41 @@
+[0.011s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
+[0.075s] [ 14%] Built target glfw
+[0.101s] [ 27%] Built target simple
+[0.102s] [ 27%] Built target boing
+[0.102s] [ 27%] Built target sharing
+[0.103s] [ 28%] Built target heightmap
+[0.103s] [ 27%] Built target gears
+[0.103s] [ 28%] Built target particles
+[0.103s] [ 32%] Built target events
+[0.104s] [ 35%] Built target clipboard
+[0.104s] [ 37%] Built target offscreen
+[0.108s] [ 41%] Built target wave
+[0.109s] [ 42%] Built target splitview
+[0.109s] [ 47%] Built target ImGuiLib
+[0.129s] [ 61%] Built target monitors
+[0.131s] [ 61%] Built target glfwinfo
+[0.131s] [ 62%] Built target iconify
+[0.131s] [ 63%] Built target msaa
+[0.131s] [ 63%] Built target reopen
+[0.131s] [ 67%] Built target cursor
+[0.132s] [ 67%] Built target gamma
+[0.132s] [ 70%] Built target empty
+[0.134s] [ 73%] Built target icon
+[0.135s] [ 76%] Built target inputlag
+[0.135s] [ 78%] Built target joysticks
+[0.137s] [ 80%] Built target opacity
+[0.153s] [ 84%] [32mBuilding CXX object CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o[0m
+[0.153s] [ 89%] Built target threads
+[0.153s] [ 94%] Built target triangle-vulkan
+[0.153s] [ 95%] Built target timeout
+[0.153s] [ 95%] Built target title
+[0.153s] [ 95%] Built target tearing
+[0.154s] [ 97%] Built target windows
+[0.248s] [01m[K/home/dksoren/drone_boys/src/drone_gui/src/interfaceUtil.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kstb_image.h: No such file or directory
+[0.248s]     4 | #include [01;31m[K"stb_image.h"[m[K
+[0.248s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[0.248s] compilation terminated.
+[0.255s] gmake[2]: *** [CMakeFiles/InterfaceLib.dir/build.make:76: CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o] Error 1
+[0.256s] gmake[1]: *** [CMakeFiles/Makefile2:290: CMakeFiles/InterfaceLib.dir/all] Error 2
+[0.256s] gmake: *** [Makefile:146: all] Error 2
+[0.259s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '2': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12

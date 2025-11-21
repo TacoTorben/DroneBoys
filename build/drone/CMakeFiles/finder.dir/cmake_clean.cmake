@@ -3,10 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/finder.dir/src/interface.cpp.o.d"
   "CMakeFiles/finder.dir/src/main.cpp.o"
   "CMakeFiles/finder.dir/src/main.cpp.o.d"
-  "CMakeFiles/finder.dir/src/manipulator.cpp.o"
-  "CMakeFiles/finder.dir/src/manipulator.cpp.o.d"
-  "CMakeFiles/finder.dir/src/utils.cpp.o"
-  "CMakeFiles/finder.dir/src/utils.cpp.o.d"
   "finder"
   "finder.pdb"
 )

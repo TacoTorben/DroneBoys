@@ -1,0 +1,29 @@
+[0mCMake Deprecation Warning at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+  Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+  rosidl_target_interfaces().  i.e:
+
+    rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+    target_link_libraries(${PROJECT_NAME}_node "${cpp_typesupport_target}")
+
+Call Stack (most recent call first):
+  CMakeLists.txt:43 (rosidl_target_interfaces)
+
+[0m
+[31mCMake Error at CMakeLists.txt:63 (find_package):
+  By not providing "Finddrone_core.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "drone_core", but CMake did not find one.
+
+  Could not find a package configuration file provided by "drone_core" with
+  any of the following names:
+
+    drone_coreConfig.cmake
+    drone_core-config.cmake
+
+  Add the installation prefix of "drone_core" to CMAKE_PREFIX_PATH or set
+  "drone_core_DIR" to a directory containing one of the above files.  If
+  "drone_core" provides a separate development package or SDK, be sure it has
+  been installed.
+
+[0m
+gmake: *** [Makefile:937: cmake_check_build_system] Error 1

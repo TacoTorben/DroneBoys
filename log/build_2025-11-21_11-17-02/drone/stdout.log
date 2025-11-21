@@ -1,0 +1,20 @@
+[  2%] Built target drone__rosidl_generator_type_description
+[  2%] Built target ament_cmake_python_symlink_drone
+[  5%] Built target drone__cpp
+[ 18%] Built target drone__rosidl_generator_c
+[ 35%] Built target drone__rosidl_typesupport_introspection_c
+[ 35%] Built target drone__rosidl_typesupport_cpp
+[ 43%] Built target drone__rosidl_typesupport_c
+[ 51%] Built target drone__rosidl_typesupport_fastrtps_c
+[ 59%] Built target drone__rosidl_typesupport_introspection_cpp
+[ 67%] Built target drone__rosidl_typesupport_fastrtps_cpp
+[ 67%] Built target drone
+[ 70%] [32mBuilding CXX object CMakeFiles/finder.dir/src/main.cpp.o[0m
+[ 72%] Built target drone__py
+running egg_info
+writing drone.egg-info/PKG-INFO
+writing dependency_links to drone.egg-info/dependency_links.txt
+writing top-level names to drone.egg-info/top_level.txt
+reading manifest file 'drone.egg-info/SOURCES.txt'
+writing manifest file 'drone.egg-info/SOURCES.txt'
+[ 72%] Built target ament_cmake_python_build_drone_egg

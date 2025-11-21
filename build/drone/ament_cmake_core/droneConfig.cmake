@@ -16,7 +16,7 @@ set(_drone_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT drone_FIND_QUIETLY)
-  message(STATUS "Found drone: 0.1.0 (${drone_DIR})")
+  message(STATUS "Found drone: 0.0.0 (${drone_DIR})")
 endif()
 
 # warn when using a deprecated package

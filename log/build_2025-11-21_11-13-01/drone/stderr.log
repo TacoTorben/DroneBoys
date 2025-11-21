@@ -1,0 +1,17 @@
+[0mCMake Deprecation Warning at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+  Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+  rosidl_target_interfaces().  i.e:
+
+    rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+    target_link_libraries(${PROJECT_NAME}_node "${cpp_typesupport_target}")
+
+Call Stack (most recent call first):
+  CMakeLists.txt:43 (rosidl_target_interfaces)
+
+[0m
+[31mCMake Error at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:64 (message):
+  rosidl_generate_interfaces() must be called before ament_package()
+Call Stack (most recent call first):
+  CMakeLists.txt:65 (rosidl_generate_interfaces)
+
+[0m

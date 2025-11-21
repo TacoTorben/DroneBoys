@@ -1,0 +1,260 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-508129f9050fd6e751ae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				},
+				{
+					"build" : "drone_core__py",
+					"jsonFile" : "directory-drone_core__py-e306a34ab1034382e9e0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/dksoren/drone_boys/build/drone_core/drone_core__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "drone_core",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_drone_core_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_drone_core_egg-58a9751255836d85f16c.json",
+					"name" : "ament_cmake_python_build_drone_core_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_drone_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_drone_core-341a1a123d1f6251204e.json",
+					"name" : "ament_cmake_python_copy_drone_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core-ae28e9f1963813447501.json",
+					"name" : "drone_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__cpp-78ae7eb20bf925b9104d.json",
+					"name" : "drone_core__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "drone_core__py::@d8b3bc4faa4f117a0a86",
+					"jsonFile" : "target-drone_core__py-1303e9f989a8034b93fd.json",
+					"name" : "drone_core__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_generator_c-c514a542d9668cf4588a.json",
+					"name" : "drone_core__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_generator_py-a3532a5819cb7e8d18b9.json",
+					"name" : "drone_core__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_generator_type_description-47bd9c5e539e481349e2.json",
+					"name" : "drone_core__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_typesupport_c-168beb358d9f7528ed0d.json",
+					"name" : "drone_core__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_typesupport_cpp-52d71de8fed48f569a45.json",
+					"name" : "drone_core__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_typesupport_fastrtps_c-a3a6c8912d3204683c31.json",
+					"name" : "drone_core__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_typesupport_fastrtps_cpp-be2f4edd052348839737.json",
+					"name" : "drone_core__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_typesupport_introspection_c-4153022b56948764dd15.json",
+					"name" : "drone_core__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core__rosidl_typesupport_introspection_cpp-7c7551b70b6e59cd5fdb.json",
+					"name" : "drone_core__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core_lib-6597db41481dc01d08d9.json",
+					"name" : "drone_core_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core_s__rosidl_typesupport_c-54f2886ba41c8677ee69.json",
+					"name" : "drone_core_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core_s__rosidl_typesupport_fastrtps_c-57c2b0a6721941cd1f93.json",
+					"name" : "drone_core_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core_s__rosidl_typesupport_introspection_c-f3aff10cd81154e310a7.json",
+					"name" : "drone_core_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "drone_core_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-drone_core_uninstall-eec8b5202a0ac74d8604.json",
+					"name" : "drone_core_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "finder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-finder-b6c93318b5b2532cd418.json",
+					"name" : "finder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-72cf200f8dbcc5b0371f.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/dksoren/drone_boys/build/drone_core",
+		"source" : "/home/dksoren/drone_boys/src/drone_core"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

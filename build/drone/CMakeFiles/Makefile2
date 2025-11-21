@@ -618,18 +618,17 @@ CMakeFiles/drone_s__rosidl_typesupport_c.dir/clean:
 # Target rules for target CMakeFiles/finder.dir
 
 # All Build rule for target.
-CMakeFiles/finder.dir/all: CMakeFiles/drone.dir/all
 CMakeFiles/finder.dir/all: CMakeFiles/drone__rosidl_generator_c.dir/all
 CMakeFiles/finder.dir/all: CMakeFiles/drone__cpp.dir/all
 CMakeFiles/finder.dir/all: CMakeFiles/drone__rosidl_typesupport_cpp.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/finder.dir/build.make CMakeFiles/finder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dksoren/drone_boys/build/drone/CMakeFiles --progress-num=35,36,37,38,39 "Built target finder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/dksoren/drone_boys/build/drone/CMakeFiles --progress-num=35,36,37 "Built target finder"
 .PHONY : CMakeFiles/finder.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/finder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/drone_boys/build/drone/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/drone_boys/build/drone/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/finder.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/dksoren/drone_boys/build/drone/CMakeFiles 0
 .PHONY : CMakeFiles/finder.dir/rule

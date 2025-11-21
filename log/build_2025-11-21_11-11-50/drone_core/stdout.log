@@ -1,0 +1,22 @@
+[100%] Built target drone_core
+-- Install configuration: ""
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/lib/libdrone_core.a
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/manipulator.h
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/include/drone_core/utils.h
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/package_run_dependencies/drone_core
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/parent_prefix_path/drone_core
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.sh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.sh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/environment/path.dsv
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.bash
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.sh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.zsh
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/local_setup.dsv
+-- Installing: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.dsv
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/ament_index/resource_index/packages/drone_core
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/cmake/drone_coreConfig-version.cmake
+-- Up-to-date: /home/dksoren/drone_boys/install/drone_core/share/drone_core/package.xml

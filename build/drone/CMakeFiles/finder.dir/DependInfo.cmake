@@ -10,8 +10,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/dksoren/drone_boys/src/drone/src/interface.cpp" "CMakeFiles/finder.dir/src/interface.cpp.o" "gcc" "CMakeFiles/finder.dir/src/interface.cpp.o.d"
   "/home/dksoren/drone_boys/src/drone/src/main.cpp" "CMakeFiles/finder.dir/src/main.cpp.o" "gcc" "CMakeFiles/finder.dir/src/main.cpp.o.d"
-  "/home/dksoren/drone_boys/src/drone/src/manipulator.cpp" "CMakeFiles/finder.dir/src/manipulator.cpp.o" "gcc" "CMakeFiles/finder.dir/src/manipulator.cpp.o.d"
-  "/home/dksoren/drone_boys/src/drone/src/utils.cpp" "CMakeFiles/finder.dir/src/utils.cpp.o" "gcc" "CMakeFiles/finder.dir/src/utils.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

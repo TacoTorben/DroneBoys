@@ -346,8 +346,8 @@ ament_cmake_symlink_install_files("/home/dksoren/drone_boys/src/drone" FILES "/h
 # install(FILES "/home/dksoren/drone_boys/build/drone/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/drone/environment")
 ament_cmake_symlink_install_files("/home/dksoren/drone_boys/src/drone" FILES "/home/dksoren/drone_boys/build/drone/ament_cmake_environment_hooks/pythonpath.dsv" "DESTINATION" "share/drone/environment")
 
-# install(DIRECTORY "/home/dksoren/drone_boys/build/drone/ament_cmake_python/drone/drone.egg-info/" "DESTINATION" "lib/python3.12/site-packages/drone-0.1.0-py3.12.egg-info")
-ament_cmake_symlink_install_directory("/home/dksoren/drone_boys/src/drone" DIRECTORY "/home/dksoren/drone_boys/build/drone/ament_cmake_python/drone/drone.egg-info/" "DESTINATION" "lib/python3.12/site-packages/drone-0.1.0-py3.12.egg-info")
+# install(DIRECTORY "/home/dksoren/drone_boys/build/drone/ament_cmake_python/drone/drone.egg-info/" "DESTINATION" "lib/python3.12/site-packages/drone-0.0.0-py3.12.egg-info")
+ament_cmake_symlink_install_directory("/home/dksoren/drone_boys/src/drone" DIRECTORY "/home/dksoren/drone_boys/build/drone/ament_cmake_python/drone/drone.egg-info/" "DESTINATION" "lib/python3.12/site-packages/drone-0.0.0-py3.12.egg-info")
 
 # install(DIRECTORY "/home/dksoren/drone_boys/build/drone/rosidl_generator_py/drone/" "DESTINATION" "lib/python3.12/site-packages/drone" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
 ament_cmake_symlink_install_directory("/home/dksoren/drone_boys/src/drone" DIRECTORY "/home/dksoren/drone_boys/build/drone/rosidl_generator_py/drone/" "DESTINATION" "lib/python3.12/site-packages/drone" "PATTERN_EXCLUDE" "*.pyc" "PATTERN_EXCLUDE" "__pycache__")
@@ -370,8 +370,8 @@ ament_cmake_symlink_install_files("/home/dksoren/drone_boys/src/drone" FILES "/h
 # install("TARGETS" "finder" "DESTINATION" "lib/drone")
 include("/home/dksoren/drone_boys/build/drone/ament_cmake_symlink_install_targets_3_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(DIRECTORY "config" "DESTINATION" "share/drone/")
-ament_cmake_symlink_install_directory("/home/dksoren/drone_boys/src/drone" DIRECTORY "config" "DESTINATION" "share/drone/")
+# install(DIRECTORY "config" "DESTINATION" "share/drone")
+ament_cmake_symlink_install_directory("/home/dksoren/drone_boys/src/drone" DIRECTORY "config" "DESTINATION" "share/drone")
 
 # install(FILES "/home/dksoren/drone_boys/build/drone/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/drone" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/dksoren/drone_boys/src/drone" FILES "/home/dksoren/drone_boys/build/drone/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/drone" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

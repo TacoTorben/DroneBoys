@@ -1,0 +1,19 @@
+[0mCMake Deprecation Warning at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+  Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+  rosidl_target_interfaces().  i.e:
+
+    rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+    target_link_libraries(${PROJECT_NAME}_node "${cpp_typesupport_target}")
+
+Call Stack (most recent call first):
+  CMakeLists.txt:54 (rosidl_target_interfaces)
+
+[0m
+[01m[K/home/dksoren/drone_boys/src/drone_core/src/main.cpp:8:10:[m[K [01;31m[Kfatal error: [m[Kdrone/action/finder_action.hpp: No such file or directory
+    8 | #include [01;31m[K"drone/action/finder_action.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:655: CMakeFiles/finder.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

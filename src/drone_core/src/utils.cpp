@@ -1,0 +1,312 @@
+#include "drone_core/utils.h"
+
+
+#include <filesystem>
+
+using namespace std;
+using namespace cv;
+namespace fs = std::filesystem;
+
+
+    cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
+
+        fs::path imagePath = fs::current_path() / "src/drone/images" / filename; //! fy fy
+        
+        cv::Mat img = cv::imread(imagePath.string());
+
+        if (img.empty()) {
+            cerr << "Error: Could not load image: " << filename << endl;
+        }
+
+
+        return img;
+    }
+
+    Config ImageProcessingPipeline::loadConfig(const std::string& path) {
+        Config cfg{};
+        cv::FileStorage fs(path, cv::FileStorage::READ);
+        if (!fs.isOpened()) {
+            throw std::runtime_error("Cannot open config file: " + path);
+        }
+
+
+        fs["denoise"]["h"] >> cfg.denoise.h;
+        fs["denoise"]["hColor"] >> cfg.denoise.hColor;
+        fs["denoise"]["templateWindowSize"] >> cfg.denoise.templateWindowSize;
+        fs["denoise"]["searchWindowSize"] >> cfg.denoise.searchWindowSize;
+
+        fs["canny_parameters"]["threshold_low"] >> cfg.canny_parameters.threshold.low_threshold;
+        fs["canny_parameters"]["threshold_max"] >> cfg.canny_parameters.threshold.max_threshold;
+
+        fs["blob_detection"]["kernel_size"] >> cfg.blob_detection.kernel_size;
+        fs["blob_detection"]["connectivity"] >> cfg.blob_detection.connectivity;
+
+        fs["bilateral_filter"]["d"] >> cfg.bilateral_filter.d;
+        fs["bilateral_filter"]["sigmaColor"] >> cfg.bilateral_filter.sigmaColor;
+        fs["bilateral_filter"]["sigmaSpace"] >> cfg.bilateral_filter.sigmaSpace;
+
+        fs["brightness_contrast"]["brightness"] >> cfg.brightness_contrast.brightness;
+        fs["brightness_contrast"]["contrast"] >> cfg.brightness_contrast.contrast;
+
+        fs["median_filter"]["kernel_size"] >> cfg.median_filter.kernel_size;
+
+        fs.release();
+        return cfg;
+    }
+
+
+
+    BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int connectivity) {
+
+        cv::Mat binary;
+        // Threshold to ensure binary
+        cv::threshold(inputImage, binary, 128, 255, cv::THRESH_BINARY);
+
+
+        cv::Mat labels, stats, centroids;
+        int numLabels = cv::connectedComponentsWithStats(binary, labels, stats, centroids, connectivity, CV_32S);
+
+        return {labels, stats, centroids, numLabels};
+    }
+
+    cv::Mat ImageProcessingPipeline::draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i) {
+
+        cv::Mat output;
+        inputImage.copyTo(output);
+        cv::circle(output, centroids, radius, cv::Scalar(0, 0, 255), 4); // Red circle
+        return output;
+
+    }
+
+     BlobData ImageProcessingPipeline::sky_sorting(const cv::Mat& inputImage, BlobData blobs, double percentageThreshold) {
+         double yThreshold = inputImage.rows * percentageThreshold;
+
+        BlobData data = blobs;
+        cv::Mat newCentroids;
+        cv::Mat newStats;
+        int newNumLabels = 0;
+        for (int i = 0; i < data.centroids.rows; ++i) {
+                double y = data.centroids.at<double>(i, 1);
+                if (y >= yThreshold) { // keep only those above threshold
+                    newCentroids.push_back(data.centroids.row(i));
+                    newStats.push_back(data.stats.row(i));
+                    newNumLabels++;
+                }
+            }
+        
+        data.centroids = newCentroids;
+        data.stats = newStats;
+        data.numLabels = newNumLabels;
+        return data;
+    }
+
+    void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string& filename) {
+        fs::path outputPath = fs::current_path() / "src/drone/output" / filename;
+        if (!cv::imwrite(outputPath.string(), image)) {
+            cerr << "Error: Could not save image to: " << outputPath.string() << endl;
+        }
+    }
+//!! Just for testing
+
+void tuning(const cv::Mat& inputImage, int mode) {
+    if (inputImage.empty()) {
+        cerr << "Error: Input image is empty!" << endl;
+        return;
+    }
+
+    // Clone original to avoid modification
+    Mat image;
+    if (inputImage.channels() == 3)
+        cvtColor(inputImage, image, COLOR_BGR2GRAY);
+    else
+        image = inputImage.clone();
+    int d = 9;
+    int sigmaColor = 33;
+    int sigmaSpace = 33;
+    int lowThreshold = 50;
+    int highThreshold = 150;
+    int medianKernelSize = 3;
+    int brightness = 100; // Trackbar value from 0 to 200
+    int contrast = 100;   // Trackbar value from 0 to 200
+    double alpha = contrast / 100.0; // Contrast control
+    int beta = brightness - 100; 
+    switch(mode) {
+        case 0: {
+            const string windowName = "Canny + Bilateral Filter Tuning";
+            namedWindow(windowName, WINDOW_AUTOSIZE);
+
+            createTrackbar("d", windowName, &d, 20);
+            createTrackbar("sigmaColor", windowName, &sigmaColor, 150);
+            createTrackbar("sigmaSpace", windowName, &sigmaSpace, 150);
+            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
+            createTrackbar("Canny High", windowName, &highThreshold, 255);
+
+            Mat bilateral, edges, output;
+
+            cout << "Adjust sliders. Press ESC to exit." << endl;
+
+            while (true) {
+                // --- Bilateral filter ---
+                bilateralFilter(image, bilateral, d > 0 ? d : 1, sigmaColor, sigmaSpace);
+            
+                // --- Canny ---
+                Canny(bilateral, edges, lowThreshold, highThreshold);
+            
+                // --- Combine for visualization ---
+                cvtColor(edges, output, COLOR_GRAY2BGR);
+                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
+            
+                imshow(windowName, output);
+            
+                // Exit on ESC key
+                int key = waitKey(30);
+                if (key == 27)  // ESC
+                    break;
+            }
+        
+            destroyWindow(windowName);
+            break;
+        }
+        case 1: {   
+            const string windowName = "Canny + median Filter Tuning";
+            namedWindow(windowName, WINDOW_AUTOSIZE);
+            createTrackbar("Median Kernel Size", windowName, &d, 20);
+            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
+            createTrackbar("Canny High", windowName, &highThreshold, 255);
+            Mat medianFiltered, edges, output;
+            cout << "Adjust sliders. Press ESC to exit." << endl;
+            while (true) {
+                // --- Median filter ---
+                medianBlur(image, medianFiltered, d % 2 == 0 ? d + 1 : d);
+                // --- Canny ---
+                Canny(medianFiltered, edges, lowThreshold, highThreshold);
+                // --- Combine for visualization ---
+                cvtColor(edges, output, COLOR_GRAY2BGR);
+                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
+                imshow(windowName, output);
+                // Exit on ESC key
+                int key = waitKey(30);
+                if (key == 27)  // ESC
+                    break;
+            }
+            destroyWindow(windowName);  
+            break;
+        }
+        case 2: {
+            const string windowName = "brightness and contrast tuning";
+            namedWindow(windowName, WINDOW_AUTOSIZE);
+      
+            createTrackbar("Brightness", windowName, &brightness, 200);
+            createTrackbar("Contrast", windowName, &contrast, 200);
+            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
+            createTrackbar("Canny High", windowName, &highThreshold, 255);
+            Mat adjusted, adjustedBGR, edges, output;
+            cout << "Adjust sliders. Press ESC to exit." << endl;
+            while (true) {
+                // Adjust brightness and contrast
+                // Recompute alpha and beta from trackbar positions
+                alpha = contrast / 100.0;
+                beta = brightness - 100;
+                // Brightness control
+                image.convertTo(adjusted, -1, alpha, beta);
+                // Ensure same number of channels as inputImage for addWeighted
+                if (adjusted.channels() == 1 && inputImage.channels() == 3) {
+                    cvtColor(adjusted, adjustedBGR, COLOR_GRAY2BGR);
+                } else {
+                    adjustedBGR = adjusted;
+                }
+                // Combine for visualization
+                addWeighted(adjustedBGR, 0.7, inputImage, 0.3, 0, output);
+                Canny(adjusted, output, lowThreshold, highThreshold);
+                imshow(windowName, output);
+                // Exit on ESC key
+                int key = waitKey(30);
+                if (key == 27)  // ESC
+                    break;
+            }
+            destroyWindow(windowName);
+            break;
+        } 
+        case 3: {
+            const string windowName = "Saturation and Canny Tuning";
+            namedWindow(windowName, WINDOW_AUTOSIZE);
+            createTrackbar("Saturation Scale x100", windowName, &contrast, 300);
+            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
+            createTrackbar("Canny High", windowName, &highThreshold, 255);
+            Mat hsvImage, saturatedImage, edges, output;
+            cout << "Adjust sliders. Press ESC to exit." << endl;
+            while (true) {
+                // Convert to HSV
+                cvtColor(inputImage, hsvImage, COLOR_BGR2HSV);
+                // Split channels
+                vector<Mat> hsvChannels;
+                split(hsvImage, hsvChannels);
+                // Adjust saturation
+                double saturationScale = contrast / 100.0;
+                hsvChannels[1] *= saturationScale;
+                // Merge back
+                merge(hsvChannels, hsvImage);
+                // Convert back to BGR
+                cvtColor(hsvImage, saturatedImage, COLOR_HSV2BGR);
+                // Convert to grayscale for Canny
+                Mat graySaturated;
+                cvtColor(saturatedImage, graySaturated, COLOR_BGR2GRAY);
+                // Apply Canny
+                Canny(graySaturated, edges, lowThreshold, highThreshold);
+                // Combine for visualization
+                cvtColor(edges, output, COLOR_GRAY2BGR);
+                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
+                imshow(windowName, output);
+                // Exit on ESC key
+                int key = waitKey(30);
+                if (key == 27)  // ESC
+                    break;
+
+            
+        }
+            destroyWindow(windowName);
+            break;
+        } 
+        case 4: {
+            const string windowName = "BGR Channel Changer and Canny Tuning";
+            int scale = 10;           // initial trackbar position (center)
+            int scale_slider = 10;    // trackbar value (0–20)
+            const int scale_max = 20;
+            namedWindow(windowName, WINDOW_AUTOSIZE);
+            createTrackbar("Channel Index (0-B,1-G,2-R)", windowName, &d, 2);
+            createTrackbar("Scale", windowName, &scale_slider, scale_max);
+            createTrackbar("Canny Low", windowName, &lowThreshold, 350);
+            createTrackbar("Canny High", windowName, &highThreshold, 350);
+            Mat changedChannelImage, edges, output;
+            cout << "Adjust sliders. Press ESC to exit." << endl;
+            while (true) {
+                // Split BGR channels
+                vector<Mat> bgrChannels;
+                split(inputImage, bgrChannels);
+                // Adjust specified channel
+                double scale = scale_slider / 10.0; // Scale from 0.0 to 2.0
+                if (d >= 0 && d < 3) {
+                    bgrChannels[d] *= scale;
+                }
+                // Merge back
+                merge(bgrChannels, changedChannelImage);
+                // Convert to grayscale for Canny
+                Mat grayChanged;
+                cvtColor(changedChannelImage, grayChanged, COLOR_BGR2GRAY);
+                // Apply Canny
+                Canny(grayChanged, edges, lowThreshold, highThreshold);
+                // Combine for visualization
+                cvtColor(edges, output, COLOR_GRAY2BGR);
+                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
+                imshow(windowName, output);
+                // Exit on ESC key
+                int key = waitKey(30);
+                if (key == 27)  // ESC
+                    break;
+            }
+            destroyWindow(windowName);
+            break;
+        } 
+    }
+}
+

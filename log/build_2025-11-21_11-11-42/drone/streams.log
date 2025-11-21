@@ -1,0 +1,49 @@
+[0.007s] Invoking command in '/home/dksoren/drone_boys/build/drone': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone
+[0.017s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.096s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.102s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.127s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.134s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.143s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.153s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.201s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.202s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.259s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.313s] -- Found rclcpp_action: 28.1.12 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+[0.351s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.357s] -- Found rosidl_adapter: 4.6.6 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.565s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.709s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.764s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.765s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[0.987s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[0.999s] [0mCMake Deprecation Warning at /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_target_interfaces.cmake:32 (message):
+[0.999s]   Use rosidl_get_typesupport_target() and target_link_libraries() instead of
+[0.999s]   rosidl_target_interfaces().  i.e:
+[0.999s] 
+[0.999s]     rosidl_get_typesupport_target(cpp_typesupport_target "${PROJECT_NAME}" "rosidl_typesupport_cpp")
+[0.999s]     target_link_libraries(${PROJECT_NAME}_node "${cpp_typesupport_target}")
+[1.000s] 
+[1.000s] Call Stack (most recent call first):
+[1.000s]   CMakeLists.txt:43 (rosidl_target_interfaces)
+[1.000s] 
+[1.000s] [0m
+[1.021s] [31mCMake Error at CMakeLists.txt:63 (find_package):
+[1.021s]   By not providing "Finddrone_core.cmake" in CMAKE_MODULE_PATH this project
+[1.021s]   has asked CMake to find a package configuration file provided by
+[1.021s]   "drone_core", but CMake did not find one.
+[1.021s] 
+[1.021s]   Could not find a package configuration file provided by "drone_core" with
+[1.021s]   any of the following names:
+[1.021s] 
+[1.021s]     drone_coreConfig.cmake
+[1.021s]     drone_core-config.cmake
+[1.021s] 
+[1.021s]   Add the installation prefix of "drone_core" to CMAKE_PREFIX_PATH or set
+[1.022s]   "drone_core_DIR" to a directory containing one of the above files.  If
+[1.022s]   "drone_core" provides a separate development package or SDK, be sure it has
+[1.022s]   been installed.
+[1.022s] 
+[1.022s] [0m
+[1.022s] -- Configuring incomplete, errors occurred!
+[1.033s] Invoked command in '/home/dksoren/drone_boys/build/drone' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone

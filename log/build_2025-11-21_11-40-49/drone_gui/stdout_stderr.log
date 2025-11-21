@@ -1,0 +1,189 @@
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Using X11 for window creation
+-- Configuring done (1.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dksoren/drone_boys/build/drone_gui
+[  4%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/vulkan.c.o[0m
+[  4%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/init.c.o[0m
+[  4%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/window.c.o[0m
+[  6%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o[0m
+[  7%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/x11_monitor.c.o[0m
+[  4%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/input.c.o[0m
+[  4%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/x11_window.c.o[0m
+[  7%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/x11_init.c.o[0m
+[  8%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/posix_thread.c.o[0m
+[  8%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/monitor.c.o[0m
+[  9%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/context.c.o[0m
+[ 10%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/posix_time.c.o[0m
+[ 10%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/glx_context.c.o[0m
+[ 11%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/egl_context.c.o[0m
+[ 12%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/linux_joystick.c.o[0m
+[ 13%] [32mBuilding C object _deps/glfw-build/src/CMakeFiles/glfw.dir/osmesa_context.c.o[0m
+[ 14%] [32m[1mLinking C static library libglfw3.a[0m
+[ 14%] Built target glfw
+[ 17%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/particles.dir/particles.c.o[0m
+[ 17%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/heightmap.dir/heightmap.c.o[0m
+[ 17%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/boing.dir/boing.c.o[0m
+[ 17%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/sharing.dir/sharing.c.o[0m
+[ 17%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/offscreen.dir/offscreen.c.o[0m
+[ 17%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/splitview.dir/splitview.c.o[0m
+[ 17%] [32mBuilding CXX object CMakeFiles/ImGuiLib.dir/_deps/imgui-src/imgui.cpp.o[0m
+[ 18%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/clipboard.dir/clipboard.c.o[0m
+[ 19%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/events.dir/events.c.o[0m
+[ 21%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/simple.dir/simple.c.o[0m
+[ 21%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/gears.dir/gears.c.o[0m
+[ 22%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/wave.dir/wave.c.o[0m
+[ 22%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/clipboard.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 23%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/sharing.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 23%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/simple.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 24%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/heightmap.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 25%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/gears.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 26%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/events.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 27%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/wave.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 28%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/boing.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 29%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/splitview.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 30%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/clipboard.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 31%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/particles.dir/__/__/glfw-src/deps/tinycthread.c.o[0m
+[ 32%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/events.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 33%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/offscreen.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 34%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/particles.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 34%] [32mBuilding C object _deps/glfw-build/examples/CMakeFiles/particles.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 35%] [32m[1mLinking C executable sharing[0m
+[ 35%] [32m[1mLinking C executable heightmap[0m
+[ 36%] [32m[1mLinking C executable simple[0m
+[ 36%] [32m[1mLinking C executable wave[0m
+[ 36%] [32m[1mLinking C executable gears[0m
+[ 37%] [32m[1mLinking C executable boing[0m
+[ 39%] [32m[1mLinking C executable clipboard[0m
+[ 39%] [32m[1mLinking C executable splitview[0m
+[ 40%] [32m[1mLinking C executable events[0m
+[ 41%] [32m[1mLinking C executable offscreen[0m
+[ 41%] Built target heightmap
+[ 41%] Built target simple
+[ 41%] Built target sharing
+[ 41%] Built target gears
+[ 41%] Built target boing
+[ 41%] Built target wave
+[ 42%] [32mBuilding CXX object CMakeFiles/ImGuiLib.dir/_deps/imgui-src/imgui_draw.cpp.o[0m
+[ 42%] Built target clipboard
+[ 44%] [32mBuilding CXX object CMakeFiles/ImGuiLib.dir/_deps/imgui-src/imgui_tables.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/ImGuiLib.dir/_deps/imgui-src/imgui_widgets.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/ImGuiLib.dir/_deps/imgui-src/backends/imgui_impl_glfw.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/ImGuiLib.dir/_deps/imgui-src/backends/imgui_impl_opengl3.cpp.o[0m
+[ 46%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/msaa.dir/msaa.c.o[0m
+[ 46%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/glfwinfo.c.o[0m
+[ 46%] Built target splitview
+[ 47%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 48%] [32m[1mLinking C executable particles[0m
+[ 48%] Built target events
+[ 49%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 49%] Built target offscreen
+[ 50%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/iconify.dir/iconify.c.o[0m
+[ 51%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/monitors.dir/monitors.c.o[0m
+[ 51%] Built target particles
+[ 52%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/msaa.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 54%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/monitors.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 54%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/msaa.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 55%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/monitors.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 55%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/iconify.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 56%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/glfwinfo.dir/__/__/glfw-src/deps/glad_vulkan.c.o[0m
+[ 57%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/reopen.dir/reopen.c.o[0m
+[ 58%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/iconify.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 60%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/cursor.dir/cursor.c.o[0m
+[ 60%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/reopen.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 61%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/empty.dir/empty.c.o[0m
+[ 62%] [32m[1mLinking C executable glfwinfo[0m
+[ 62%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/empty.dir/__/__/glfw-src/deps/tinycthread.c.o[0m
+[ 63%] [32m[1mLinking C executable msaa[0m
+[ 64%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/cursor.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 65%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/empty.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 65%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/gamma.dir/gamma.c.o[0m
+[ 65%] [32m[1mLinking C executable monitors[0m
+[ 65%] Built target glfwinfo
+[ 66%] [32m[1mLinking C executable reopen[0m
+[ 67%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/gamma.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 67%] Built target msaa
+[ 68%] [32m[1mLinking C executable iconify[0m
+[ 69%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/icon.dir/icon.c.o[0m
+[ 69%] Built target monitors
+[ 69%] Built target reopen
+[ 70%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/icon.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 70%] Built target iconify
+[ 71%] [32m[1mLinking C executable cursor[0m
+[ 71%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/inputlag.dir/inputlag.c.o[0m
+[ 71%] [32m[1mLinking C executable empty[0m
+[ 71%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/inputlag.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 72%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/joysticks.dir/joysticks.c.o[0m
+[ 73%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/inputlag.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 73%] Built target empty
+[ 73%] Built target cursor
+[ 74%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/opacity.dir/opacity.c.o[0m
+[ 74%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/tearing.dir/tearing.c.o[0m
+[ 75%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/threads.dir/threads.c.o[0m
+[ 76%] [32m[1mLinking C executable icon[0m
+[ 76%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/threads.dir/__/__/glfw-src/deps/tinycthread.c.o[0m
+[ 76%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/opacity.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 76%] Built target icon
+[ 77%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/tearing.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 78%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/threads.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 79%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/joysticks.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 80%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/timeout.dir/timeout.c.o[0m
+[ 81%] [32m[1mLinking C executable tearing[0m
+[ 82%] [32m[1mLinking C executable threads[0m
+[ 83%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/timeout.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 84%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/title.dir/title.c.o[0m
+[ 84%] Built target tearing
+[ 84%] Built target threads
+[ 85%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/title.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 85%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/triangle-vulkan.c.o[0m
+[ 86%] [32m[1mLinking C executable timeout[0m
+[ 86%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/windows.dir/windows.c.o[0m
+[ 87%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/windows.dir/__/__/glfw-src/deps/getopt.c.o[0m
+[ 87%] Built target timeout
+[ 88%] [32m[1mLinking C executable title[0m
+[ 90%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/windows.dir/__/__/glfw-src/deps/glad_gl.c.o[0m
+[ 90%] [32mBuilding C object _deps/glfw-build/tests/CMakeFiles/triangle-vulkan.dir/__/__/glfw-src/deps/glad_vulkan.c.o[0m
+[ 90%] Built target title
+[ 91%] [32m[1mLinking C executable triangle-vulkan[0m
+[ 92%] [32m[1mLinking C executable windows[0m
+[ 92%] Built target triangle-vulkan
+[ 92%] Built target windows
+[ 93%] [32m[1mLinking C executable gamma[0m
+[ 93%] Built target gamma
+[ 94%] [32m[1mLinking C executable inputlag[0m
+[ 95%] [32m[1mLinking C executable opacity[0m
+[ 95%] Built target inputlag
+[ 95%] Built target opacity
+[ 95%] [32m[1mLinking C executable joysticks[0m
+[ 95%] Built target joysticks
+[ 96%] [32m[1mLinking CXX static library libImGuiLib.a[0m
+[ 96%] Built target ImGuiLib
+[ 97%] [32mBuilding CXX object CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o[0m
+[ 98%] [32m[1mLinking CXX static library libInterfaceLib.a[0m
+[ 98%] Built target InterfaceLib
+[ 99%] [32mBuilding CXX object CMakeFiles/gui_app.dir/src/interface.cpp.o[0m
+[100%] [32m[1mLinking CXX executable gui_app[0m
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/gui_app.dir/build.make:234: gui_app] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:318: CMakeFiles/gui_app.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

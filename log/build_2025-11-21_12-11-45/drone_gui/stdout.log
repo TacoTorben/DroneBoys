@@ -1,0 +1,35 @@
+[ 14%] Built target glfw
+[ 26%] Built target gears
+[ 26%] Built target sharing
+[ 26%] Built target heightmap
+[ 26%] Built target boing
+[ 26%] Built target offscreen
+[ 30%] Built target particles
+[ 31%] Built target splitview
+[ 35%] Built target wave
+[ 36%] Built target simple
+[ 38%] Built target clipboard
+[ 43%] Built target ImGuiLib
+[ 47%] Built target events
+[ 61%] Built target iconify
+[ 61%] Built target glfwinfo
+[ 61%] Built target empty
+[ 62%] Built target msaa
+[ 65%] Built target reopen
+[ 68%] Built target monitors
+[ 68%] Built target gamma
+[ 71%] Built target inputlag
+[ 73%] Built target cursor
+[ 78%] Built target joysticks
+[ 78%] Built target icon
+[ 80%] Built target opacity
+[ 92%] Built target tearing
+[ 92%] [32mBuilding CXX object CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o[0m
+[ 97%] Built target title
+[ 97%] Built target timeout
+[ 97%] Built target windows
+[ 97%] Built target threads
+[ 97%] Built target triangle-vulkan
+[ 98%] [32m[1mLinking CXX static library libInterfaceLib.a[0m
+[ 98%] Built target InterfaceLib
+[ 99%] [32mBuilding CXX object CMakeFiles/gui_app.dir/src/interface.cpp.o[0m

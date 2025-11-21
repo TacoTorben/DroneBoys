@@ -1,0 +1,97 @@
+[0.016s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui
+[0.027s] [31mCMake Error at CMakeLists.txt:80:
+[0.027s]   Parse error.  Function missing ending ")".  Instead found unterminated
+[0.028s]   string with text "
+[0.028s] 
+[0.028s]       GIT_TAG 3.3.4
+[0.028s] 
+[0.028s]   )
+[0.028s] 
+[0.028s]   FetchContent_MakeAvailable(glfw)
+[0.028s] 
+[0.028s] 
+[0.028s] 
+[0.028s]   # ImGui library
+[0.028s] 
+[0.028s]   add_library(ImGuiLib
+[0.028s] 
+[0.029s]       ${imgui_SOURCE_DIR}/imgui.cpp
+[0.029s]       ${imgui_SOURCE_DIR}/imgui_draw.cpp
+[0.029s]       ${imgui_SOURCE_DIR}/imgui_tables.cpp
+[0.029s]       ${imgui_SOURCE_DIR}/imgui_widgets.cpp
+[0.029s]       ${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
+[0.029s]       ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
+[0.029s] 
+[0.029s]   )
+[0.029s] 
+[0.029s]   target_include_directories(ImGuiLib PUBLIC
+[0.029s] 
+[0.029s]       ${imgui_SOURCE_DIR}
+[0.029s]       ${imgui_SOURCE_DIR}/backends
+[0.029s] 
+[0.030s]   )
+[0.030s] 
+[0.030s]   target_link_libraries(ImGuiLib PUBLIC glfw OpenGL::GL)
+[0.030s] 
+[0.030s] 
+[0.030s] 
+[0.030s]   # InterfaceLib (GUI helper code)
+[0.030s] 
+[0.030s]   add_library(InterfaceLib
+[0.030s] 
+[0.030s]       src/interfaceUtil.cpp
+[0.030s] 
+[0.030s]   )
+[0.030s] 
+[0.031s]   target_include_directories(InterfaceLib PUBLIC
+[0.031s] 
+[0.031s]       include
+[0.031s]       ${imgui_SOURCE_DIR}
+[0.031s]       ${imgui_SOURCE_DIR}/backends
+[0.031s]       ${glfw_SOURCE_DIR}/include
+[0.031s] 
+[0.031s]   )
+[0.031s] 
+[0.031s]   target_link_libraries(InterfaceLib PUBLIC
+[0.031s] 
+[0.031s]       ImGuiLib
+[0.031s]       glfw
+[0.031s]       OpenGL::GL
+[0.032s] 
+[0.032s]   )
+[0.032s] 
+[0.032s] 
+[0.033s] 
+[0.033s]   # GUI executable
+[0.033s] 
+[0.033s]   add_executable(gui_app src/interface.cpp)
+[0.034s] 
+[0.034s]   target_compile_features(gui_app PUBLIC cxx_std_20)
+[0.034s] 
+[0.034s]   target_link_libraries(gui_app PRIVATE
+[0.035s] 
+[0.035s]       InterfaceLib
+[0.035s]       ImGuiLib
+[0.035s]       glfw
+[0.035s]       OpenGL::GL
+[0.035s]       ${OpenCV_LIBS}
+[0.035s]       rclcpp::rclcpp
+[0.035s]       std_msgs::std_msgs
+[0.035s] 
+[0.035s]   )
+[0.035s] 
+[0.035s] 
+[0.035s] 
+[0.035s]   install(TARGETS gui_app DESTINATION lib/${PROJECT_NAME})
+[0.036s] 
+[0.036s]   install(DIRECTORY config DESTINATION share/${PROJECT_NAME}/)
+[0.036s] 
+[0.036s] 
+[0.036s] 
+[0.036s]   ament_package()
+[0.036s] 
+[0.036s]   ".
+[0.036s] 
+[0.036s] [0m
+[0.036s] -- Configuring incomplete, errors occurred!
+[0.036s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '1': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake /home/dksoren/drone_boys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone_gui

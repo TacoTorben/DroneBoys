@@ -1,0 +1,13 @@
+{
+  "package_name": "drone_core",
+  "output_dir": "/home/dksoren/drone_boys/build/drone_core/rosidl_generator_type_description/drone_core",
+  "idl_tuples": [
+    "/home/dksoren/drone_boys/build/drone_core/rosidl_adapter/drone_core:action/FinderAction.idl"
+  ],
+  "include_paths": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "action_msgs:/opt/ros/jazzy/share/action_msgs",
+    "unique_identifier_msgs:/opt/ros/jazzy/share/unique_identifier_msgs"
+  ]
+}

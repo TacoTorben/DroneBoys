@@ -1,0 +1,64 @@
+[0.011s] Invoking command in '/home/dksoren/drone_boys/build/drone_gui': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
+[0.033s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.201s] -- Found rclcpp: 28.1.12 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.224s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.231s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.239s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.249s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.295s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.296s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.356s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.409s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.368s] [0mCMake Deprecation Warning at /home/dksoren/drone_boys/build/drone_gui/_deps/glfw-src/CMakeLists.txt:1 (cmake_minimum_required):
+[1.368s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[1.368s]   CMake.
+[1.368s] 
+[1.368s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.368s]   CMake that the project does not need compatibility with older versions.
+[1.368s] 
+[1.368s] [0m
+[1.373s] -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+[1.374s] -- Using X11 for window creation
+[1.507s] -- Configuring done (1.5s)
+[1.565s] -- Generating done (0.0s)
+[1.579s] -- Build files have been written to: /home/dksoren/drone_boys/build/drone_gui
+[1.632s] [ 14%] Built target glfw
+[1.658s] [ 25%] Built target sharing
+[1.658s] [ 25%] Built target simple
+[1.660s] [ 26%] Built target particles
+[1.660s] [ 25%] Built target offscreen
+[1.660s] [ 26%] Built target heightmap
+[1.660s] [ 28%] Built target gears
+[1.660s] [ 31%] Built target clipboard
+[1.660s] [ 34%] Built target splitview
+[1.661s] [ 39%] Built target events
+[1.661s] [ 40%] Built target boing
+[1.664s] [ 42%] Built target wave
+[1.675s] [ 47%] Built target ImGuiLib
+[1.687s] [ 56%] Built target iconify
+[1.688s] [ 57%] Built target monitors
+[1.688s] [ 59%] Built target cursor
+[1.688s] [ 63%] Built target msaa
+[1.688s] [ 57%] Built target glfwinfo
+[1.688s] [ 75%] Built target empty
+[1.688s] [ 75%] Built target joysticks
+[1.689s] [ 75%] Built target inputlag
+[1.689s] [ 75%] Built target gamma
+[1.689s] [ 75%] Built target reopen
+[1.697s] [ 78%] Built target icon
+[1.705s] [ 80%] Built target opacity
+[1.711s] [ 86%] Built target triangle-vulkan
+[1.711s] [ 86%] Built target title
+[1.711s] [ 88%] [32mBuilding CXX object CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o[0m
+[1.711s] [ 90%] Built target windows
+[1.711s] [ 93%] Built target threads
+[1.711s] [ 96%] Built target tearing
+[1.711s] [ 97%] Built target timeout
+[1.810s] [01m[K/home/dksoren/drone_boys/src/drone_gui/src/interfaceUtil.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kstb_image.h: No such file or directory
+[1.810s]     4 | #include [01;31m[K"stb_image.h"[m[K
+[1.810s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[1.811s] compilation terminated.
+[1.814s] gmake[2]: *** [CMakeFiles/InterfaceLib.dir/build.make:76: CMakeFiles/InterfaceLib.dir/src/interfaceUtil.cpp.o] Error 1
+[1.815s] gmake[1]: *** [CMakeFiles/Makefile2:290: CMakeFiles/InterfaceLib.dir/all] Error 2
+[1.815s] gmake: *** [Makefile:146: all] Error 2
+[1.817s] Invoked command in '/home/dksoren/drone_boys/build/drone_gui' returned '2': CMAKE_PREFIX_PATH=/opt/ros/jazzy:/home/dksoren/drone_boys/install/drone_core:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/dksoren/drone_boys/install/drone_core/lib:${LD_LIBRARY_PATH} PKG_CONFIG_PATH=/home/dksoren/drone_boys/install/drone_core/lib/x86_64-linux-gnu/pkgconfig:/home/dksoren/drone_boys/install/drone_core/lib/pkgconfig PYTHONPATH=/home/dksoren/drone_boys/install/drone_core/lib/python3.12/site-packages:${PYTHONPATH} ROS_PACKAGE_PATH=/home/dksoren/drone_boys/install/drone_core/share /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone_gui -- -j12 -l12
