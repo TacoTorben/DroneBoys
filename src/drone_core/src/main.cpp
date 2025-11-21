@@ -158,18 +158,20 @@ private:
         try {
             if (goal->command_type == "field") {
                 int img_numb = goal->target_pose[0]; // Just an example of using target_pose
+                int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image("jesper" + std::to_string(img_numb) + ".jpeg");
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
                 image = field_coloredshirt(image, cfg);
-                pipeline.save_image(image, "output.jpeg");
+                pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
             }
             if (goal->command_type == "sky") {
                 int img_numb = goal->target_pose[0]; // Just an example of using target_pose
+                int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image("jesper" + std::to_string(img_numb) + ".jpeg");
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
                 sky_sorted_coloredshirt(image, cfg);
-                pipeline.save_image(image, "output_sky.jpeg");
+                pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
             }
         } catch (const std::exception &e) {
@@ -186,8 +188,6 @@ int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
     rclcpp::spin(std::make_shared<CommandActionServer>());
     rclcpp::shutdown();
-    //!! Tuning test
-    //tuning(image, 4);
     return 0;
 
 }
