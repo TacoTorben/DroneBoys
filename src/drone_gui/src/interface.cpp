@@ -86,6 +86,7 @@ void ros_thread_function(std::shared_ptr<GuiClient> node, std::atomic<bool> & ru
 //---------------- End ROS2 Action Client --------------------
 int main() {
     std::string package_share_dir = ament_index_cpp::get_package_share_directory("drone_core");
+    ImVec2 button_size(110,20);
         // Load image
 
 
@@ -190,7 +191,7 @@ int main() {
             ImGui::SetNextWindowSize(ImVec2(button_width ,200));
             ImGui::SetNextWindowPos(ImVec2(5, 5));
             ImGui::Begin("Image Control");
-            if (ImGui::Button("next image")) {;
+            if (ImGui::Button("next image",button_size)) {;
                 if (current_image <  max_images) {
                     current_image++;
                     std::filesystem::path path_main =
@@ -202,7 +203,7 @@ int main() {
                     LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);
                 }   
             }   
-            if (ImGui::Button("previous image"))  {;
+            if (ImGui::Button("previous image", button_size))  {;
                 if (current_image > 1) {
                     current_image--;
                     std::filesystem::path path_main =
@@ -214,11 +215,11 @@ int main() {
                     LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);}
 
             }
-             if (ImGui::Button("method 1")) {;
-                printf("wow this sure is a temporary print fuction");
+             if (ImGui::Button("field", button_size)) {;
+                node->send_command("field", {current_image, current_image});
 
             }   
-            if (ImGui::Button("method 2"))  {;
+            if (ImGui::Button("method 2", button_size))  {;
                 printf("wow this sure is a temporary print fuction");
 
 
