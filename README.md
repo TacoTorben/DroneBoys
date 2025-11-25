@@ -10,8 +10,16 @@
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
 ```
-    
-
+3. Setup image folder
+In home folder (or where ever your ros2 workspace folder currently is)
+Run:
+```bash
+    mkdir images
+    cd images
+    mkdir input
+    mkdir output
+```
+4. Save images needed inside the input folder
 
 
 ### User guide:
