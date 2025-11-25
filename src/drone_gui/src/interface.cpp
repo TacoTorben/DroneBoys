@@ -1,9 +1,8 @@
 #include "drone_gui/interfaceUtil.h"
 #include "drone_gui/stb_image.h"
-#include <iostream>
-#include <GLFW/glfw3.h>
-#include <filesystem>
 #include <ament_index_cpp/get_package_share_directory.hpp>
+
+
 
 using namespace std;
 
@@ -19,9 +18,9 @@ int button_width = 125;
 int fb_w, fb_h;
 
 
-
 int main() {
     std::string package_share_dir = ament_index_cpp::get_package_share_directory("drone_core");
+    ImVec2 button_size (110,20);
         // Load image
 
 
@@ -123,19 +122,19 @@ int main() {
             ImGui::SetNextWindowSize(ImVec2(button_width ,200));
             ImGui::SetNextWindowPos(ImVec2(5, 5));
             ImGui::Begin("Image Control");
-            if (ImGui::Button("next image")) {;
+            if (ImGui::Button("next image",button_size)) {;
                 if (current_image <  max_images) {
                     current_image++;
                     std::filesystem::path path_main =
                     std::filesystem::path(package_share_dir) / "images" / (std::to_string(current_image) + ".jpeg");
                     LoadTextureFromFile(path_main.string().c_str(), &my_image_texture, &my_image_width, &my_image_height);
-                                            // reload alternate image
+                    // reload alternate image
                     std::filesystem::path path_alt =
                     std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".jpeg");
                     LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);
                 }   
             }   
-            if (ImGui::Button("previous image"))  {;
+            if (ImGui::Button("previous image", button_size))  {;
                 if (current_image > 1) {
                     current_image--;
                     std::filesystem::path path_main =
@@ -147,11 +146,11 @@ int main() {
                     LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);}
 
             }
-             if (ImGui::Button("method 1")) {;
+             if (ImGui::Button("method 1", button_size)) {;
                 printf("wow this sure is a temporary print fuction");
 
             }   
-            if (ImGui::Button("method 2"))  {;
+            if (ImGui::Button("method 2", button_size))  {;
                 printf("wow this sure is a temporary print fuction");
 
 

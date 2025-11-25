@@ -72,7 +72,6 @@ target_link_libraries(gui_app
 install(TARGETS gui_app DESTINATION lib/${PROJECT_NAME})
 #install(DIRECTORY images DESTINATION share/${PROJECT_NAME/images}
 #)
-install(DIRECTORY config DESTINATION share/${PROJECT_NAME}/)
 
 ament_export_dependencies(rclcpp std_msgs)
 ament_package()
