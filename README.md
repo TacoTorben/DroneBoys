@@ -30,6 +30,7 @@ ros2 run drone_core finder
 *** To run action server: ***
 open new terminal, and write only first time:
 ```bash
+cd DroneBoys
 source install/setup.bash
 ```
 *** Then for every action: ***
