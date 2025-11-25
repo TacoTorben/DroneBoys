@@ -2,14 +2,16 @@
 ### Before use:
 1. Make sure you have ros2 jazzy installed
     https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
+
 2. Install missing dependencies:
 ```bash 
     sudo apt install python3-rosdep
     sudo rosdep init || true  
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
-    ```
-﻿
+```
+    
+3. To 
 
 
 

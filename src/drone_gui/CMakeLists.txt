@@ -51,6 +51,7 @@ target_include_directories(InterfaceLib PUBLIC
 target_link_libraries(InterfaceLib PUBLIC ImGuiLib glfw OpenGL::GL)
 
 add_executable(gui_app src/interface.cpp)
+
 target_compile_features(gui_app PUBLIC cxx_std_20)
 target_include_directories(gui_app PRIVATE ${OpenCV_INCLUDE_DIRS})
 
