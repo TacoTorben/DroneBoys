@@ -1,5 +1,0 @@
-/home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3.h
-/home/dksoren/drone_boys/install/drone_gui/include/GLFW/glfw3native.h
-/home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets.cmake
-/home/dksoren/drone_boys/install/drone_gui/lib/cmake/glfw3/glfw3Targets-noconfig.cmake
-/home/dksoren/drone_boys/install/drone_gui/lib/libglfw3.a

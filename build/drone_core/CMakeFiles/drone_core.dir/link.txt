@@ -1,2 +1,0 @@
-/usr/bin/ar qc libdrone_core.a CMakeFiles/drone_core.dir/src/utils.cpp.o CMakeFiles/drone_core.dir/src/manipulator.cpp.o
-/usr/bin/ranlib libdrone_core.a

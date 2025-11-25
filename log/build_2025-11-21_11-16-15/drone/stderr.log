@@ -1,8 +1,0 @@
-[01m[K/home/dksoren/drone_boys/src/drone/src/main.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kutils.h: No such file or directory
-    1 | #include [01;31m[K"utils.h"[m[K
-      |          [01;31m[K^~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/finder.dir/build.make:76: CMakeFiles/finder.dir/src/main.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:625: CMakeFiles/finder.dir/all] Error 2
-gmake[1]: *** Waiting for unfinished jobs....
-gmake: *** [Makefile:146: all] Error 2

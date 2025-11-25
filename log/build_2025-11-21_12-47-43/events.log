@@ -1,4 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000279] (-) JobUnselected: {'identifier': 'drone_core'}
-[0.000402] (-) JobUnselected: {'identifier': 'drone_gui'}
-[0.000455] (-) EventReactorShutdown: {}

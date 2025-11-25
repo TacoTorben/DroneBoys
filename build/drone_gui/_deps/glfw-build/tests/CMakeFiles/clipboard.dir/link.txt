@@ -1,1 +1,0 @@
-/usr/bin/cc -rdynamic CMakeFiles/clipboard.dir/clipboard.c.o "CMakeFiles/clipboard.dir/__/__/glfw-src/deps/getopt.c.o" "CMakeFiles/clipboard.dir/__/__/glfw-src/deps/glad_gl.c.o" -o clipboard  ../src/libglfw3.a -lm -Wl,-Bstatic -lrt -Wl,-Bdynamic -lm -ldl -lX11 

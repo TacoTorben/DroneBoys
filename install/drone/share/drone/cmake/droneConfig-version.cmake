@@ -1,1 +1,0 @@
-/home/dksoren/drone_boys/build/drone/ament_cmake_core/droneConfig-version.cmake

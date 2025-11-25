@@ -1,1 +1,0 @@
-/home/dksoren/drone_boys/build/drone_gui/_deps/glfw-build/src/glfw3.pc

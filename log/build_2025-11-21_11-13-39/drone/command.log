@@ -1,3 +1,0 @@
-Invoking command in '/home/dksoren/drone_boys/build/drone': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone
-Invoked command in '/home/dksoren/drone_boys/build/drone' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/dksoren/drone_boys/src/drone -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/dksoren/drone_boys/install/drone
-Invoking command in '/home/dksoren/drone_boys/build/drone': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/dksoren/drone_boys/build/drone -- -j12 -l12

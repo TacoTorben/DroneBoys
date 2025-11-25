@@ -1,1 +1,0 @@
-/usr/bin/cc -rdynamic CMakeFiles/particles.dir/particles.c.o "CMakeFiles/particles.dir/__/__/glfw-src/deps/tinycthread.c.o" "CMakeFiles/particles.dir/__/__/glfw-src/deps/getopt.c.o" "CMakeFiles/particles.dir/__/__/glfw-src/deps/glad_gl.c.o" -o particles  ../src/libglfw3.a -lm -Wl,-Bstatic -lrt -Wl,-Bdynamic -ldl -lX11 
