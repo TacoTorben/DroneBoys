@@ -3,6 +3,8 @@ project(drone_gui)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
+find_package(drone_core REQUIRED) 
 find_package(std_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(OpenGL REQUIRED)
@@ -56,7 +58,9 @@ target_compile_features(gui_app PUBLIC cxx_std_20)
 target_include_directories(gui_app PRIVATE ${OpenCV_INCLUDE_DIRS})
 
 ament_target_dependencies(gui_app 
-rclcpp 
+rclcpp
+rclcpp_action
+drone_core
 std_msgs 
 ament_index_cpp) 
 

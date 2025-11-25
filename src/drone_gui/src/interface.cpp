@@ -4,7 +4,12 @@
 #include <GLFW/glfw3.h>
 #include <filesystem>
 #include <ament_index_cpp/get_package_share_directory.hpp>
-
+#include "rclcpp/rclcpp.hpp"
+#include "rclcpp_action/rclcpp_action.hpp"
+#include <thread>
+#include <atomic>
+#include "drone_core/action/finder_action.hpp" 
+using FinderAction = drone_core::action::FinderAction;
 using namespace std;
 
 
@@ -17,9 +22,68 @@ int current_image = 1;
 int max_images = 10;
 int button_width = 125;
 int fb_w, fb_h;
+//---------------- ROS2 Action Client --------------------
+class GuiClient : public rclcpp::Node
+{
+public:
+    using GoalHandleFinder = rclcpp_action::ClientGoalHandle<FinderAction>;
 
+    GuiClient() : Node("gui_client")
+    {
+        client_ = rclcpp_action::create_client<FinderAction>(
+            this,
+            "/drone_command"   // Must match server name
+        );
+    }
 
+    void send_command(const std::string &command, std::vector<int32_t> target_pose)
+    {
+        if (!client_->wait_for_action_server(std::chrono::seconds(2)))
+        {
+            RCLCPP_ERROR(get_logger(), "Action server not available");
+            return;
+        }
 
+        auto goal_msg = FinderAction::Goal();
+        goal_msg.command_type = command;
+        goal_msg.target_pose = target_pose;
+
+        RCLCPP_INFO(get_logger(), "Sending goal: %s", command.c_str());
+
+        auto options = rclcpp_action::Client<FinderAction>::SendGoalOptions();
+
+        options.feedback_callback =
+            [this](GoalHandleFinder::SharedPtr,
+                   const std::shared_ptr<const FinderAction::Feedback> feedback)
+            {
+                RCLCPP_INFO(get_logger(), "Feedback: numb_labels = %d", feedback->numb_labels);
+            };
+
+        options.result_callback =
+            [this](const GoalHandleFinder::WrappedResult &result)
+            {
+                RCLCPP_INFO(get_logger(), "Result success = %d", result.result->success);
+            };
+
+        client_->async_send_goal(goal_msg, options);
+    }
+
+private:
+    rclcpp_action::Client<FinderAction>::SharedPtr client_;
+};
+
+void ros_thread_function(std::shared_ptr<GuiClient> node, std::atomic<bool> & running)
+{
+    rclcpp::executors::MultiThreadedExecutor exec;
+    exec.add_node(node);
+
+    while (running) {
+        exec.spin_some();        // non-blocking
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+    exec.cancel();
+}
+//---------------- End ROS2 Action Client --------------------
 int main() {
     std::string package_share_dir = ament_index_cpp::get_package_share_directory("drone_core");
         // Load image
@@ -27,7 +91,10 @@ int main() {
 
         //std::string base = std::filesystem::current_path().string();
         //std::cout << "Working directory: " << base << "\n";
-
+        rclcpp::init(0, nullptr);
+        auto node = std::make_shared<GuiClient>();
+        std::atomic<bool> running(true);
+        std::thread ros_thread(ros_thread_function, node, std::ref(running));
     
         if (!glfwInit())
             return 1;
@@ -206,7 +273,7 @@ int main() {
         ImGui::DestroyContext();
         glfwDestroyWindow(window);
         glfwTerminate();
-
+        rclcpp::shutdown();
     
 
 

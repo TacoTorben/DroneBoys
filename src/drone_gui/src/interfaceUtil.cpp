@@ -6,6 +6,7 @@
 
 
 
+
 namespace windowVar {
     int monitor_w = 0;
     int monitor_h = 0;
