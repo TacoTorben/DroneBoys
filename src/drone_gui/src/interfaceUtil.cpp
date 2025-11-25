@@ -3,7 +3,8 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "drone_gui/stb_image.h"
 #define _CRT_SECURE_NO_WARNINGS
-
+using namespace cv;
+namespace fs = std::filesystem;
 
 
 
@@ -91,4 +92,30 @@ bool LoadTextureFromFile(const char* file_name, GLuint* out_texture, int* out_wi
     bool ret = LoadTextureFromMemory(file_data, file_size, out_texture, out_width, out_height);
     IM_FREE(file_data);
     return ret;
+}
+
+cv::Mat fetch_image(const std::string& filename) {
+    fs::path current = fs::current_path();
+    fs::path inputPath = current.parent_path() / "images" / "input" / filename;
+
+    cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
+    if (image.empty()) {
+        std::cerr << "Error: Could not load image from: " << inputPath.string() << std::endl;
+    } else {
+        std::cout << "Loaded image: " << inputPath.string() << std::endl;
+    }
+    return image;
+}
+
+cv::Mat fetch_image_output(const std::string& filename) {
+    fs::path current = fs::current_path();
+    fs::path inputPath = current.parent_path() / "images" / "output" / filename;
+
+    cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
+    if (image.empty()) {
+        std::cerr << "Error: Could not load image from: " << inputPath.string() << std::endl;
+    } else {
+        std::cout << "Loaded image: " << inputPath.string() << std::endl;
+    }
+    return image;
 }

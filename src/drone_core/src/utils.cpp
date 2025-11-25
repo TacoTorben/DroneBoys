@@ -8,19 +8,19 @@ using namespace cv;
 namespace fs = std::filesystem;
 
 
-    cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
+    
+cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
+    fs::path current = fs::current_path();
+    fs::path inputPath = current.parent_path() / "images" / "input" / filename;
 
-        fs::path imagePath = fs::current_path() / "src/drone_core/images" / filename; //! fy fy
-        
-        cv::Mat img = cv::imread(imagePath.string());
-
-        if (img.empty()) {
-            cerr << "Error: Could not load image: " << filename << endl;
-        }
-
-
-        return img;
+    cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
+    if (image.empty()) {
+        std::cerr << "Error: Could not load image from: " << inputPath.string() << std::endl;
+    } else {
+        std::cout << "Loaded image: " << inputPath.string() << std::endl;
     }
+    return image;
+}
 
     Config ImageProcessingPipeline::loadConfig(const std::string& path) {
         Config cfg{};
@@ -100,13 +100,36 @@ namespace fs = std::filesystem;
         return data;
     }
 
-    void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string& filename) {
-        fs::path outputPath = fs::current_path() / "src/drone_core/output" / filename;
-        if (!cv::imwrite(outputPath.string(), image)) {
-            cerr << "Error: Could not save image to: " << outputPath.string() << endl;
-        }
+    
+    
+#include <filesystem>
+#include <opencv2/opencv.hpp>
+#include <iostream>
+
+namespace fs = std::filesystem;
+
+void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string& filename) {
+    // Get current working directory (where the node runs)
+    fs::path current = fs::current_path();
+
+    // Go one level up and then into images/output
+    fs::path outputPath = current.parent_path() / "images" / "output";
+
+    // Ensure the directory exists
+    if (!fs::exists(outputPath)) {
+        fs::create_directories(outputPath);
     }
-//!! Just for testing
+
+    fs::path filePath = outputPath / filename;
+
+    if (!cv::imwrite(filePath.string(), image)) {
+        std::cerr << "Error: Could not save image to: " << filePath.string() << std::endl;
+    } else {
+        std::cout << "Image saved to: " << filePath.string() << std::endl;
+    }
+}
+
+    //!! Just for testing
 
 void tuning(const cv::Mat& inputImage, int mode) {
     if (inputImage.empty()) {

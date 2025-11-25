@@ -7,6 +7,10 @@
 #include <iostream>
 #include "imgui_internal.h"
 #include <filesystem>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+namespace fs = std::filesystem;
 
 namespace windowVar {
     extern int monitor_w;
@@ -45,3 +49,7 @@ public:
 
 bool LoadTextureFromMemory(const void* data, size_t data_size, GLuint* out_texture, int* out_width, int* out_height);
 bool LoadTextureFromFile(const char* file_name, GLuint* out_texture, int* out_width, int* out_height);
+
+cv::Mat fetch_image(const std::string& filename);
+
+cv::Mat fetch_image_output(const std::string& filename);

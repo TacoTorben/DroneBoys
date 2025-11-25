@@ -85,7 +85,8 @@ void ros_thread_function(std::shared_ptr<GuiClient> node, std::atomic<bool> & ru
 }
 //---------------- End ROS2 Action Client --------------------
 int main() {
-    std::string package_share_dir = ament_index_cpp::get_package_share_directory("drone_core");
+    //std::string package_share_dir = ament_index_cpp::get_package_share_directory("drone_core");
+
     ImVec2 button_size(110,20);
         // Load image
 
@@ -136,37 +137,37 @@ int main() {
         static bool textures_loaded = false;
         
                 // MAIN IMAGE
-        std::filesystem::path path_main =
-            std::filesystem::path(package_share_dir) /
-            "images" /
-            (std::to_string(current_image) + ".jpeg");
+        //std::filesystem::path path_main =
+        //    std::filesystem::path(package_share_dir) /
+        //    "images" /
+        //    (std::to_string(current_image) + ".jpeg");
 
-        LoadTextureFromFile(
-            path_main.string().c_str(),
-            &my_image_texture,
-            &my_image_width,
-            &my_image_height
-        );
+        //LoadTextureFromFile(
+        //    path_main.string().c_str(),
+        //    &my_image_texture,
+        //    &my_image_width,
+        //    &my_image_height
+        //);
 
         // ALT IMAGE
-        std::filesystem::path path_alt =
-            std::filesystem::path(package_share_dir) /
-            "output" /
-            (std::to_string(current_image) + ".jpeg");
+        //std::filesystem::path path_alt =
+        //    std::filesystem::path(package_share_dir) /
+        //    "output" /
+        //    (std::to_string(current_image) + ".jpeg");
 
-        LoadTextureFromFile(
-            path_alt.string().c_str(),
-            &my_alt_texture,
-            &my_alt_width,
-            &my_alt_height
-        );
-        
-        bool ok_alt = LoadTextureFromFile(
-            path_alt.string().c_str(),
-            &my_alt_texture,
-            &my_alt_width,
-            &my_alt_height
-        );
+        //LoadTextureFromFile(
+        //    path_alt.string().c_str(),
+        //    &my_alt_texture,
+        //    &my_alt_width,
+        //    &my_alt_height
+        //);
+        //
+        //bool ok_alt = LoadTextureFromFile(
+        //    path_alt.string().c_str(),
+        //    &my_alt_texture,
+        //    &my_alt_width,
+        //    &my_alt_height
+        //);
         
 
 
@@ -194,25 +195,30 @@ int main() {
             if (ImGui::Button("next image",button_size)) {;
                 if (current_image <  max_images) {
                     current_image++;
-                    std::filesystem::path path_main =
-                    std::filesystem::path(package_share_dir) / "images" / (std::to_string(current_image) + ".jpeg");
-                    LoadTextureFromFile(path_main.string().c_str(), &my_image_texture, &my_image_width, &my_image_height);
-                                            // reload alternate image
-                    std::filesystem::path path_alt =
-                    std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".jpeg");
-                    LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);
+                    cv::Mat main_image = fetch_image(std::to_string(current_image) + ".jpeg");
+                    my_image_texture = 0;
+                    my_image_width = main_image.cols;
+                    my_image_height = main_image.rows;
+                    // reload alternate image
+                    cv::Mat alt_image = fetch_image_output(std::to_string(current_image) + ".jpeg");
+                    my_alt_texture = 0;
+                    my_alt_width = alt_image.cols;
+                    my_alt_height = alt_image.rows;
                 }   
             }   
             if (ImGui::Button("previous image", button_size))  {;
                 if (current_image > 1) {
                     current_image--;
-                    std::filesystem::path path_main =
-                    std::filesystem::path(package_share_dir) / "images" / (std::to_string(current_image) + ".jpeg");
-                    LoadTextureFromFile(path_main.string().c_str(), &my_image_texture, &my_image_width, &my_image_height);
+                    cv::Mat main_image = fetch_image(std::to_string(current_image) + ".jpeg");
+                    my_image_texture = 0;
+                    my_image_width = main_image.cols;
+                    my_image_height = main_image.rows;
                     // reload alternate image
-                    std::filesystem::path path_alt =
-                    std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".jpeg");
-                    LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);}
+                    cv::Mat alt_image = fetch_image_output(std::to_string(current_image) + ".jpeg");
+                    my_alt_texture = 0;
+                    my_alt_width = alt_image.cols;
+                    my_alt_height = alt_image.rows;
+                }
 
             }
              if (ImGui::Button("field", button_size)) {;
@@ -248,14 +254,14 @@ int main() {
 
 
             //description window
-            ImGui::SetNextWindowSize(ImVec2((float)fb_w * 0.98 -button_width, (float)fb_h * 0.3 - 15));
-            ImGui::SetNextWindowPos(ImVec2(button_width+15, (float)fb_h * 0.7+10));
-            ImGui::Begin("Description");
-            ImGui::Text("This is image %d", current_image);
-            ImGui::Text("Circle State: %d", circle_state);
-            std::string current_path = circle_state ? path_alt.string() : path_main.string();
-            ImGui::Text("Current Image Path: %s", current_path.c_str());
-            ImGui::End();
+            //ImGui::SetNextWindowSize(ImVec2((float)fb_w * 0.98 -button_width, (float)fb_h * 0.3 - 15));
+            //ImGui::SetNextWindowPos(ImVec2(button_width+15, (float)fb_h * 0.7+10));
+            //ImGui::Begin("Description");
+            //ImGui::Text("This is image %d", current_image);
+            //ImGui::Text("Circle State: %d", circle_state);
+            //std::string current_path = circle_state ? path_alt.string() : path_main.string();
+            //ImGui::Text("Current Image Path: %s", current_path.c_str());
+            //ImGui::End();
 
 
             ImGui::Render();

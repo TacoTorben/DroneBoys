@@ -162,6 +162,7 @@ private:
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
                 image = field_coloredshirt(image, cfg);
+                cv::imwrite("output_field.jpeg", image);
                 pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
             }
