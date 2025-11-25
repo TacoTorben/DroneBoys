@@ -70,5 +70,15 @@ install(
     DIRECTORY config
     DESTINATION share/${PROJECT_NAME}/
 )
+install(
+  DIRECTORY images
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  DIRECTORY output
+  DESTINATION share/${PROJECT_NAME}
+)
+
 
 ament_package()

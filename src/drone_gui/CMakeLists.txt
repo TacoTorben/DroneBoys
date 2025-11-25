@@ -6,6 +6,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 
@@ -51,11 +52,13 @@ target_include_directories(InterfaceLib PUBLIC
 target_link_libraries(InterfaceLib PUBLIC ImGuiLib glfw OpenGL::GL)
 
 add_executable(gui_app src/interface.cpp)
-
 target_compile_features(gui_app PUBLIC cxx_std_20)
 target_include_directories(gui_app PRIVATE ${OpenCV_INCLUDE_DIRS})
 
-ament_target_dependencies(gui_app rclcpp std_msgs)
+ament_target_dependencies(gui_app 
+rclcpp 
+std_msgs 
+ament_index_cpp) 
 
 target_link_libraries(gui_app
     InterfaceLib
@@ -67,6 +70,8 @@ target_link_libraries(gui_app
 
 
 install(TARGETS gui_app DESTINATION lib/${PROJECT_NAME})
+#install(DIRECTORY images DESTINATION share/${PROJECT_NAME/images}
+#)
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME}/)
 
 ament_export_dependencies(rclcpp std_msgs)

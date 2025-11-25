@@ -18,11 +18,11 @@ namespace windowVar {
 
 class WindowInitializer {
 public:
-    
+
     void GetPrimaryMonitorResolution(int& width, int& height);
     void Setup();
     void UpdateWindowSize();
-    
+
     void Render();
     void DrawMultiColor();
     void loadFonts();     // load all fonts once
