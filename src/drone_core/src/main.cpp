@@ -22,7 +22,7 @@ ColorManipulator colorManipulator;
 cv::Point nonBackground_point; // For storing non-background point in blob detection
 
 
-cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
+cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {//!! Only works at 30m right now TODO:: improve for other altitudes
     /**
     Takes in an image, do a series of processing steps to detect red shirts in a field setting.
     First adjusts saturation, brightness/contrast, enhances red channel, applies median filtering,
@@ -30,7 +30,7 @@ cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
     */
     int radius = 15;
     int kernel_size = 1;
-    int connectivity = 4;
+    int connectivity = 4; // 4 for 30m
     int saturationScale = 2;
 
     cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
@@ -64,7 +64,7 @@ cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
     return image;
 }
 
-cv::Mat sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) {
+cv::Mat sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) { //!! May not be used
     /**
     Takes in an image, do a series of processing steps to detect red shirts in a field setting.
     First adjusts saturation, brightness/contrast, enhances red channel, applies median filtering,
@@ -73,7 +73,7 @@ cv::Mat sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) {
     */
     int radius = 15;
     int kernel_size = 1;
-    int connectivity = 4;
+    int connectivity = 4; 
     int saturationScale = 2;
 
     cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
@@ -106,7 +106,7 @@ cv::Mat sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) {
     return image;
 }
 
-cv::Mat dark_colorshirt(cv::Mat& image, const Config& cfg){
+cv::Mat dark_colorshirt(cv::Mat& image, const Config& cfg){ //!! Only works at 30m right now TODO:: improve for other altitudes
     int radius = 15;
     double target_intensity = 200.0;
     int connectivity = 4;
