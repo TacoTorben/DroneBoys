@@ -6,19 +6,30 @@ denoise:
    searchWindowSize: 21
 canny_parameters:
    threshold_low: 300
-   threshold_max: 350   
+   threshold_max: 350  
+   threshold_low_dark: 200
+   threshold_max_dark: 250 
 blob_detection:
    kernel_size: 2
    connectivity: 7
+   kernel_size_dark: 1
 bilateral_filter:
    d: 15
    sigmaColor: 75
    sigmaSpace: 75
+   d_dark: 7
+   sigmaColor_dark: 150
+   sigmaSpace_dark: 150
 median_filter:
    kernel_size: 7
+   kernel_size_dark: 15
 brightness_contrast:
    brightness: 200
    contrast: 126
+saturation:
+   saturationScale: 8
+   saturationScale_dark: 2
+
 
 #Best parameters found so far for jesper2.jpeg (red shirt)
 #denoise: 

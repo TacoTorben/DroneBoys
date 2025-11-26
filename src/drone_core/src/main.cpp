@@ -106,6 +106,45 @@ cv::Mat sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) {
     return image;
 }
 
+cv::Mat dark_colorshirt(cv::Mat& image, const Config& cfg){
+    int radius = 15;
+    double target_intensity = 200.0;
+    int connectivity = 4;
+    int saturationScale = 8;
+     cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
+    cv::Mat gammaCorrectedImage = noiseReducer.gamma_correction(saturatedImage,find_gamma(saturatedImage, target_intensity, determine_intensity(saturatedImage)));
+    cv::Mat medianFiltered = noiseReducer.median_filter(gammaCorrectedImage, cfg.median_filter.kernel_size_dark);
+    
+    cv::Mat bilateralFiltered = noiseReducer.bilateral_filter(medianFiltered, cfg.bilateral_filter.d_dark, cfg.bilateral_filter.sigmaColor_dark, cfg.bilateral_filter.sigmaSpace_dark);
+    
+    cv::Mat gray;
+    cv::cvtColor(bilateralFiltered, gray, cv::COLOR_BGR2GRAY);
+
+    cv::Mat edges = canny_edge_detection(gray, cfg.canny_parameters.threshold.low_threshold_dark, cfg.canny_parameters.threshold.max_threshold_dark);
+ 
+    cv::Mat closedImage = morphologyProcessor.closing_morphology(edges, cfg.blob_detection.connectivity);
+    cv::Mat openingImage = morphologyProcessor.opening_morphology(closedImage, cfg.blob_detection.kernel_size_dark);
+    BlobData blobs = pipeline.blob_detection(openingImage, connectivity);
+
+    
+    //Draw circles around detected blobs (excluding background aka label 0)
+    for(int i = 1; i < blobs.numLabels; ++i) {
+        cv::Point2d centroid(
+            blobs.centroids.at<double>(i, 0),
+            blobs.centroids.at<double>(i, 1)
+        );
+        cv::Point center(static_cast<int>(centroid.x), static_cast<int>(centroid.y));
+        //std::cout << "centroid y" << centroid.y << std::endl;
+        image = pipeline.draw_circles(image, center, radius, i);
+    }
+
+    cout << "Number of blobs detected: " << blobs.numLabels -1 << endl;
+
+    return image;
+
+
+}
+
 //-----------------ROS2 Action Server and Client Implementation-----------------
 class CommandActionServer : public rclcpp::Node {
 public:
@@ -132,7 +171,7 @@ private:
         const rclcpp_action::GoalUUID &,
         std::shared_ptr<const DroneCommand::Goal> goal)
     {
-        static const std::vector<std::string> allowed_commands = {"field", "sky"};
+        static const std::vector<std::string> allowed_commands = {"field", "sky", "dark"};
         RCLCPP_INFO(get_logger(), "Received goal request: %s", goal->command_type.c_str());
         if (std::find(allowed_commands.begin(), allowed_commands.end(), goal->command_type) == allowed_commands.end()) {
             RCLCPP_WARN(get_logger(), "Rejected invalid command: %s", goal->command_type.c_str());
@@ -157,7 +196,7 @@ private:
 
         try {
             if (goal->command_type == "field") {
-                int img_numb = goal->target_pose[0]; // Just an example of using target_pose
+                int img_numb = goal->target_pose[0]; 
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
@@ -166,11 +205,20 @@ private:
                 result->success = true;
             }
             if (goal->command_type == "sky") {
-                int img_numb = goal->target_pose[0]; // Just an example of using target_pose
+                int img_numb = goal->target_pose[0]; 
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
                 sky_sorted_coloredshirt(image, cfg);
+                pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
+                result->success = true;
+            }
+            if (goal->command_type == "dark") {
+                int img_numb = goal->target_pose[0]; 
+                int output_numb = goal->target_pose[1];
+                RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
+                dark_colorshirt(image, cfg);
                 pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
             }

@@ -8,6 +8,10 @@ class NoiseReducer {
         cv::Mat median_filter(const cv::Mat& inputImage, int kernelSize = 3);
 
         cv::Mat bilateralFilter(const cv::Mat& inputImage, int d = 9, double sigmaColor = 75, double sigmaSpace = 75);
+        
+        cv::Mat gamma_correction(const cv::Mat& inputImage, double gamma);
+
+        cv::Mat bilateral_filter(const cv::Mat& inputImage, int d, double sigmaColor, double sigmaSpace);
 
 };
 
@@ -32,9 +36,9 @@ class ColorManipulator {
 
 cv::Mat canny_edge_detection(const cv::Mat& inputImage, double lowThreshold = 100, double highThreshold = 200);
 
+double find_gamma(const cv::Mat& inputImage, double target_intensity, double average_intensity);
 
-
-
+double determine_intensity(const cv::Mat& inputImage);
 
 
 

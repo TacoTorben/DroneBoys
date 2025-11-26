@@ -37,18 +37,25 @@ cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
 
         fs["canny_parameters"]["threshold_low"] >> cfg.canny_parameters.threshold.low_threshold;
         fs["canny_parameters"]["threshold_max"] >> cfg.canny_parameters.threshold.max_threshold;
+        fs["canny_parameters"]["threshold_low_dark"] >> cfg.canny_parameters.threshold.low_threshold_dark;
+        fs["canny_parameters"]["threshold_max_dark"] >> cfg.canny_parameters.threshold.max_threshold_dark;
 
         fs["blob_detection"]["kernel_size"] >> cfg.blob_detection.kernel_size;
         fs["blob_detection"]["connectivity"] >> cfg.blob_detection.connectivity;
+        fs["blob_detection"]["kernel_size_dark"] >> cfg.blob_detection.kernel_size_dark;
 
         fs["bilateral_filter"]["d"] >> cfg.bilateral_filter.d;
         fs["bilateral_filter"]["sigmaColor"] >> cfg.bilateral_filter.sigmaColor;
         fs["bilateral_filter"]["sigmaSpace"] >> cfg.bilateral_filter.sigmaSpace;
+        fs["bilateral_filter"]["d_dark"] >> cfg.bilateral_filter.d_dark;
+        fs["bilateral_filter"]["sigmaColor_dark"] >> cfg.bilateral_filter.sigmaColor_dark;
+        fs["bilateral_filter"]["sigmaSpace_dark"] >> cfg.bilateral_filter.sigmaSpace_dark;
 
         fs["brightness_contrast"]["brightness"] >> cfg.brightness_contrast.brightness;
         fs["brightness_contrast"]["contrast"] >> cfg.brightness_contrast.contrast;
 
         fs["median_filter"]["kernel_size"] >> cfg.median_filter.kernel_size;
+        fs["median_filter"]["kernel_size_dark"] >> cfg.median_filter.kernel_size_dark;
 
         fs.release();
         return cfg;

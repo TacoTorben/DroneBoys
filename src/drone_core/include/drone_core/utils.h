@@ -8,6 +8,8 @@ struct CannyParameters {
     struct threshold {
         double low_threshold;
         double max_threshold;
+        double low_threshold_dark;
+        double max_threshold_dark;
     } threshold;
 };
 struct DenoiseConfig {
@@ -19,12 +21,16 @@ struct DenoiseConfig {
 struct BlobDetectionConfig {
     int kernel_size;
     int connectivity;
+    int kernel_size_dark;
 };
 
 struct BilateralFilterConfig {
     int d;
     int sigmaColor;
     int sigmaSpace;
+    int d_dark;
+    int sigmaColor_dark;
+    int sigmaSpace_dark;
 };
 
 struct BrightnessContrastConfig {
@@ -34,7 +40,9 @@ struct BrightnessContrastConfig {
 
 struct MedianFilterConfig {
     int kernel_size;
+    int kernel_size_dark;
 };
+
 
 struct Config {
     DenoiseConfig denoise;

@@ -44,10 +44,12 @@ source install/setup.bash
 ```bash
 ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_type: 'field', target_pose: [1,1]}"
 ```
-    the 'field' is the action. So far we have 'field', 'sky'
+    the 'field' is the action. So far we have 'field', 'sky', 'dark'
 
     target pose: [1,1] is name of input image and name of output image (without .jpeg)
     input images are those from images folder, and output you decise yourself (but only a number)
 
-
-if still not use, stop being an ass
+*** To run the interface use: ***
+```bash
+ros2 run drone_gui gui_app 
+```
