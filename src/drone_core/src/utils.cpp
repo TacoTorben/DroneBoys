@@ -136,6 +136,19 @@ void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string
     }
 }
 
+cv::Mat resize_scale(const cv::Mat& inputImage) {
+    cv::Mat outputImage;
+    int height = inputImage.rows;
+    int width = inputImage.cols;
+    int resize_height = 1120;
+    int resize_width = 746;
+    cv::resize(inputImage, outputImage, cv::Size(resize_width, resize_height));
+
+
+    //cv::resize(inputImage, outputImage, cv::Size(), 0.5, 0.5, cv::INTER_LINEAR);
+    return outputImage;
+}
+
     //!! Just for testing
 
 void tuning(const cv::Mat& inputImage, int mode) {

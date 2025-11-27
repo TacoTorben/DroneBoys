@@ -30,8 +30,13 @@ cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {//!! Only works a
     */
     int radius = 15;
     int kernel_size = 1;
-    int connectivity = 4; // 4 for 30m
+    int connectivity = 4; // 4 for 30m 5 for 5m
     int saturationScale = 2;
+    //int height = image.rows;
+    //int width = image.cols;
+    int resize_height = 1120;
+    int resize_width = 746;
+    cv::resize(image, image, cv::Size(resize_height, resize_width), cv::INTER_NEAREST);
 
     cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
     cv::Mat brightness_contrast_image = colorManipulator.brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
@@ -41,7 +46,7 @@ cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {//!! Only works a
     //cv::imshow("Median Filtered Image", medianFiltered);
     cv::Mat edges = canny_edge_detection(medianFiltered, cfg.canny_parameters.threshold.low_threshold, cfg.canny_parameters.threshold.max_threshold);
     //cv::imshow("Edges", edges);
-    cv::Mat closedImage = morphologyProcessor.closing_morphology(edges, cfg.blob_detection.connectivity);
+    cv::Mat closedImage = morphologyProcessor.closing_morphology(edges, 5);
     //cv::imshow("Labeled Blobs", closedImage);
     cv::Mat openingImage = morphologyProcessor.opening_morphology(closedImage, kernel_size);
     //cv::imshow("Opening Morphology Image", openingImage);
