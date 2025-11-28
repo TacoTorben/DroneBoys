@@ -1,0 +1,4 @@
+Invoking command in '/home/snekkie/DroneBoys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/snekkie/DroneBoys/build/drone_core -- -j24 -l24
+Invoked command in '/home/snekkie/DroneBoys/build/drone_core' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/snekkie/DroneBoys/build/drone_core -- -j24 -l24
+Invoking command in '/home/snekkie/DroneBoys/build/drone_core': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/snekkie/DroneBoys/build/drone_core
+Invoked command in '/home/snekkie/DroneBoys/build/drone_core' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/snekkie/DroneBoys/build/drone_core

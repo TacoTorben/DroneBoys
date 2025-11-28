@@ -1,0 +1,2 @@
+Invoking command in '/home/snekkie/DroneBoys/build/drone_gui': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/snekkie/DroneBoys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/snekkie/DroneBoys/install/drone_gui
+Invoked command in '/home/snekkie/DroneBoys/build/drone_gui' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/snekkie/DroneBoys/src/drone_gui -DCMAKE_INSTALL_PREFIX=/home/snekkie/DroneBoys/install/drone_gui

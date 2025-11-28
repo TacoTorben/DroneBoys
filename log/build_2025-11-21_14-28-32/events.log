@@ -1,0 +1,174 @@
+[0.000000] (-) TimerEvent: {}
+[0.000335] (-) JobUnselected: {'identifier': 'drone_gui'}
+[0.000417] (drone_core) JobQueued: {'identifier': 'drone_core', 'dependencies': OrderedDict()}
+[0.000445] (drone_core) JobStarted: {'identifier': 'drone_core'}
+[0.004871] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'cmake'}
+[0.005753] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'build'}
+[0.006359] (drone_core) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/snekkie/DroneBoys/build/drone_core', '--', '-j24', '-l24'], 'cwd': '/home/snekkie/DroneBoys/build/drone_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'snekkie', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'HOME': '/home/snekkie', 'OLDPWD': '/home/snekkie', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2917', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'LOGNAME': 'snekkie', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'snekkie', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/Zephyrus:@/tmp/.ICE-unix/2668,unix/Zephyrus:/tmp/.ICE-unix/2668', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1085c39b_30b6_4772_9ed0_cfd1aad9f9fa', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.7K2DG3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.315', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/snekkie/DroneBoys/build/drone_core', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600'}), 'shell': False}
+[0.057339] (drone_core) StdoutLine: {'line': b'[  2%] Built target drone_core__rosidl_generator_type_description\n'}
+[0.062576] (drone_core) StdoutLine: {'line': b'[  9%] Built target drone_core_lib\n'}
+[0.066204] (drone_core) StdoutLine: {'line': b'[  9%] Built target ament_cmake_python_copy_drone_core\n'}
+[0.074327] (drone_core) StdoutLine: {'line': b'[ 21%] Built target drone_core__rosidl_generator_c\n'}
+[0.075193] (drone_core) StdoutLine: {'line': b'[ 24%] Built target drone_core__cpp\n'}
+[0.095521] (drone_core) StdoutLine: {'line': b'[ 31%] Built target drone_core__rosidl_typesupport_introspection_c\n'}
+[0.097097] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_introspection_cpp\n'}
+[0.097260] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_cpp\n'}
+[0.097325] (drone_core) StdoutLine: {'line': b'[ 53%] Built target drone_core__rosidl_typesupport_c\n'}
+[0.097679] (drone_core) StdoutLine: {'line': b'[ 60%] Built target drone_core__rosidl_typesupport_fastrtps_c\n'}
+[0.099096] (drone_core) StdoutLine: {'line': b'[ 68%] Built target drone_core__rosidl_typesupport_fastrtps_cpp\n'}
+[0.099239] (-) TimerEvent: {}
+[0.116895] (drone_core) StdoutLine: {'line': b'[ 68%] Built target drone_core\n'}
+[0.132932] (drone_core) StdoutLine: {'line': b'[ 70%] Built target drone_core__py\n'}
+[0.145082] (drone_core) StdoutLine: {'line': b'[ 80%] Built target finder\n'}
+[0.154611] (drone_core) StdoutLine: {'line': b'[ 85%] Built target drone_core__rosidl_generator_py\n'}
+[0.178754] (drone_core) StdoutLine: {'line': b'[100%] Built target drone_core_s__rosidl_typesupport_c\n'}
+[0.178823] (drone_core) StdoutLine: {'line': b'[100%] Built target drone_core_s__rosidl_typesupport_introspection_c\n'}
+[0.178873] (drone_core) StdoutLine: {'line': b'[100%] Built target drone_core_s__rosidl_typesupport_fastrtps_c\n'}
+[0.190316] (drone_core) StdoutLine: {'line': b'running egg_info\n'}
+[0.196392] (drone_core) StdoutLine: {'line': b'writing drone_core.egg-info/PKG-INFO\n'}
+[0.196568] (drone_core) StdoutLine: {'line': b'writing dependency_links to drone_core.egg-info/dependency_links.txt\n'}
+[0.196660] (drone_core) StdoutLine: {'line': b'writing top-level names to drone_core.egg-info/top_level.txt\n'}
+[0.199301] (-) TimerEvent: {}
+[0.216052] (drone_core) StdoutLine: {'line': b"reading manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[0.216420] (drone_core) StdoutLine: {'line': b"writing manifest file 'drone_core.egg-info/SOURCES.txt'\n"}
+[0.239541] (drone_core) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_drone_core_egg\n'}
+[0.250506] (drone_core) CommandEnded: {'returncode': 0}
+[0.251188] (drone_core) JobProgress: {'identifier': 'drone_core', 'progress': 'install'}
+[0.259501] (drone_core) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/snekkie/DroneBoys/build/drone_core'], 'cwd': '/home/snekkie/DroneBoys/build/drone_core', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'snekkie', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'HOME': '/home/snekkie', 'OLDPWD': '/home/snekkie', 'DESKTOP_SESSION': 'ubuntu', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2917', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'LOGNAME': 'snekkie', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'snekkie', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/Zephyrus:@/tmp/.ICE-unix/2668,unix/Zephyrus:/tmp/.ICE-unix/2668', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1085c39b_30b6_4772_9ed0_cfd1aad9f9fa', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.7K2DG3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.315', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/snekkie/DroneBoys/build/drone_core', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600'}), 'shell': False}
+[0.266884] (drone_core) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.266995] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/ament_index/resource_index/rosidl_interfaces/drone_core\n'}
+[0.267056] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/action/FinderAction.json\n'}
+[0.267148] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core\n'}
+[0.267203] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action\n'}
+[0.267260] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[0.267310] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__description.c\n'}
+[0.267399] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__functions.h\n'}
+[0.267448] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__functions.c\n'}
+[0.267498] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__struct.h\n'}
+[0.267547] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.h\n'}
+[0.267594] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.c\n'}
+[0.267642] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/finder_action.h\n'}
+[0.267689] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[0.267736] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.267783] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/library_path.sh\n'}
+[0.267831] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/library_path.dsv\n'}
+[0.267926] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_generator_c.so\n'}
+[0.267975] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core\n'}
+[0.268023] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action\n'}
+[0.268070] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[0.268118] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_fastrtps_c.h\n'}
+[0.268166] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[0.268213] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.268266] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_typesupport_fastrtps_c.so\n'}
+[0.268316] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core\n'}
+[0.268447] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action\n'}
+[0.268489] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[0.268536] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__traits.hpp\n'}
+[0.268584] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__builder.hpp\n'}
+[0.268631] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.hpp\n'}
+[0.268678] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__struct.hpp\n'}
+[0.268745] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/finder_action.hpp\n'}
+[0.268792] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[0.268837] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[0.268883] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core\n'}
+[0.268928] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action\n'}
+[0.268973] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[0.269019] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/dds_fastrtps\n'}
+[0.269065] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.269113] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[0.269159] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.269247] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.269294] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core\n'}
+[0.269341] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action\n'}
+[0.269387] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[0.269435] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_introspection_c.h\n'}
+[0.269483] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.c\n'}
+[0.269531] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg\n'}
+[0.269578] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.269627] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_typesupport_introspection_c.so\n'}
+[0.269709] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_typesupport_c.so\n'}
+[0.269756] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core\n'}
+[0.269802] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action\n'}
+[0.269846] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail\n'}
+[0.269891] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__type_support.cpp\n'}
+[0.269936] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/drone_core/action/detail/finder_action__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.270012] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_typesupport_introspection_cpp.so\n'}
+[0.270054] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_typesupport_cpp.so\n'}
+[0.270094] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/pythonpath.sh\n'}
+[0.270134] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/pythonpath.dsv\n'}
+[0.270174] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info\n'}
+[0.270221] (drone_core) StdoutLine: {'line': b'-- Installing: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/dependency_links.txt\n'}
+[0.270269] (drone_core) StdoutLine: {'line': b'-- Installing: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/SOURCES.txt\n'}
+[0.270310] (drone_core) StdoutLine: {'line': b'-- Installing: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/top_level.txt\n'}
+[0.270350] (drone_core) StdoutLine: {'line': b'-- Installing: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core-0.0.1-py3.12.egg-info/PKG-INFO\n'}
+[0.270391] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core\n'}
+[0.270431] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/action\n'}
+[0.270471] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/action/_finder_action.py\n'}
+[0.270512] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/action/_finder_action_s.c\n'}
+[0.270552] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/action/__init__.py\n'}
+[0.270592] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so\n'}
+[0.270633] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[0.270673] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_c.c\n'}
+[0.270713] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so\n'}
+[0.270753] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_c.so\n'}
+[0.270793] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/_drone_core_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[0.270832] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/__init__.py\n'}
+[0.290580] (drone_core) StdoutLine: {'line': b"Listing '/home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core'...\n"}
+[0.290629] (drone_core) StdoutLine: {'line': b"Listing '/home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/action'...\n"}
+[0.293524] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_fastrtps_c.so\n'}
+[0.293619] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_introspection_c.so\n'}
+[0.293701] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/python3.12/site-packages/drone_core/drone_core_s__rosidl_typesupport_c.so\n'}
+[0.293783] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/libdrone_core__rosidl_generator_py.so\n'}
+[0.293838] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/action/FinderAction.idl\n'}
+[0.293908] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/action/FinderAction.action\n'}
+[0.293943] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include\n'}
+[0.293980] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core\n'}
+[0.294016] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/utils.h\n'}
+[0.294053] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/include/drone_core/manipulator.h\n'}
+[0.294106] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/drone_core/libdrone_core_lib.so\n'}
+[0.294185] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/lib/drone_core/finder\n'}
+[0.294224] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core//config\n'}
+[0.294264] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core//config/params.yaml\n'}
+[0.294301] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/ament_index/resource_index/package_run_dependencies/drone_core\n'}
+[0.294338] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/ament_index/resource_index/parent_prefix_path/drone_core\n'}
+[0.294375] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/ament_prefix_path.sh\n'}
+[0.294410] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/ament_prefix_path.dsv\n'}
+[0.294484] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/path.sh\n'}
+[0.294520] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/environment/path.dsv\n'}
+[0.294556] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/local_setup.bash\n'}
+[0.294592] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/local_setup.sh\n'}
+[0.294630] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/local_setup.zsh\n'}
+[0.294666] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/local_setup.dsv\n'}
+[0.294702] (drone_core) StdoutLine: {'line': b'-- Installing: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/package.dsv\n'}
+[0.294738] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/ament_index/resource_index/packages/drone_core\n'}
+[0.294774] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cExport.cmake\n'}
+[0.294812] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.294848] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[0.294884] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[0.294936] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_cppExport.cmake\n'}
+[0.295023] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[0.295059] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[0.295092] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.295124] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.295155] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cExport.cmake\n'}
+[0.295189] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.295221] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.295259] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.295291] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cppExport.cmake\n'}
+[0.295323] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_core__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.295354] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_pyExport.cmake\n'}
+[0.295386] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/export_drone_core__rosidl_generator_pyExport-noconfig.cmake\n'}
+[0.295418] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/rosidl_cmake-extras.cmake\n'}
+[0.295450] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.295482] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.295513] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.295545] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.295577] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.295610] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.295644] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_coreConfig.cmake\n'}
+[0.295676] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/cmake/drone_coreConfig-version.cmake\n'}
+[0.295708] (drone_core) StdoutLine: {'line': b'-- Up-to-date: /home/snekkie/DroneBoys/install/drone_core/share/drone_core/package.xml\n'}
+[0.296322] (drone_core) CommandEnded: {'returncode': 0}
+[0.299381] (-) TimerEvent: {}
+[0.306970] (drone_core) JobEnded: {'identifier': 'drone_core', 'rc': 0}
+[0.307448] (-) EventReactorShutdown: {}

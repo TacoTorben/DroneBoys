@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "drone_core__py",
+		"source" : "/home/snekkie/DroneBoys/build/drone_core/drone_core__py"
+	}
+}
