@@ -96,7 +96,7 @@ bool LoadTextureFromFile(const char* file_name, GLuint* out_texture, int* out_wi
 
 cv::Mat fetch_image(const std::string& filename) {
     fs::path current = fs::current_path();
-    fs::path inputPath = current.parent_path() / "images" / "input" / filename;
+    fs::path inputPath = current.parent_path() / "drone_boys_images" / "input" / filename;
 
     cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
     if (image.empty()) {
@@ -109,7 +109,7 @@ cv::Mat fetch_image(const std::string& filename) {
 
 cv::Mat fetch_image_output(const std::string& filename) {
     fs::path current = fs::current_path();
-    fs::path inputPath = current.parent_path() / "images" / "output" / filename;
+    fs::path inputPath = current.parent_path() / "drone_boys_images" / "output" / filename;
 
     cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
     if (image.empty()) {

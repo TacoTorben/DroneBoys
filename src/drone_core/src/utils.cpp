@@ -1,7 +1,10 @@
 #include "drone_core/utils.h"
-
-
 #include <filesystem>
+#include <opencv2/opencv.hpp>
+#include <iostream>
+
+
+
 
 using namespace std;
 using namespace cv;
@@ -11,7 +14,7 @@ namespace fs = std::filesystem;
     
 cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
     fs::path current = fs::current_path();
-    fs::path inputPath = current.parent_path() / "images" / "input" / filename;
+    fs::path inputPath = current.parent_path() / "drone_boys_images" / "input" / filename;
 
     cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
     if (image.empty()) {
@@ -109,9 +112,6 @@ cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
 
     
     
-#include <filesystem>
-#include <opencv2/opencv.hpp>
-#include <iostream>
 
 namespace fs = std::filesystem;
 
@@ -120,7 +120,7 @@ void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string
     fs::path current = fs::current_path();
 
     // Go one level up and then into images/output
-    fs::path outputPath = current.parent_path() / "images" / "output";
+    fs::path outputPath = current.parent_path() / "drone_boys_images" / "output";
 
     // Ensure the directory exists
     if (!fs::exists(outputPath)) {

@@ -1,27 +1,14 @@
 
 ### Before use:
-1. Make sure you have ros2 jazzy installed
-    https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
-
-2. Install missing dependencies:
-```bash 
-    sudo apt install python3-rosdep
-    sudo rosdep init || true  
-    rosdep update
-    rosdep install --from-paths src --ignore-src -r -y
-```
-3. Setup image folder
-In home folder (or where ever your ros2 workspace folder currently is)
-Run:
+1. Make setup script an executrable:
 ```bash
-    mkdir images
-    cd images
-    mkdir input
-    mkdir output
+chmod +x setup.sh
 ```
-4. Save images needed inside the input folder
-
-
+2. Run setup
+```bash
+./setup.sh
+```
+3. Insert images into folder created in folder called "drone_boys_images"
 ### User guide:
 
 *** First open 1 terminal write: ***

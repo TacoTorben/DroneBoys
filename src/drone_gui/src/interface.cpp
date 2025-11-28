@@ -86,7 +86,7 @@ void ros_thread_function(std::shared_ptr<GuiClient> node, std::atomic<bool> & ru
 //---------------- End ROS2 Action Client --------------------
 int main() {
     fs::path current = fs::current_path();
-    std::string package_share_dir = current.parent_path() / "images";
+    std::string package_share_dir = current.parent_path() / "drone_boys_images";
     ImVec2 button_size(110,20);
         // Load image
 
