@@ -204,30 +204,30 @@ private:
                 int img_numb = goal->target_pose[0]; 
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                 image = pipeline.compression(image);
                 image = field_coloredshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
+                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                 result->success = true;
             }
             if (goal->command_type == "sky") {
                 int img_numb = goal->target_pose[0]; 
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                 image = pipeline.compression(image);
                 image = sky_sorted_coloredshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
+                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                 result->success = true;
             }
             if (goal->command_type == "dark") {
                 int img_numb = goal->target_pose[0]; 
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                 image = pipeline.compression(image);
                 image =dark_colorshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
+                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                 result->success = true;
             }
         } catch (const std::exception &e) {

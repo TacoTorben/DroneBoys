@@ -141,7 +141,7 @@ int main() {
         std::filesystem::path path_main =
             std::filesystem::path(package_share_dir) /
             "input" /
-            (std::to_string(current_image) + ".jpeg");
+            (std::to_string(current_image) + ".JPG");
 
 
         LoadTextureFromFile(
@@ -155,7 +155,7 @@ int main() {
         std::filesystem::path path_alt =
             std::filesystem::path(package_share_dir) /
             "output" /
-            (std::to_string(current_image) + ".jpeg");
+            (std::to_string(current_image) + ".JPG");
 
         LoadTextureFromFile(
             path_alt.string().c_str(),
@@ -198,11 +198,11 @@ int main() {
                 if (current_image <  max_images) {
                     current_image++;
                     std::filesystem::path path_main =
-                    std::filesystem::path(package_share_dir) / "input" / (std::to_string(current_image) + ".jpeg");
+                    std::filesystem::path(package_share_dir) / "input" / (std::to_string(current_image) + ".JPG");
                      LoadTextureFromFile(path_main.string().c_str(), &my_image_texture, &my_image_width, &my_image_height);
                                             // reload alternate image
                     std::filesystem::path path_alt =
-                    std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".jpeg");
+                    std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".JPG");
                     LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);
                 }   
             }   
@@ -210,11 +210,11 @@ int main() {
                 if (current_image > 1) {
                     current_image--;
                     std::filesystem::path path_main =
-                    std::filesystem::path(package_share_dir) / "input" / (std::to_string(current_image) + ".jpeg");
+                    std::filesystem::path(package_share_dir) / "input" / (std::to_string(current_image) + ".JPG");
                     LoadTextureFromFile(path_main.string().c_str(), &my_image_texture, &my_image_width, &my_image_height);
                     // reload alternate image
                     std::filesystem::path path_alt =
-                    std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".jpeg");
+                    std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".JPG");
                     LoadTextureFromFile(path_alt.string().c_str(), &my_alt_texture, &my_alt_width, &my_alt_height);}
 
             }

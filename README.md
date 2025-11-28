@@ -9,6 +9,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 3. Insert images into folder created in folder called "drone_boys_images"
+Remember, image inputs are numbers
 ### User guide:
 
 *** First open 1 terminal write: ***
@@ -40,3 +41,6 @@ ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_ty
 ```bash
 ros2 run drone_gui gui_app 
 ```
+
+User guide for interface not included, good luck
+
