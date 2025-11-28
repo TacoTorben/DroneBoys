@@ -6,7 +6,7 @@ if image is None:
     raise SystemExit("Failed to load image.")
 img = cv2.GaussianBlur(image, (5, 5), 0)
 
-while True:
+while :
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     
     red_lower1 = np.array([0, 100, 100])
