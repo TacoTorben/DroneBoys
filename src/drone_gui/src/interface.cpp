@@ -199,7 +199,7 @@ int main() {
                     current_image++;
                     std::filesystem::path path_main =
                     std::filesystem::path(package_share_dir) / "input" / (std::to_string(current_image) + ".jpeg");
-                    
+                     LoadTextureFromFile(path_main.string().c_str(), &my_image_texture, &my_image_width, &my_image_height);
                                             // reload alternate image
                     std::filesystem::path path_alt =
                     std::filesystem::path(package_share_dir) / "output" / (std::to_string(current_image) + ".jpeg");
@@ -222,8 +222,8 @@ int main() {
                 node->send_command("field", {1, 2, 3});
 
             }   
-            if (ImGui::Button("method 2", button_size))  {;
-                printf("wow this sure is a temporary print fuction");
+            if (ImGui::Button("Dark", button_size))  {;
+                node->send_command("dark", {1, 2, 3});
 
 
             }

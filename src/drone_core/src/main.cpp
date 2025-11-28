@@ -205,6 +205,7 @@ private:
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
+                image = pipeline.compression(image);
                 image = field_coloredshirt(image, cfg);
                 pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
@@ -214,7 +215,8 @@ private:
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
-                sky_sorted_coloredshirt(image, cfg);
+                image = pipeline.compression(image);
+                image = sky_sorted_coloredshirt(image, cfg);
                 pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
             }
@@ -223,7 +225,8 @@ private:
                 int output_numb = goal->target_pose[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".jpeg");
-                dark_colorshirt(image, cfg);
+                image = pipeline.compression(image);
+                image =dark_colorshirt(image, cfg);
                 pipeline.save_image(image, std::to_string(output_numb) + ".jpeg");
                 result->success = true;
             }

@@ -78,6 +78,8 @@ class ImageProcessingPipeline {
 
         void save_image(const cv::Mat& image, const std::string& filename);
 
+        cv::Mat compression(const cv::Mat& inputImage);
+
 };
 void tuning(const cv::Mat& inputImage, int mode = 0);
 

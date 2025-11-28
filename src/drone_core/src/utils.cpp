@@ -111,9 +111,20 @@ cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
     }
 
     
-    
+cv::Mat ImageProcessingPipeline::compression(const cv::Mat& inputImage){
+    double scaleFactor = 0.204;
+    cv::Mat resized_image;
+    cv::resize(inputImage, resized_image, cv::Size(), scaleFactor, scaleFactor, cv::INTER_LINEAR);
+    std::vector<uchar> buf;
+    std::vector<int> params = {
+    cv::IMWRITE_JPEG_QUALITY, 30   // try 20–40
+    };
 
-namespace fs = std::filesystem;
+    cv::imencode(".jpg", resized_image, buf, params);
+    cv::Mat compressed = cv::imdecode(buf, cv::IMREAD_COLOR);
+    cv::GaussianBlur(compressed, compressed, cv::Size(3,3), 0.8);
+    return compressed;
+}
 
 void ImageProcessingPipeline::save_image(const cv::Mat& image, const std::string& filename) {
     // Get current working directory (where the node runs)
