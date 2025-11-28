@@ -14,6 +14,7 @@ namespace fs = std::filesystem;
     
 cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
     fs::path current = fs::current_path();
+
     fs::path inputPath = current.parent_path() / "drone_boys_images" / "input" / filename;
 
     cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);

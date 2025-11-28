@@ -34,7 +34,7 @@ ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_ty
 ```
     the 'field' is the action. So far we have 'field', 'sky', 'dark'
 
-    target pose: [1,1] is name of input image and name of output image (without .jpeg)
+    target pose: [1,1] is name of input image and name of output image (without .JPG)
     input images are those from images folder, and output you decise yourself (but only a number)
 
 *** To run the interface use: ***

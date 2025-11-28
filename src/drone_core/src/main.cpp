@@ -230,6 +230,15 @@ private:
                 pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                 result->success = true;
             }
+            if (goal->command_type = "test"){
+                int map_numb = goal->target_pose[0];
+                case map_numb:
+                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG"); //!!! NEED TO CHANGE FECTH FUNCTION
+                image = pipeline.compression(image);
+                image = field_coloredshirt(image, cfg);
+                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
+                result->success = true;
+            }
         } catch (const std::exception &e) {
             RCLCPP_ERROR(get_logger(), "Exception: %s", e.what());
             result->success = false;

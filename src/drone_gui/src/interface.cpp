@@ -219,12 +219,11 @@ int main() {
 
             }
              if (ImGui::Button("F", button_size)) {;
-                node->send_command("field", {1, 2, 3});
+                node->send_command("field", {current_image, current_image});
 
             }   
             if (ImGui::Button("Dark", button_size))  {;
-                node->send_command("dark", {1, 2, 3});
-
+                node->send_command("dark", {current_image, current_image + 100});
 
             }
             ImGui::SetNextItemWidth(20.0f);
