@@ -233,6 +233,7 @@ private:
             if (goal->command_type = "test"){
                 int map_numb = goal->target_pose[0];
                 case map_numb:
+                //while loop around here woooooW
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG"); //!!! NEED TO CHANGE FECTH FUNCTION
                 image = pipeline.compression(image);
                 image = field_coloredshirt(image, cfg);
