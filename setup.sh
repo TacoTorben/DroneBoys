@@ -49,26 +49,38 @@ echo "ℹ️ ImGui is header-only and must be included in your project (not apt)
 echo ""
 echo "📦 Installing ROS 2 Jazzy core & build tools..."
 
+
+
 sudo apt install -y \
-    ros-jazzy-ros-base \
-    ros-jazzy-ament-cmake \
     ros-jazzy-rclcpp \
     ros-jazzy-rclcpp-action \
     ros-jazzy-std-msgs \
     ros-jazzy-ament-index-cpp \
     ros-jazzy-rosidl-default-runtime \
+    ros-jazzy-ament-cmake \
+    ros-jazzy-ros-base \
     python3-colcon-common-extensions \
     python3-rosdep
 
+
+
 # Initialize rosdep (safe to run multiple times)
 sudo rosdep init || true
-rosdep update || true
+rosdep update 
 
 # Source ROS 2 now and for future shells
 if ! grep -q "source /opt/ros/jazzy/setup.bash" ~/.bashrc; then
     echo 'source /opt/ros/jazzy/setup.bash' >> ~/.bashrc
 fi
 source /opt/ros/jazzy/setup.bash
+
+
+
+if [[ -d "src" ]]; then
+    echo "📦 Installing package dependencies via rosdep..."
+    rosdep install --from-paths src --ignore-src --rosdistro jazzy -y
+fi
+
 
 echo "✔️ ROS 2 core & build tooling installed and sourced."
 
