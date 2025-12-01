@@ -1,6 +1,7 @@
 # Goal
-string command_type # "field"
-int32[] target_pose 
+string method # "your_mom" "your_sister"
+string command_type # "field" "sky" "dark
+int32[] image_info 
 
 ---
 # Result

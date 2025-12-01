@@ -201,8 +201,8 @@ private:
 
         try {
             if (goal->command_type == "field") {
-                int img_numb = goal->target_pose[0]; 
-                int output_numb = goal->target_pose[1];
+                int img_numb = goal->image_info[0]; 
+                int output_numb = goal->image_info[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                 image = pipeline.compression(image);
@@ -211,8 +211,8 @@ private:
                 result->success = true;
             }
             if (goal->command_type == "sky") {
-                int img_numb = goal->target_pose[0]; 
-                int output_numb = goal->target_pose[1];
+                int img_numb = goal->image_info[0]; 
+                int output_numb = goal->image_info[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                 image = pipeline.compression(image);
@@ -221,8 +221,8 @@ private:
                 result->success = true;
             }
             if (goal->command_type == "dark") {
-                int img_numb = goal->target_pose[0]; 
-                int output_numb = goal->target_pose[1];
+                int img_numb = goal->image_info[0]; 
+                int output_numb = goal->image_info[1];
                 RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                 cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                 image = pipeline.compression(image);
@@ -230,16 +230,16 @@ private:
                 pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                 result->success = true;
             }
-            if (goal->command_type = "test"){
-                int map_numb = goal->target_pose[0];
-                case map_numb:
-                //while loop around here woooooW
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG"); //!!! NEED TO CHANGE FECTH FUNCTION
-                image = pipeline.compression(image);
-                image = field_coloredshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
-                result->success = true;
-            }
+            //if (goal->command_type = "test"){
+            //    int map_numb = goal->image_info[0];
+            //    case map_numb:
+            //    //while loop around here woooooW
+            //    cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG"); //!!! NEED TO CHANGE FECTH FUNCTION
+            //    image = pipeline.compression(image);
+            //    image = field_coloredshirt(image, cfg);
+            //    pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
+            //    result->success = true;
+            //}
         } catch (const std::exception &e) {
             RCLCPP_ERROR(get_logger(), "Exception: %s", e.what());
             result->success = false;

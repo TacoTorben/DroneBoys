@@ -36,7 +36,7 @@ public:
         );
     }
 
-    void send_command(const std::string &command, std::vector<int32_t> target_pose)
+    void send_command(const std::string &command, std::vector<int32_t> image_info)
     {
         if (!client_->wait_for_action_server(std::chrono::seconds(2)))
         {
@@ -46,8 +46,8 @@ public:
 
         auto goal_msg = FinderAction::Goal();
         goal_msg.command_type = command;
-        goal_msg.target_pose = target_pose;
-
+        goal_msg.image_info = image_info;
+        
         RCLCPP_INFO(get_logger(), "Sending goal: %s", command.c_str());
 
         auto options = rclcpp_action::Client<FinderAction>::SendGoalOptions();

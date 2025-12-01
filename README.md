@@ -30,7 +30,7 @@ source install/setup.bash
 ```
 *** Then for every action: ***
 ```bash
-ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_type: 'field', target_pose: [1,1]}"
+ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_type: 'field', image_info: [1,1]}"
 ```
     the 'field' is the action. So far we have 'field', 'sky', 'dark'
 
