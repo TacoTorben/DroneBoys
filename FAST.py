@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-saturation_scale = 2
+saturation_scale = 8
 gamma = 0.5
 kernel_size = 1
 
@@ -66,6 +66,7 @@ def compression(input_image):
 
     return compressed
 
+#In order to find black clothing, we increase the multiple parameters of the image:
 def saturation_increase(self, input_image, saturation_scale):
     hsv_image = cv2.cvtColor(input_image, cv2.COLOR_BGR2HSV)
     h, s, v = cv2.split(hsv_image)
@@ -93,7 +94,6 @@ def gamma_correction(self, input_image, gamma):
     output_image = cv2.LUT(input_image, lut)
     return output_image
 
-
 def median_filter(self, input_image, kernel_size):
     # Apply median blur
     output_image = cv2.medianBlur(input_image, kernel_size)
@@ -114,10 +114,10 @@ if __name__ == "__main__":
     if img is None:
         raise SystemExit("Failed to load image.")
     img = compression(img)
-    img = saturation_increase(None, img, saturation_scale)
-    img = gamma_correction(None, img, gamma)
-    img = median_filter(None, img, kernel_size)
-    img = bilateral_filter(None, img, d=9, sigma_color=75, sigma_space=75)
+    #img = saturation_increase(None, img, saturation_scale)
+    #img = gamma_correction(None, img, gamma)
+    #img = median_filter(None, img, kernel_size)
+    #img = bilateral_filter(None, img, d=9, sigma_color=75, sigma_space=75)
     img = cv2.GaussianBlur(img, (5, 5), 0)
     keypoints, output_image, circle_image = fast_detector(img)
     #resize = cv2.resize(output_image, (1600, 1200))
@@ -129,3 +129,14 @@ if __name__ == "__main__":
     cv2.imshow("FAST Keypoints + Enclosing Circle", resize2)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+
+
+    """
+    Blackshirt:
+    Compression -> Saturation Increase (8) -> Gamma Correction (0.5) -> Bilateral Filter (9,75,75)
+
+    Coloredshirt:
+    Compression -> Gaussian Blur (5x5)
+    """
+    
