@@ -12,6 +12,7 @@
 
 using namespace std;
 using namespace cv;
+namespace fs = std::filesystem;
 using DroneCommand = drone_core::action::FinderAction;
 using GoalHandleDroneCommand = rclcpp_action::ServerGoalHandle<DroneCommand>;
 ImageProcessingPipeline pipeline;
@@ -25,7 +26,8 @@ cv::Point nonBackground_point; // For storing non-background point in blob detec
 cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
     /**
     Takes in an image, do a series of processing steps to detect red shirts in a field setting.
-    First adjusts saturation, brightness/contrast, enhances red channel, applies median filtering,
+    First adjusts saturation, brightness/contrast, enhances
+     red channel, applies median filtering,
     performs Canny edge detection, morphological operations, and blob detection. Finally, draws circles around detected blobs on the original image.
     */
     int radius = 15;
@@ -200,36 +202,107 @@ private:
         auto result = std::make_shared<DroneCommand::Result>();
 
         try {
-            if (goal->command_type == "field") {
-                int img_numb = goal->image_info[0]; 
-                int output_numb = goal->image_info[1];
-                RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
-                image = pipeline.compression(image);
-                image = field_coloredshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
-                result->success = true;
+            if (goal->method == "test") {
+                if (goal->command_type == "field") {
+                    int filename_number = 0;
+                    for(int i = 0; i < 5; i++) {
+                        for(int j = 1; j <= 10; j++) {
+
+                            try {
+                                fs::path current = fs::current_path();
+
+                                fs::path inputPath = current.parent_path() / "drone_boys_images" / "test" / std::to_string(i) / (std::to_string(j) + ".JPG");
+                                cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
+
+                                if (image.empty()) {
+                                    continue;
+                                }
+
+                                RCLCPP_INFO(get_logger(), "Processing image: %s", inputPath.string().c_str());
+
+                                image = pipeline.compression(image);
+                                cv::Mat processed_image =dark_colorshirt(image, cfg);
+                                fs::path outputPath = current.parent_path() / "drone_boys_images" / "test" / "output";
+                                fs::path filePath = outputPath / (std::to_string(filename_number) + ".JPG");
+                                cv::imwrite(filePath.string(), image);
+                                filename_number++;
+                            }
+                            catch(const std::exception &e) {
+                                continue;
+                            }
+
+                        } 
+                    }     
+
+                } 
+                 if (goal->command_type == "dark") {
+                    int filename_number = 0;
+                    for(int i = 0; i < 5; i++) {
+                        for(int j = 1; j <= 10; j++) {
+
+                            try {
+                                fs::path current = fs::current_path();
+
+                                fs::path inputPath = current.parent_path() / "drone_boys_images" / "test" / std::to_string(i) / (std::to_string(j) + ".JPG");
+                                cv::Mat image = cv::imread(inputPath.string(), cv::IMREAD_COLOR);
+
+                                if (image.empty()) {
+                                    continue;
+                                }
+
+                                RCLCPP_INFO(get_logger(), "Processing image: %s", inputPath.string().c_str());
+
+                                image = pipeline.compression(image);
+                                cv::Mat processed_image = field_coloredshirt(image, cfg);
+                                fs::path outputPath = current.parent_path() / "drone_boys_images" / "test" / "output";
+                                fs::path filePath = outputPath / (std::to_string(filename_number) + ".JPG");
+                                cv::imwrite(filePath.string(), image);
+                                filename_number++;
+                            }
+                            catch(const std::exception &e) {
+                                continue;
+                            }
+
+                        } 
+                    }     
+
+                } 
+            } 
+
+            
+            if (goal->method == "training") {
+                if (goal->command_type == "field") {
+                    int img_numb = goal->image_info[0]; 
+                    int output_numb = goal->image_info[1];
+                    RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
+                    cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
+                    image = pipeline.compression(image);
+                    image = field_coloredshirt(image, cfg);
+                    pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
+                    result->success = true;
+                }
+                if (goal->command_type == "sky") {
+                    int img_numb = goal->image_info[0]; 
+                    int output_numb = goal->image_info[1];
+                    RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
+                    cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
+                    image = pipeline.compression(image);
+                    image = sky_sorted_coloredshirt(image, cfg);
+                    pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
+                    result->success = true;
+                }
+                if (goal->command_type == "dark") {
+                    int img_numb = goal->image_info[0]; 
+                    int output_numb = goal->image_info[1];
+                    RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
+                    cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
+                    image = pipeline.compression(image);
+                    image =dark_colorshirt(image, cfg);
+                    pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
+                    result->success = true;
+                }
             }
-            if (goal->command_type == "sky") {
-                int img_numb = goal->image_info[0]; 
-                int output_numb = goal->image_info[1];
-                RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
-                image = pipeline.compression(image);
-                image = sky_sorted_coloredshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
-                result->success = true;
-            }
-            if (goal->command_type == "dark") {
-                int img_numb = goal->image_info[0]; 
-                int output_numb = goal->image_info[1];
-                RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
-                cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
-                image = pipeline.compression(image);
-                image =dark_colorshirt(image, cfg);
-                pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
-                result->success = true;
-            }
+            
             //if (goal->command_type = "test"){
             //    int map_numb = goal->image_info[0];
             //    case map_numb:

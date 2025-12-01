@@ -130,3 +130,4 @@ double determine_intensity(const cv::Mat& inputImage) {
     cv::Scalar meanIntensity = cv::mean(inputImage);
     return meanIntensity[0];
 }
+

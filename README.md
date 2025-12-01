@@ -30,17 +30,26 @@ source install/setup.bash
 ```
 *** Then for every action: ***
 ```bash
-ros2 action send_goal /drone_command drone_core/action/FinderAction "{command_type: 'field', image_info: [1,1]}"
+ros2 action send_goal /drone_command drone_core/action/FinderAction "{method: 'training', command_type: 'field', image_info: [1,1]}"
 ```
-    the 'field' is the action. So far we have 'field', 'sky', 'dark'
 
-    target pose: [1,1] is name of input image and name of output image (without .JPG)
-    input images are those from images folder, and output you decise yourself (but only a number)
+or:
+
+```bash
+ros2 action send_goal /drone_command drone_core/action/FinderAction "{method: 'test',command_type: 'field', image_info: []}"
+```
+    The 'method' is for either training or testing. The testing method goes into the test folder and takes all images inside and puts it into a output folder inside. The 'training' method takes one image at a time.
+
+    The 'field' is the program we run. So far we have 'field', 'sky', 'dark'
+
+    image_info: [1,1] is name of input image and name of output image (without .JPG)
+I   Input images are those from images folder, and output you decise yourself (but only a number)
+    This only needs number inputs when used in training.
 
 *** To run the interface use: ***
 ```bash
 ros2 run drone_gui gui_app 
-```
+```w
 
 User guide for interface not included, good luck
 

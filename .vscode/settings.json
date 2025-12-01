@@ -47,6 +47,7 @@
         "ostream": "cpp",
         "__nullptr": "cpp",
         "filesystem": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "functional": "cpp"
     }
 }
