@@ -29,6 +29,9 @@ brightness_contrast:
 saturation:
    saturationScale: 8
    saturationScale_dark: 2
+fast_parameters:
+   threshold: 60
+   nonmaxSuppression: true
 
 
 #Best parameters found so far for jesper2.jpeg (red shirt)

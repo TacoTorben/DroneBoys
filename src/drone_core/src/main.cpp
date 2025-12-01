@@ -22,6 +22,67 @@ ColorManipulator colorManipulator;
 
 cv::Point nonBackground_point; // For storing non-background point in blob detection
 
+cv::Mat FAST_detector(cv::Mat& image, const Config& cfg, int fast_blackshirt) {
+    int saturationScale = 8;
+    float fast_gamma_value = 0.5;
+    image = noiseReducer.gausian_filter(image, 3, 0.8, 0.8);
+    if (fast_blackshirt)
+    {
+        cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
+        cv::Mat gammaCorrectedImage = noiseReducer.gamma_correction(saturatedImage, fast_gamma_value);
+        cv::Mat image = noiseReducer.bilateral_filter(gammaCorrectedImage, 9, 75, 75);
+        cout << "FAST Blackshirt processing" << endl;
+    }
+    else {
+        image = noiseReducer.gausian_filter(image, 5, 0, 0);
+    }
+
+    // Step 2: FAST detector setup
+    auto detector = cv::FastFeatureDetector::create(
+        cfg.fast_parameters.threshold,
+        cfg.fast_parameters.nonmaxSuppression
+    );
+
+    // Step 3: Detect keypoints
+    std::vector<cv::KeyPoint> keypoints;
+    detector->detect(image, keypoints);
+
+    // Step 4: Draw keypoints
+    cv::Mat output;
+    cv::drawKeypoints(image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+
+    // Step 5: If we have keypoints, compute minimal enclosing circle
+    if (!keypoints.empty()) {
+
+        // Extract points into a vector<cv::Point2f>
+        std::vector<cv::Point2f> pts;
+        pts.reserve(keypoints.size());
+        for (const auto &kp : keypoints) {
+            pts.push_back(kp.pt);
+        }
+
+        // Compute minimal enclosing circle
+        cv::Point2f center_f;
+        float radius_f;
+        cv::minEnclosingCircle(pts, center_f, radius_f);
+
+        // Convert to int for drawing
+        cv::Point center((int)center_f.x, (int)center_f.y);
+        int radius = (int)radius_f;
+
+        // Draw the circle (green)
+        cv::circle(output, center, radius, cv::Scalar(0, 255, 0), 2);
+
+        // Draw center point (blue)
+        cv::circle(output, center, 3, cv::Scalar(255, 0, 0), -1);
+    }
+
+    
+    return output;
+}
+
+
+
 
 cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
     /**
@@ -178,7 +239,7 @@ private:
         const rclcpp_action::GoalUUID &,
         std::shared_ptr<const DroneCommand::Goal> goal)
     {
-        static const std::vector<std::string> allowed_commands = {"field", "sky", "dark"};
+        static const std::vector<std::string> allowed_commands = {"field", "sky", "dark", "fast"};
         RCLCPP_INFO(get_logger(), "Received goal request: %s", goal->command_type.c_str());
         if (std::find(allowed_commands.begin(), allowed_commands.end(), goal->command_type) == allowed_commands.end()) {
             RCLCPP_WARN(get_logger(), "Rejected invalid command: %s", goal->command_type.c_str());
@@ -298,6 +359,17 @@ private:
                     cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                     image = pipeline.compression(image);
                     image =dark_colorshirt(image, cfg);
+                    pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
+                    result->success = true;
+                }
+                if (goal->command_type == "fast") {
+                    int img_numb = goal->image_info[0]; 
+                    int output_numb = goal->image_info[1];
+                    int fast_blackshirt = goal->image_info[2];
+                    RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
+                    cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
+                    image = pipeline.compression(image);
+                    image =FAST_detector(image, cfg, fast_blackshirt);
                     pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                     result->success = true;
                 }

@@ -61,6 +61,9 @@ cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
         fs["median_filter"]["kernel_size"] >> cfg.median_filter.kernel_size;
         fs["median_filter"]["kernel_size_dark"] >> cfg.median_filter.kernel_size_dark;
 
+        fs["fast_parameters"]["threshold"] >> cfg.fast_parameters.threshold;
+        fs["fast_parameters"]["nonmaxSuppression"] >> cfg.fast_parameters.nonmaxSuppression;
+
         fs.release();
         return cfg;
     }

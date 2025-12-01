@@ -43,6 +43,11 @@ struct MedianFilterConfig {
     int kernel_size_dark;
 };
 
+struct FastParameters {
+    int threshold;
+    bool nonmaxSuppression;
+};
+
 
 struct Config {
     DenoiseConfig denoise;
@@ -51,6 +56,7 @@ struct Config {
     BilateralFilterConfig bilateral_filter;
     BrightnessContrastConfig brightness_contrast;
     MedianFilterConfig median_filter;
+    FastParameters fast_parameters;
 };
 
 

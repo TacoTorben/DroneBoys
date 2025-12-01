@@ -13,6 +13,8 @@ class NoiseReducer {
 
         cv::Mat bilateral_filter(const cv::Mat& inputImage, int d, double sigmaColor, double sigmaSpace);
 
+        cv::Mat gausian_filter(const cv::Mat& inputImage, int kernelSize, double sigmaX, double sigmaY);
+
 };
 
 class MorphologyProcessor {

@@ -41,7 +41,11 @@ cv:: Mat NoiseReducer::bilateral_filter(const cv::Mat& inputImage, int d, double
 }
 
 
-
+cv::Mat NoiseReducer::gausian_filter(const cv::Mat& inputImage, int kernelSize, double sigmaX, double sigmaY) {
+    cv::Mat outputImage;
+    cv::GaussianBlur(inputImage, outputImage, cv::Size(kernelSize, kernelSize), sigmaX, sigmaY);
+    return outputImage;
+}
 
 
 cv::Mat canny_edge_detection(const cv::Mat& inputImage, double lowThreshold, double highThreshold) {
