@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <opencv2/opencv.hpp>
-
+#include <opencv2/ml.hpp>
 using namespace cv;
 
 struct CannyParameters {
@@ -73,3 +73,4 @@ class ImageProcessingPipeline {
 };
 void tuning(const cv::Mat& inputImage, int mode = 0);
 
+bool sky_edge_found(const cv::Mat& image,  cv::Point2d centroid, int searchRadius);

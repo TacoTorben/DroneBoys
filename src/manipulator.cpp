@@ -21,6 +21,17 @@ cv::Mat NoiseReducer::median_filter(const cv::Mat& inputImage, int kernelSize) {
     return outputImage;
 }
 
+cv::Mat NoiseReducer::gamma_correction(const cv::Mat& inputImage, double gamma) {
+    cv::Mat outputImage;
+    CV_Assert(gamma >= 0); // Gamma should be non-negative
+    cv::Mat lut(1, 256, CV_8UC1);
+    for (int i = 0; i < 256; i++) {
+        lut.at<uchar>(i) = cv::saturate_cast<uchar>(pow(i / 255.0, gamma) * 255.0); // Build lookup table
+    }
+    cv::LUT(inputImage, lut, outputImage);
+    return outputImage;
+}
+
 cv::Mat canny_edge_detection(const cv::Mat& inputImage, double lowThreshold, double highThreshold) {
     cv::Mat edges;
     cv::Canny(inputImage, edges, lowThreshold, highThreshold);
@@ -79,13 +90,44 @@ cv::Mat ColorManipulator::saturation(const cv::Mat& inputImage, double saturatio
 
 cv::Mat ColorManipulator::BGR_channel_changer(const cv::Mat& inputImage, int channelIndex, double scale) {
     cv::Mat outputImage;
-    std::vector<cv::Mat> bgrChannels;
-    cv::split(inputImage, bgrChannels);
+    std::vector<cv::Mat> bgrChannels; // Vector to hold the B, G, R channels separately
+    cv::split(inputImage, bgrChannels); // 
 
     if (channelIndex >= 0 && channelIndex < 3) {
-        bgrChannels[channelIndex] *= scale;
+        bgrChannels[channelIndex] *= scale;  // Scale the specified channel
     }
 
     cv::merge(bgrChannels, outputImage);
     return outputImage;
+}
+
+cv:: Mat NoiseReducer::resize_image(const cv::Mat& inputImage, double scaleFactor) {
+    cv::Mat outputImage;
+    cv::resize(inputImage, outputImage, cv::Size(), scaleFactor, scaleFactor, cv::INTER_LINEAR);
+    return outputImage;
+}
+
+cv:: Mat NoiseReducer::bilateral_filter(const cv::Mat& inputImage, int d, double sigmaColor, double sigmaSpace) {
+    cv::Mat outputImage;
+    cv::bilateralFilter(inputImage, outputImage, d, sigmaColor, sigmaSpace);
+    return outputImage;
+}
+
+double determine_intensity(const cv::Mat& inputImage) {
+    /**
+    Determines the average intensity of the input grayscale image.
+    */
+    cv::Scalar meanIntensity = cv::mean(inputImage);
+    return meanIntensity[0];
+}
+
+double find_gamma(const cv::Mat& inputImage, double target_intensity, double average_intensity) {
+    /**
+    Finds the gamma value needed to adjust the image's average intensity to the target intensity.
+    */
+    if (average_intensity <= 0) {
+        return 1.0; // Avoid division by zero
+    }
+    double gamma = log(target_intensity / 255.0) / log(average_intensity / 255.0);
+    return gamma;
 }

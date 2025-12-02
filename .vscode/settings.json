@@ -56,6 +56,7 @@
         "stop_token": "cpp",
         "__mutex_base": "cpp",
         "bitset": "cpp",
-        "mutex": "cpp"
+        "mutex": "cpp",
+        "format": "cpp"
     }
 }

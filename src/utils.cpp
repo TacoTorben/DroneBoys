@@ -1,11 +1,15 @@
 #include "utils.h"
-
+#include "manipulator.h"
 
 #include <filesystem>
 
 using namespace std;
 using namespace cv;
 namespace fs = std::filesystem;
+extern ImageProcessingPipeline pipeline;
+extern NoiseReducer noiseReducer;
+extern MorphologyProcessor morphologyProcessor;
+extern ColorManipulator colorManipulator;
 
 
     cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
@@ -115,11 +119,6 @@ void tuning(const cv::Mat& inputImage, int mode) {
     }
 
     // Clone original to avoid modification
-    Mat image;
-    if (inputImage.channels() == 3)
-        cvtColor(inputImage, image, COLOR_BGR2GRAY);
-    else
-        image = inputImage.clone();
     int d = 9;
     int sigmaColor = 33;
     int sigmaSpace = 33;
@@ -131,68 +130,10 @@ void tuning(const cv::Mat& inputImage, int mode) {
     double alpha = contrast / 100.0; // Contrast control
     int beta = brightness - 100; 
     switch(mode) {
-        case 0: {
-            const string windowName = "Canny + Bilateral Filter Tuning";
-            namedWindow(windowName, WINDOW_AUTOSIZE);
-
-            createTrackbar("d", windowName, &d, 20);
-            createTrackbar("sigmaColor", windowName, &sigmaColor, 150);
-            createTrackbar("sigmaSpace", windowName, &sigmaSpace, 150);
-            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
-            createTrackbar("Canny High", windowName, &highThreshold, 255);
-
-            Mat bilateral, edges, output;
-
-            cout << "Adjust sliders. Press ESC to exit." << endl;
-
-            while (true) {
-                // --- Bilateral filter ---
-                bilateralFilter(image, bilateral, d > 0 ? d : 1, sigmaColor, sigmaSpace);
-            
-                // --- Canny ---
-                Canny(bilateral, edges, lowThreshold, highThreshold);
-            
-                // --- Combine for visualization ---
-                cvtColor(edges, output, COLOR_GRAY2BGR);
-                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
-            
-                imshow(windowName, output);
-            
-                // Exit on ESC key
-                int key = waitKey(30);
-                if (key == 27)  // ESC
-                    break;
-            }
-        
-            destroyWindow(windowName);
-            break;
-        }
-        case 1: {   
-            const string windowName = "Canny + median Filter Tuning";
-            namedWindow(windowName, WINDOW_AUTOSIZE);
-            createTrackbar("Median Kernel Size", windowName, &d, 20);
-            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
-            createTrackbar("Canny High", windowName, &highThreshold, 255);
-            Mat medianFiltered, edges, output;
-            cout << "Adjust sliders. Press ESC to exit." << endl;
-            while (true) {
-                // --- Median filter ---
-                medianBlur(image, medianFiltered, d % 2 == 0 ? d + 1 : d);
-                // --- Canny ---
-                Canny(medianFiltered, edges, lowThreshold, highThreshold);
-                // --- Combine for visualization ---
-                cvtColor(edges, output, COLOR_GRAY2BGR);
-                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
-                imshow(windowName, output);
-                // Exit on ESC key
-                int key = waitKey(30);
-                if (key == 27)  // ESC
-                    break;
-            }
-            destroyWindow(windowName);  
-            break;
-        }
+       
         case 2: {
+            Mat image = inputImage.clone();  // Local copy for this case
+            Mat bilateral;
             const string windowName = "brightness and contrast tuning";
             namedWindow(windowName, WINDOW_AUTOSIZE);
       
@@ -228,85 +169,207 @@ void tuning(const cv::Mat& inputImage, int mode) {
             break;
         } 
         case 3: {
-            const string windowName = "Saturation and Canny Tuning";
-            namedWindow(windowName, WINDOW_AUTOSIZE);
-            createTrackbar("Saturation Scale x100", windowName, &contrast, 300);
-            createTrackbar("Canny Low", windowName, &lowThreshold, 255);
-            createTrackbar("Canny High", windowName, &highThreshold, 255);
-            Mat hsvImage, saturatedImage, edges, output;
-            cout << "Adjust sliders. Press ESC to exit." << endl;
-            while (true) {
-                // Convert to HSV
-                cvtColor(inputImage, hsvImage, COLOR_BGR2HSV);
-                // Split channels
-                vector<Mat> hsvChannels;
-                split(hsvImage, hsvChannels);
-                // Adjust saturation
-                double saturationScale = contrast / 100.0;
-                hsvChannels[1] *= saturationScale;
-                // Merge back
-                merge(hsvChannels, hsvImage);
-                // Convert back to BGR
-                cvtColor(hsvImage, saturatedImage, COLOR_HSV2BGR);
-                // Convert to grayscale for Canny
-                Mat graySaturated;
-                cvtColor(saturatedImage, graySaturated, COLOR_BGR2GRAY);
-                // Apply Canny
-                Canny(graySaturated, edges, lowThreshold, highThreshold);
-                // Combine for visualization
-                cvtColor(edges, output, COLOR_GRAY2BGR);
-                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
-                imshow(windowName, output);
-                // Exit on ESC key
-                int key = waitKey(30);
-                if (key == 27)  // ESC
-                    break;
+            Mat image = inputImage.clone();  // Local copy for this case
 
-            
-        }
-            destroyWindow(windowName);
-            break;
-        } 
-        case 4: {
-            const string windowName = "BGR Channel Changer and Canny Tuning";
-            int scale = 10;           // initial trackbar position (center)
-            int scale_slider = 10;    // trackbar value (0–20)
-            const int scale_max = 20;
+            const string windowName = "Redshirt altitude test";
             namedWindow(windowName, WINDOW_AUTOSIZE);
-            createTrackbar("Channel Index (0-B,1-G,2-R)", windowName, &d, 2);
-            createTrackbar("Scale", windowName, &scale_slider, scale_max);
-            createTrackbar("Canny Low", windowName, &lowThreshold, 350);
-            createTrackbar("Canny High", windowName, &highThreshold, 350);
-            Mat changedChannelImage, edges, output;
-            cout << "Adjust sliders. Press ESC to exit." << endl;
-            while (true) {
-                // Split BGR channels
-                vector<Mat> bgrChannels;
-                split(inputImage, bgrChannels);
-                // Adjust specified channel
-                double scale = scale_slider / 10.0; // Scale from 0.0 to 2.0
-                if (d >= 0 && d < 3) {
-                    bgrChannels[d] *= scale;
+
+            // Trackbars (modern, safe)
+            createTrackbar("Canny Low",      windowName, NULL, 350);
+            createTrackbar("Canny High",     windowName, NULL, 350);
+            createTrackbar("Connectivity",   windowName, NULL, 8);
+
+            int kernel_size = 1;   // opening kernel
+            int radius = 15;       // preserved but unused
+            int saturationScale = 2; 
+            Mat edges, closedImage, openingImage;
+
+            while (true)
+            {
+                // --- Get trackbar values ---
+                int lowThreshold    = getTrackbarPos("Canny Low",    windowName);
+                int highThreshold   = getTrackbarPos("Canny High",   windowName);
+                int connectivity    = getTrackbarPos("Connectivity", windowName);
+               
+                if (connectivity < 1) connectivity = 1;
+                Mat resized = noiseReducer.resize_image(image, 0.204);
+                // --- Your processing pipeline (unchanged) ---
+                cv::Mat saturatedImage =
+                    colorManipulator.saturation(resized, saturationScale);  // FIXED to "2" permanently
+
+                cv::Mat brightness_contrast_image =
+                    colorManipulator.brightnees_contrast(
+                        saturatedImage,
+                        126,
+                        200);
+
+                cv::Mat RedEnhanced =
+                    colorManipulator.BGR_channel_changer(
+                        brightness_contrast_image, 0, 0);
+
+                cv::Mat medianFiltered =
+                    noiseReducer.median_filter(
+                        RedEnhanced,
+                        7);
+
+                // --- Canny (option B: returns Mat) ---
+                edges = canny_edge_detection(
+                            medianFiltered,
+                            lowThreshold,
+                            highThreshold);
+
+                if (edges.empty()) {
+                    std::cerr << "Edges empty — skipping morphology.\n";
+                    continue;
                 }
-                // Merge back
-                merge(bgrChannels, changedChannelImage);
-                // Convert to grayscale for Canny
-                Mat grayChanged;
-                cvtColor(changedChannelImage, grayChanged, COLOR_BGR2GRAY);
-                // Apply Canny
-                Canny(grayChanged, edges, lowThreshold, highThreshold);
-                // Combine for visualization
-                cvtColor(edges, output, COLOR_GRAY2BGR);
-                addWeighted(output, 0.7, inputImage, 0.3, 0, output);
-                imshow(windowName, output);
-                // Exit on ESC key
-                int key = waitKey(30);
-                if (key == 27)  // ESC
-                    break;
-            }
-            destroyWindow(windowName);
-            break;
-        } 
-    }
-}
 
+                // --- Morphology ---
+                closedImage =
+                    morphologyProcessor.closing_morphology(edges, connectivity);
+
+                openingImage =
+                    morphologyProcessor.opening_morphology(closedImage, 1);
+
+                // Display final tuned blob-mask (resized)
+                
+                imshow(windowName, openingImage);
+
+                // Exit on ESC
+                int key = waitKey(30);
+                if (key == 27)
+                    break;
+                }
+                destroyWindow(windowName);
+                break;
+            }
+             
+       
+        case 5: {
+            Mat image = inputImage.clone();  // Local copy for this case
+            double target_intensity = 200.0;
+             int kernel_size = 1;
+            int connectivity = 4;
+            int saturationScale = 2;
+            const string windowName = "Redshirt altitude test";
+            namedWindow(windowName, WINDOW_AUTOSIZE);
+
+            // Trackbars (modern style)
+            createTrackbar("Canny Low",  windowName, NULL, 350);
+            createTrackbar("Canny High", windowName, NULL, 350);
+            createTrackbar("Morph kernel (d)", windowName, NULL, 20);
+
+            Mat edges, closedImage, openingImage;
+
+            while (true)
+            {
+                // --- Read trackbar values every frame ---
+                int lowThreshold  = getTrackbarPos("Canny Low",  windowName);
+                int highThreshold = getTrackbarPos("Canny High", windowName);
+                int d             = getTrackbarPos("Morph kernel (d)", windowName);
+
+                // Avoid invalid morphology kernel sizes
+                if (d < 1) d = 1;
+
+                // --- Your image processing chain ---r3
+                Mat saturated     = colorManipulator.saturation(image, saturationScale);
+                Mat gammaCorrected = noiseReducer.gamma_correction(
+                        saturated,
+                        find_gamma(saturated, target_intensity, determine_intensity(saturated))
+                    );
+
+                Mat medianFiltered     = noiseReducer.median_filter(gammaCorrected, 15);
+                Mat bilateralFiltered  = noiseReducer.bilateral_filter(medianFiltered, 7, 150, 150);
+
+                Mat gray;
+                cv::cvtColor(bilateralFiltered, gray, cv::COLOR_BGR2GRAY);
+
+                // --- FIXED: canny writes into edges ---
+                edges = canny_edge_detection(gray, lowThreshold, highThreshold);
+
+                // Safety check
+                if (edges.empty())
+                {
+                    std::cerr << "Edges image empty — skipping morphology.\n";
+                    continue;
+                }
+
+                // --- Morphology pipeline on edges only ---
+                closedImage  = morphologyProcessor.closing_morphology(edges, d);
+                openingImage = morphologyProcessor.opening_morphology(closedImage, 1);
+
+                // Resize final blob image
+                Mat resized = noiseReducer.resize_image(openingImage, 1);
+
+                imshow(windowName, resized);
+
+                // Exit on ESC
+                int key = waitKey(30);
+                if (key == 27)
+                    break;
+            
+                    }
+                    destroyWindow(windowName);
+                    break;
+                }
+            }
+        }
+
+bool sky_edge_found(const cv::Mat& image,  cv::Point2d centroid, int searchRadius) { //!! Not happy about how works
+    int startX = std::max(0, static_cast<int>(centroid.x) - searchRadius);
+    int endX = std::min(image.cols - 1, static_cast<int>(centroid.x) + searchRadius);
+    int y = static_cast<int>(centroid.y);
+    int x = static_cast<int>(centroid.x);
+    cv::Mat hsvImage;
+    cv::cvtColor(image, hsvImage, cv::COLOR_BGR2HSV);
+    int averageHue = 0;
+    int count = 0;
+    int averageSaturation = 0;
+    int averageValue = 0;
+    //for (int x = startX; x <= endX; ++x) {
+    //     cv::Vec3b hsvPixel = hsvImage.at<cv::Vec3b>(y, x);
+    //    
+    //    // Assuming sky is predominantly blue; adjust thresholds as needed
+//
+    //    int H = hsvPixel[0];
+    //    int S = hsvPixel[1];
+    //    int V = hsvPixel[2];
+//
+    // 
+    //   if (H > 70 && H < 160 && S > 50 && V > 20) { // Example thresholds
+    //        return true; // Sky edge found
+    //    }
+    //}
+    for (int dx = -searchRadius; dx <= searchRadius; ++dx) {
+        for (int dy = -searchRadius; dy <= searchRadius; ++dy) {
+            
+            // Circle condition
+            if (dx*dx + dy*dy > searchRadius*searchRadius)
+                continue; // outside circle
+
+            int cx = x + dx;
+            int cy = y + dy;
+
+            if (cx < 0 || cx >= image.cols || cy < 0 || cy >= image.rows)
+                continue;
+
+            cv::Vec3b hsvPixel = hsvImage.at<cv::Vec3b>(cy, cx);
+            int H = hsvPixel[0];
+            int S = hsvPixel[1];
+            int V = hsvPixel[2];
+            averageHue += H;
+            count++;
+            averageSaturation += S;
+            averageValue += V;
+
+        }
+    }
+        int avgH = averageHue / count;
+        int avgS = averageSaturation / count;
+        int avgV = averageValue / count;
+        if (avgH > 50 && avgH < 180 && avgS > 90 && avgV > 50) {
+            return true; // Sky edge found
+        }
+       
+    return false; // No edge found
+
+}
