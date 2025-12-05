@@ -5,8 +5,8 @@ denoise:
    templateWindowSize: 7
    searchWindowSize: 21
 canny_parameters:
-   threshold_low: 300
-   threshold_max: 350  
+   threshold_low: 200
+   threshold_max: 250  
    threshold_low_dark: 200
    threshold_max_dark: 250 
 blob_detection:

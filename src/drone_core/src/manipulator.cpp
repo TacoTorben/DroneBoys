@@ -135,3 +135,30 @@ double determine_intensity(const cv::Mat& inputImage) {
     return meanIntensity[0];
 }
 
+cv::Mat blob_trying(const cv::Mat& inputImage){
+    cv::SimpleBlobDetector::Params params;
+    params.minThreshold = 10;
+    params.maxThreshold = 200;
+    params.filterByArea = true;
+    params.minArea = 10;
+    params.filterByCircularity = true;
+    params.minCircularity = 0.1;
+    params.filterByConvexity = true;
+    params.minConvexity = 0.87;
+    params.filterByInertia = true;
+    params.minInertiaRatio = 0.01;
+ 
+    // Create detector and detect blobs
+    cv::Ptr<cv::SimpleBlobDetector> detector = cv::SimpleBlobDetector::create(params);
+    std::vector<cv::KeyPoint> keypoints;
+    detector->detect(inputImage, keypoints);
+ 
+    // Draw the keypoints
+    cv::Mat output;
+    cv::drawKeypoints(inputImage, keypoints, output, cv::Scalar(0, 0, 255),
+                      cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+ 
+    // Display result
+    return output;
+}
+

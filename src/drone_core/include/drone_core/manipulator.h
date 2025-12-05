@@ -42,7 +42,7 @@ double find_gamma(const cv::Mat& inputImage, double target_intensity, double ave
 
 double determine_intensity(const cv::Mat& inputImage);
 
-
+cv::Mat blob_trying(const cv::Mat& inputimage);
 
 
 

@@ -68,7 +68,11 @@ struct BlobData {
     cv::Mat labels;      // CV_32S matrix of labels
     cv::Mat stats;       // CV_32S matrix of stats
     cv::Mat centroids;   // CV_64F matrix of centroids
-    int numLabels;       // Number of detected labels
+    int numLabels;
+    std::vector<double> areas;
+    std::vector<double> perimeters;
+    std::vector<double> circularities;
+    std::vector<double> aspect_ratios;
 };
 
 class ImageProcessingPipeline {

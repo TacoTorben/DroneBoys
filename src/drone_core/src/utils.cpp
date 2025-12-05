@@ -69,19 +69,63 @@ cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
     }
 
 
+BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int connectivity)
+{
+    cv::Mat binary;
+    // 1. Threshold image first
+    cv::threshold(inputImage, binary, 128, 255, cv::THRESH_BINARY);
 
-    BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int connectivity) {
+    // 2. Connected components
+    cv::Mat labels, stats, centroids;
+    int numLabels = cv::connectedComponentsWithStats(
+        binary, labels, stats, centroids, connectivity, CV_32S);
 
-        cv::Mat binary;
-        // Threshold to ensure binary
-        cv::threshold(inputImage, binary, 128, 255, cv::THRESH_BINARY);
+    // Create feature vectors
+    std::vector<double> areas(numLabels);
+    std::vector<double> perimeters(numLabels);
+    std::vector<double> circularities(numLabels);
+    std::vector<double> aspect_ratios(numLabels);
 
+    // 3. LOOP OVER BLOBS
+    for (int i = 1; i < numLabels; i++)  // skip background label 0
+    {
+        // Area from stats
+        double area = stats.at<int>(i, cv::CC_STAT_AREA);
+        areas[i] = area;
 
-        cv::Mat labels, stats, centroids;
-        int numLabels = cv::connectedComponentsWithStats(binary, labels, stats, centroids, connectivity, CV_32S);
+        // Create mask for this blob
+        cv::Mat compMask = (labels == i);
 
-        return {labels, stats, centroids, numLabels};
+        // Find contour
+        std::vector<std::vector<cv::Point>> contours;
+        cv::findContours(compMask, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_NONE);
+
+        // Perimeter
+        double perimeter = cv::arcLength(contours[0], true);
+        perimeters[i] = perimeter;
+
+        // Circularity
+        double circularity = (4 * CV_PI * area) / (perimeter * perimeter + 1e-5);
+        circularities[i] = circularity;
+
+        // Aspect ratio
+        double w = stats.at<int>(i, cv::CC_STAT_WIDTH);
+        double h = stats.at<int>(i, cv::CC_STAT_HEIGHT);
+        aspect_ratios[i] = w / h;
     }
+
+    // 4. Return all data
+    return {labels,
+        stats,
+        centroids,
+        numLabels,
+        areas,
+        perimeters,
+        circularities,
+        aspect_ratios};
+    
+}
+
 
     cv::Mat ImageProcessingPipeline::draw_circles(const cv::Mat& inputImage, const cv::Point& centroids, int radius, int i) {
 
@@ -116,9 +160,9 @@ cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
 
     
 cv::Mat ImageProcessingPipeline::compression(const cv::Mat& inputImage){
-    double scaleFactor = 0.204;
+   
     cv::Mat resized_image;
-    cv::resize(inputImage, resized_image, cv::Size(), scaleFactor, scaleFactor, cv::INTER_LINEAR);
+    cv::resize(inputImage, resized_image, cv::Size(1120, 746), cv::INTER_LINEAR);
     std::vector<uchar> buf;
     std::vector<int> params = {
     cv::IMWRITE_JPEG_QUALITY, 30   // try 20–40
