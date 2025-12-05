@@ -153,6 +153,69 @@ class seach_algorithm{
         return output_image;
     }
 
+    cv::Rect2f bounding_box(const std::vector<cv::KeyPoint>& keypoints) {
+    if (keypoints.empty()) {
+        return cv::Rect2f();
+    }
+    float min_x = keypoints[0].pt.x;
+    float min_y = keypoints[0].pt.y;
+    float max_x = keypoints[0].pt.x;
+    float max_y = keypoints[0].pt.y;
+    for (const auto& kp : keypoints) {
+        float x = kp.pt.x;
+        float y = kp.pt.y;
+        if (x < min_x) min_x = x;
+        if (y < min_y) min_y = y;
+        if (x > max_x) max_x = x;
+        if (y > max_y) max_y = y;
+    }
+    return cv::Rect2f(min_x, min_y, max_x - min_x, max_y - min_y);
+}
+
+    cv::Mat FAST_detector(cv::Mat& image, const Config& cfg, int fast_blackshirt)
+        {
+            int saturationScale = 8;
+            float fast_gamma_value = 0.5;
+
+            image = noiseReducer.gausian_filter(image, 3, 0.8, 0.8);
+
+            //if (fast_blackshirt) {
+            //    cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
+            //    cv::Mat gammaCorrectedImage = noiseReducer.gamma_correction(saturatedImage, fast_gamma_value);
+            //    image = noiseReducer.bilateral_filter(gammaCorrectedImage, 9, 75, 75);
+//
+            //    std::cout << "FAST Blackshirt processing" << std::endl;
+            //} else {
+            //    image = noiseReducer.gausian_filter(image, 5, 0, 0);
+            //}
+
+            // FAST detector setup
+            auto detector = cv::FastFeatureDetector::create(
+                cfg.fast_parameters.threshold,
+                cfg.fast_parameters.nonmaxSuppression
+            );
+
+            // Detect keypoints
+            std::vector<cv::KeyPoint> keypoints;
+            detector->detect(image, keypoints);
+            std::cout << "FAST keypoints: " << keypoints.size() << std::endl;
+
+
+            // Draw keypoints into an output image
+            cv::Mat output;
+            cv::drawKeypoints(image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+
+            // Draw bounding box on the same output image
+            if (!keypoints.empty()) {
+                cout << "dwadawd" << endl;
+                cv::Rect2f box = bounding_box(keypoints);
+                if (box.area() > 0) {
+                    cv::rectangle(output, box, cv::Scalar(0, 0, 255), 2);
+                }
+            }
+            return output;
+        }
+
 
     cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
         /**
@@ -449,7 +512,7 @@ private:
                                 image = pipeline.compression(image);
                                 cv::Mat original_image = image.clone();
                                 image = sa.preprocess_for_detection(image, mode);
-                                cv::Mat visualization = sa.fast_detector_visualize(image, original_image);
+                                cv::Mat visualization = sa.FAST_detector(image, cfg, mode);
                                 fs::path outputPath = current.parent_path() / "drone_boys_images" / "test" / "output";
                                 fs::path filePath = outputPath / (std::to_string(filename_number) + ".JPG");
                                 cv::imwrite(filePath.string(), visualization);
@@ -506,7 +569,7 @@ private:
                     image = pipeline.compression(image);
                     cv::Mat original_image = image.clone();
                     image = sa.preprocess_for_detection(image, mode);
-                    cv::Mat visualization = sa.fast_detector_visualize(image, original_image);
+                    cv::Mat visualization = sa.FAST_detector(image, cfg, mode);
                     pipeline.save_image(visualization, std::to_string(output_numb) + ".JPG");
                     result->success = true;
                 }
