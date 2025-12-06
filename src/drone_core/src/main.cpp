@@ -7,6 +7,7 @@
 
 
 #include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <string>
 
@@ -154,7 +155,7 @@ class seach_algorithm{
     }
 
 
-    cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg) {
+    cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg, int folder, int file){ 
         /**
         Takes in an image, do a series of processing steps to detect red shirts in a field setting.
         First adjusts saturation, brightness/contrast, enhances
@@ -166,6 +167,9 @@ class seach_algorithm{
         int connectivity = 4; // 4 for 30m 5 for 5m
         int saturationScale = 2;
      
+        
+        fs::path current = fs::current_path();
+        fs::path inputPath = current.parent_path() / "drone_boys_images";
 
         cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
         cv::Mat brightness_contrast_image = colorManipulator.brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
@@ -179,48 +183,55 @@ class seach_algorithm{
         //cv::imshow("Labeled Blobs", closedImage);
         cv::Mat openingImage = morphologyProcessor.opening_morphology(closedImage, kernel_size);
         //cv::imshow("Opening Morphology Image", openingImage);
+
+
         BlobData blobs = pipeline.blob_detection(openingImage, connectivity);
+        const fs::path csvPath = inputPath / ("data" + std::to_string(folder) + ".csv");
+        bool needHeader = !fs::exists(csvPath) || fs::file_size(csvPath) == 0;
+        std::ofstream out(csvPath.string(), std::ios::app);
         
+        cout << "writing to: " << csvPath.string() << endl;
+        if (!out.is_open()) {
+            std::cerr << "Failed to open file for writing." << std::endl;
+            return image;
+        }
+        
+        if (needHeader) {
+            out << "Folder,Image,Label,Area,Perimeter,Circularity,Aspect_Ratio\n";
+        }
+
         ////Draw circles around detected blobs (excluding background aka label 0)
         for (int i = 1; i < blobs.numLabels; ++i)
-{
-    // centroid
-    cv::Point2d c(
-        blobs.centroids.at<double>(i, 0),
-        blobs.centroids.at<double>(i, 1));
-
-    cv::Point pos((int)c.x + 2, (int)c.y + 2);  // slight offset
-
-    // Prepare the 3 lines
-    std::string line1 = "A:"  + cv::format("%.1f", blobs.areas[i]);
-    std::string line2 = "AR:" + cv::format("%.2f", blobs.aspect_ratios[i]);
-    std::string line3 = "C:"  + cv::format("%.2f", blobs.circularities[i]);
-
-    double scale = 0.4;   // very small text
-    int thickness = 1;
-    int lineHeight = 8;   // manually control spacing
-
-    // Draw each line separately
-    cv::putText(openingImage, line1, pos,
-                cv::FONT_HERSHEY_PLAIN, scale, cv::Scalar(255,255,255), thickness);
-
-    cv::putText(openingImage, line2,
-                cv::Point(pos.x, pos.y + lineHeight),
-                cv::FONT_HERSHEY_PLAIN, scale, cv::Scalar(255,255,255), thickness);
-
-    cv::putText(openingImage, line3,
-                cv::Point(pos.x, pos.y + 2 * lineHeight),
-                cv::FONT_HERSHEY_PLAIN, scale, cv::Scalar(255,255,255), thickness);
-}
-
-        // cv::putText(image, //target image
-        //        std::to_string(blobs.numLabels -1), //text
-        //        cv::Point(10, image.rows / 10), //top-left position
-        //        cv::FONT_HERSHEY_DUPLEX,
-        //        1.0,
-        //        CV_RGB(255, 0, 0), //font color
-        //        2);
-        //image = blob_trying(openingImage);
+        {
+            // centroid
+            cv::Point2d c(
+                blobs.centroids.at<double>(i, 0),
+                blobs.centroids.at<double>(i, 1));
+            
+            cv::Point pos((int)c.x + 2, (int)c.y + 2);  // slight offset
+            
+            // Prepare the 3 lines
+            std::string line1 = std::to_string(i);
+            
+            double scale = 3;   // very small text
+            int thickness = 1;
+            int lineHeight = 8;   // manually control spacing
+            
+            // Draw each line separately
+            cv::putText(openingImage, line1, pos,
+                        cv::FONT_HERSHEY_PLAIN, scale, cv::Scalar(255,255,255), thickness);
+            
+            out << folder << "," 
+                << file << ","
+                 << i << "," 
+                << blobs.areas[i] << "," 
+                << blobs.perimeters[i] << "," 
+                << blobs.circularities[i] << "," 
+                << blobs.aspect_ratios[i] << "\n";
+  
+        }
+        cv::putText(openingImage, "f = " + std::to_string(folder) + " i = " + std::to_string(file),cv::Point(10, openingImage.rows / 10),
+                        cv::FONT_HERSHEY_PLAIN, 1.0, cv::Scalar(255,255,255), 2);
 
         return openingImage;
     }
@@ -381,10 +392,10 @@ private:
                                 RCLCPP_INFO(get_logger(), "Processing image: %s", inputPath.string().c_str());
 
                                 image = pipeline.compression(image);
-                                cv::Mat processed_image = sa.field_coloredshirt(image, cfg);
+                                cv::Mat processed_image = sa.field_coloredshirt(image, cfg, i, j);
                                 fs::path outputPath = current.parent_path() / "drone_boys_images" / "test" / "output";
                                 fs::path filePath = outputPath / (std::to_string(filename_number) + ".JPG");
-                                cv::imwrite(filePath.string(), image);
+                                cv::imwrite(filePath.string(), processed_image);
                                 filename_number++;
                             }
                             catch(const std::exception &e) {
@@ -473,7 +484,7 @@ private:
                     RCLCPP_INFO(get_logger(), "Processing image number: %d", img_numb);
                     cv::Mat image = pipeline.fetch_image(std::to_string(img_numb) + ".JPG");
                     image = pipeline.compression(image);
-                    image = sa.field_coloredshirt(image, cfg);
+                    image = sa.field_coloredshirt(image, cfg, 0, img_numb);
                     pipeline.save_image(image, std::to_string(output_numb) + ".JPG");
                     result->success = true;
                 }
