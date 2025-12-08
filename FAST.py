@@ -1,5 +1,7 @@
+from tkinter import Image
 import cv2
 import numpy as np
+from PIL import Image
 
 saturation_scale = 8
 gamma = 0.5
@@ -15,7 +17,6 @@ def fast_detector(image, threshold=60, nonmax_suppression=True):
 
     # Detect keypoints
     keypoints = fast.detect(image, None)
-
     # Draw keypoints on the image
     output_image = cv2.drawKeypoints(image, keypoints, None, color=(0, 0, 255))
 
@@ -110,16 +111,20 @@ def bilateral_filter(self, input_image, d, sigma_color, sigma_space):
 
 
 if __name__ == "__main__":
-    img = cv2.imread("/home/snekkie/DroneBoys/Images/crazy.JPG")
+    img = cv2.imread("/home/dksoren/DroneBoys/Images/crazy.JPG")
+    image = Image.open("/home/dksoren/DroneBoys/Images/crazy.JPG")
     if img is None:
         raise SystemExit("Failed to load image.")
-    img = compression(img)
-    #img = saturation_increase(None, img, saturation_scale)
-    #img = gamma_correction(None, img, gamma)
+    print("EXIF orientation:", image.getexif().get(274, "no EXIF"))
+    img = compression(img) #gaussian blur inside
+    img = saturation_increase(None, img, saturation_scale)
+    img = gamma_correction(None, img, gamma)
     #img = median_filter(None, img, kernel_size)
-    #img = bilateral_filter(None, img, d=9, sigma_color=75, sigma_space=75)
-    img = cv2.GaussianBlur(img, (5, 5), 0)
+    img = bilateral_filter(None, img, d=9, sigma_color=75, sigma_space=75) #
+    #img = cv2.GaussianBlur(img, (5, 5), 0)
     keypoints, output_image, circle_image = fast_detector(img)
+
+    
     #resize = cv2.resize(output_image, (1600, 1200))
     resize2 = cv2.resize(circle_image, (1600, 1200))
 
