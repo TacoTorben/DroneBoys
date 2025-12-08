@@ -171,51 +171,89 @@ class seach_algorithm{
         if (y > max_y) max_y = y;
     }
     return cv::Rect2f(min_x, min_y, max_x - min_x, max_y - min_y);
-}
+    }
 
-    cv::Mat FAST_detector(cv::Mat& image, const Config& cfg, int fast_blackshirt)
-        {
-            int saturationScale = 8;
-            float fast_gamma_value = 0.5;
+    cv::Mat FAST_detector(cv::Mat& image, const cv::Mat& original_image, const Config& cfg, int fast_blackshirt, int folder,  int file)
+    {
+        int saturationScale = 8;
+        float fast_gamma_value = 0.5;
+        fs::path current = fs::current_path();
+        fs::path inputPath = current.parent_path() / "drone_boys_images";
 
-            image = noiseReducer.gausian_filter(image, 3, 0.8, 0.8);
+        // Prepare CSV file for logging
+        const fs::path csvPath = inputPath / ("data" + std::to_string(folder) + ".csv");
+        bool needHeader = !fs::exists(csvPath) || fs::file_size(csvPath) == 0;
 
-            //if (fast_blackshirt) {
-            //    cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
-            //    cv::Mat gammaCorrectedImage = noiseReducer.gamma_correction(saturatedImage, fast_gamma_value);
-            //    image = noiseReducer.bilateral_filter(gammaCorrectedImage, 9, 75, 75);
-//
-            //    std::cout << "FAST Blackshirt processing" << std::endl;
-            //} else {
-            //    image = noiseReducer.gausian_filter(image, 5, 0, 0);
-            //}
-
-            // FAST detector setup
-            auto detector = cv::FastFeatureDetector::create(
-                cfg.fast_parameters.threshold,
-                cfg.fast_parameters.nonmaxSuppression
-            );
-
-            // Detect keypoints
-            std::vector<cv::KeyPoint> keypoints;
-            detector->detect(image, keypoints);
-            std::cout << "FAST keypoints: " << keypoints.size() << std::endl;
-
-
-            // Draw keypoints into an output image
-            cv::Mat output;
-            cv::drawKeypoints(image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
-
-            // Draw bounding box on the same output image
-            if (!keypoints.empty()) {
-                cout << "dwadawd" << endl;
-                cv::Rect2f box = bounding_box(keypoints);
-                if (box.area() > 0) {
-                    cv::rectangle(output, box, cv::Scalar(0, 0, 255), 2);
-                }
-            }
-            return output;
+        std::ofstream out(csvPath.string(), std::ios::app);
+        if (!out) {
+            std::cerr << "Could not open CSV file: " << csvPath << std::endl;
+            // continue processing, but no CSV logging
+        } else if (needHeader) {
+            out << "folder,file,x,y,width,height\n";
         }
+
+        // Pre-processing
+        image = noiseReducer.gausian_filter(image, 3, 0.8, 0.8);
+
+        if (fast_blackshirt) {
+            cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
+            cv::Mat gammaCorrectedImage = noiseReducer.gamma_correction(saturatedImage, fast_gamma_value);
+            image = noiseReducer.bilateral_filter(gammaCorrectedImage, 9, 75, 75);
+            std::cout << "FAST Blackshirt processing" << std::endl;
+        } else {
+            std::cout << "FAST Coloredshirt processing" << std::endl;
+        }
+
+        // FAST detector setup
+        auto detector = cv::FastFeatureDetector::create(
+            cfg.fast_parameters.threshold,
+            cfg.fast_parameters.nonmaxSuppression
+        );
+
+        // Detect keypoints
+        std::vector<cv::KeyPoint> keypoints;
+        detector->detect(image, keypoints);
+        std::cout << "FAST keypoints: " << keypoints.size() << std::endl;
+
+        // Draw keypoints into an output image
+        cv::Mat output;
+        if (fast_blackshirt) {
+            cv::drawKeypoints(original_image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+        } else {
+            cv::drawKeypoints(image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+        }
+
+        // Draw bounding box on the same output image + log to CSV
+        if (!keypoints.empty()) {
+            cv::Rect2f box = bounding_box(keypoints);
+            if (box.area() > 0) {
+                cv::rectangle(output, box, cv::Scalar(0, 0, 255), 2);
+
+                // Print location info
+                std::cout << "Bounding box:\n"
+                          << "  x:      " << box.x      << "\n"
+                          << "  y:      " << box.y      << "\n"
+                          << "  width:  " << box.width  << "\n"
+                          << "  height: " << box.height << "\n";
+
+                // Derived: center point
+                float cx = box.x + box.width  / 2.0f;
+                float cy = box.y + box.height / 2.0f;
+                std::cout << "  center: (" << cx << ", " << cy << ")\n";
+
+                // Write one row to CSV: folder,file,x,y,width,height
+                    out << folder << ","
+                        << file   << ","
+                        << box.x << ","
+                        << box.y << ","
+                        << box.width << ","
+                        << box.height << "\n";
+            }
+        }
+
+        return output;
+    }
+
 
 
     cv::Mat field_coloredshirt(cv::Mat& image, const Config& cfg, int folder, int file){ 
@@ -384,7 +422,6 @@ class seach_algorithm{
         return image;
     }
 };  
-
 seach_algorithm sa;
     //-----------------ROS2 Action Server and Client Implementation-----------------
 class CommandActionServer : public rclcpp::Node {
@@ -523,7 +560,7 @@ private:
                                 image = pipeline.compression(image);
                                 cv::Mat original_image = image.clone();
                                 image = sa.preprocess_for_detection(image, mode);
-                                cv::Mat visualization = sa.FAST_detector(image, cfg, mode);
+                                cv::Mat visualization = sa.FAST_detector(image, original_image, cfg, mode, i, j);
                                 fs::path outputPath = current.parent_path() / "drone_boys_images" / "test" / "output";
                                 fs::path filePath = outputPath / (std::to_string(filename_number) + ".JPG");
                                 cv::imwrite(filePath.string(), visualization);
@@ -580,7 +617,7 @@ private:
                     image = pipeline.compression(image);
                     cv::Mat original_image = image.clone();
                     image = sa.preprocess_for_detection(image, mode);
-                    cv::Mat visualization = sa.FAST_detector(image, cfg, mode);
+                    cv::Mat visualization = sa.FAST_detector(image, original_image, cfg, mode, 0, 0);
                     pipeline.save_image(visualization, std::to_string(output_numb) + ".JPG");
                     result->success = true;
                 }
