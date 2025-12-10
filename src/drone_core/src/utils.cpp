@@ -85,6 +85,9 @@ BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int 
     std::vector<double> perimeters(numLabels);
     std::vector<double> circularities(numLabels);
     std::vector<double> aspect_ratios(numLabels);
+    std::vector<double> inertia(numLabels);
+    std::vector<double> solidity(numLabels);
+    std::vector<double> eccentricity(numLabels);
 
     // 3. LOOP OVER BLOBS
     for (int i = 1; i < numLabels; i++)  // skip background label 0
@@ -105,13 +108,37 @@ BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int 
         perimeters[i] = perimeter;
 
         // Circularity
-        double circularity = (4 * CV_PI * area) / (perimeter * perimeter + 1e-5);
+        double circularity = (4 * CV_PI * area) / (perimeter * perimeter + 1e-5); //
         circularities[i] = circularity;
 
         // Aspect ratio
         double w = stats.at<int>(i, cv::CC_STAT_WIDTH);
         double h = stats.at<int>(i, cv::CC_STAT_HEIGHT);
         aspect_ratios[i] = w / h;
+
+        //Inertia
+        cv::Moments mu = cv::moments(contours[0]);
+        inertia[i] = (mu.mu20 + mu.mu02) / (area + 1e-5);
+
+        {
+            std::vector<cv::Point> hull;
+            cv::convexHull(contours[0], hull);
+            double hullArea = cv::contourArea(hull);
+            solidity[i] = area / (hullArea + 1e-5);
+        }
+
+
+        {
+            cv::RotatedRect ellipse = cv::fitEllipse(contours[0]);
+            double a = ellipse.size.width / 2.0;  // semi-major axis
+            double b = ellipse.size.height / 2.0; // semi-minor axis
+
+            if(b > a) std::swap(a, b); // ensure a >= b
+
+            eccentricity[i] = sqrt(1 - (b * b) / (a * a + 1e-8)); 
+        }
+
+
     }
 
     // 4. Return all data
@@ -122,7 +149,11 @@ BlobData ImageProcessingPipeline::blob_detection(const cv::Mat& inputImage, int 
         areas,
         perimeters,
         circularities,
-        aspect_ratios};
+        aspect_ratios,
+        inertia,
+        solidity,
+        eccentricity,
+         };
     
 }
 
@@ -207,6 +238,26 @@ cv::Mat resize_scale(const cv::Mat& inputImage) {
     //cv::resize(inputImage, outputImage, cv::Size(), 0.5, 0.5, cv::INTER_LINEAR);
     return outputImage;
 }
+
+std::map<int, std::vector<int>> group_blobs_by_vector_length(BlobData blobs, float threshold)
+{
+    std::map<int, std::vector<int>> groups;
+    
+    for (size_t i = 0; i < blobs.numLabels; ++i) {
+        // Calculate length from origin
+        float length = std::sqrt(blobs.centroids.at<double>(i, 0) * blobs.centroids.at<double>(i, 0) + blobs.centroids.at<double>(i, 1) * blobs.centroids.at<double>(i, 1));
+        
+        // Determine which bucket this length falls into
+        int group_id = (length < threshold) ? 0 : 1;
+        
+        // Add blob index to the appropriate bucket
+        groups[group_id].push_back(i);
+    }
+    
+    return groups;
+}
+
+
 
     //!! Just for testing
 

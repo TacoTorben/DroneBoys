@@ -229,7 +229,7 @@ class seach_algorithm{
         int kernel_size = 1;
         int connectivity = 4; // 4 for 30m 5 for 5m
         int saturationScale = 2;
-     
+        float threshold = 20.0f;
         
         fs::path current = fs::current_path();
         fs::path inputPath = current.parent_path() / "drone_boys_images";
@@ -260,9 +260,9 @@ class seach_algorithm{
         }
         
         if (needHeader) {
-            out << "Folder,Image,Label,Area,Perimeter,Circularity,Aspect_Ratio\n";
+            out << "Folder,Image,Label,Area,Perimeter,Circularity,Aspect_Ratio,Inertia,Solidity,Eccentricity\n";
         }
-
+        
         ////Draw circles around detected blobs (excluding background aka label 0)
         for (int i = 1; i < blobs.numLabels; ++i)
         {
@@ -278,24 +278,29 @@ class seach_algorithm{
             
             double scale = 3;   // very small text
             int thickness = 1;
-            int lineHeight = 8;   // manually control spacing
-            
+      
             // Draw each line separately
             cv::putText(openingImage, line1, pos,
                         cv::FONT_HERSHEY_PLAIN, scale, cv::Scalar(255,255,255), thickness);
             
-            out << folder << "," 
-                << file << ","
-                 << i << "," 
-                << blobs.areas[i] << "," 
-                << blobs.perimeters[i] << "," 
-                << blobs.circularities[i] << "," 
-                << blobs.aspect_ratios[i] << "\n";
+            //out << folder << "," 
+            //    << file << ","
+            //     << i << "," 
+            //    << blobs.areas[i] << "," 
+            //    << blobs.perimeters[i] << "," 
+            //    << blobs.circularities[i] << "," 
+            //    << blobs.aspect_ratios[i] << "," 
+            //    << blobs.inertia[i] << "," 
+            //    << blobs.solidity[i] << "," 
+            //    << blobs.eccentricity[i] << "\n";
+            //    << blobs.centroids.at<double>(i, 0) << ","
+            //    << blobs.centroids.at<double>(i, 1) << "\n";
   
         }
         cv::putText(openingImage, "f = " + std::to_string(folder) + " i = " + std::to_string(file),cv::Point(10, openingImage.rows / 10),
                         cv::FONT_HERSHEY_PLAIN, 1.0, cv::Scalar(255,255,255), 2);
-
+        auto groups = group_blobs_by_vector_length(blobs, threshold);
+        
         return openingImage;
     }
 

@@ -1,6 +1,9 @@
 #pragma once
 #include <string>
 #include <opencv2/opencv.hpp>
+#include <vector>
+#include <map>
+#include <cmath>
 
 using namespace cv;
 
@@ -73,6 +76,9 @@ struct BlobData {
     std::vector<double> perimeters;
     std::vector<double> circularities;
     std::vector<double> aspect_ratios;
+    std::vector<double> inertia;
+    std::vector<double> solidity;
+    std::vector<double> eccentricity;
 };
 
 class ImageProcessingPipeline {
