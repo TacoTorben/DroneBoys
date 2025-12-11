@@ -286,8 +286,9 @@ class seach_algorithm{
         cv::Mat openingImage = morphologyProcessor.opening_morphology(closedImage, kernel_size);
         //cv::imshow("Opening Morphology Image", openingImage);
 
-
+        cout << "Performing blob detection..." << endl;
         BlobData blobs = pipeline.blob_detection(openingImage, connectivity);
+        
         const fs::path csvPath = inputPath / ("data" + std::to_string(folder) + ".csv");
         bool needHeader = !fs::exists(csvPath) || fs::file_size(csvPath) == 0;
         std::ofstream out(csvPath.string(), std::ios::app);
