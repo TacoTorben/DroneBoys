@@ -10,6 +10,8 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <vector>
+#include <queue>
 
 using namespace std;
 using namespace cv;
@@ -173,6 +175,53 @@ class seach_algorithm{
     return cv::Rect2f(min_x, min_y, max_x - min_x, max_y - min_y);
     }
 
+    
+    // Group keypoints by spatial proximity: points closer than `radius` end up in same group
+    std::vector<int> group_keypoints(const std::vector<cv::KeyPoint>& keypoints,
+                                     double radius)
+    {
+        const double r2 = radius * radius; // squared distance threshold
+        const int n = static_cast<int>(keypoints.size());
+
+        std::vector<int> group(n, -1);
+        int currentGroup = 0;
+
+        for (int i = 0; i < n; ++i) {
+            if (group[i] != -1) continue; // already assigned
+
+            group[i] = currentGroup;
+
+            std::queue<int> q;
+            q.push(i);
+
+            while (!q.empty()) {
+                int idx = q.front();
+                q.pop();
+
+                const cv::Point2f& p = keypoints[idx].pt;
+
+                for (int j = 0; j < n; ++j) {
+                    if (group[j] != -1) continue;
+
+                    const cv::Point2f& qpt = keypoints[j].pt;
+                    double dx = p.x - qpt.x;
+                    double dy = p.y - qpt.y;
+                    double dist2 = dx * dx + dy * dy;
+
+                    if (dist2 <= r2) {
+                        group[j] = currentGroup;
+                        q.push(j);
+                    }
+                }
+            }
+
+            ++currentGroup;
+        }
+
+        return group;
+    }
+
+
     cv::Mat FAST_detector(cv::Mat& image, const cv::Mat& original_image, const Config& cfg, int fast_blackshirt, int folder,  int file)
     {
         int saturationScale = 8;
@@ -202,6 +251,8 @@ class seach_algorithm{
             std::cout << "FAST Blackshirt processing" << std::endl;
         } else {
             std::cout << "FAST Coloredshirt processing" << std::endl;
+            image = noiseReducer.gamma_correction(image,find_gamma(image, 80, determine_intensity(image)));
+            image = colorManipulator.saturation(image, 3);
         }
 
         // FAST detector setup
@@ -215,42 +266,118 @@ class seach_algorithm{
         detector->detect(image, keypoints);
         std::cout << "FAST keypoints: " << keypoints.size() << std::endl;
 
-        // Draw keypoints into an output image
+        // Draw keypoints into an output image (all in red)
         cv::Mat output;
+        cv::Scalar red(255, 0, 255);
         if (fast_blackshirt) {
-            cv::drawKeypoints(original_image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+            cv::drawKeypoints(original_image, keypoints, output, red, cv::DrawMatchesFlags::DEFAULT);
         } else {
-            cv::drawKeypoints(image, keypoints, output, cv::Scalar::all(-1), cv::DrawMatchesFlags::DEFAULT);
+            cv::drawKeypoints(original_image, keypoints, output, red, cv::DrawMatchesFlags::DEFAULT);
         }
 
-        // Draw bounding box on the same output image + log to CSV
+            // --- Group keypoints and draw one bounding box per group ---
         if (!keypoints.empty()) {
-            cv::Rect2f box = bounding_box(keypoints);
-            if (box.area() > 0) {
+        
+            // 1) Group keypoints by distance (tune radius as needed)
+            double radius = 75.0;  // or whatever makes sense for your scale
+            std::vector<int> groups = group_keypoints(keypoints, radius);
+        
+            // find how many groups we have
+            int maxGroup = -1;
+            for (int g : groups) {
+                if (g > maxGroup) maxGroup = g;
+            }
+            int numGroups = maxGroup + 1;
+        
+            std::cout << "Number of groups formed: " << numGroups << std::endl;
+        
+            // 2) First pass: accumulate sums for centroids
+            struct GroupStats {
+                float sumx = 0.0f;
+                float sumy = 0.0f;
+                int   count = 0;
+            };
+        
+            std::vector<GroupStats> stats(numGroups);
+        
+            for (size_t i = 0; i < keypoints.size(); ++i) {
+                int g = groups[i];
+                if (g < 0) continue;
+            
+                float x = keypoints[i].pt.x;
+                float y = keypoints[i].pt.y;
+            
+                stats[g].sumx += x;
+                stats[g].sumy += y;
+                stats[g].count++;
+            }
+        
+            const float MIN_SIZE   = 50.0f;
+            const float MIN_HALF   = MIN_SIZE / 2.0f;
+        
+            // 3) For each group, compute centroid and then box centered at centroid
+            for (int g = 0; g < numGroups; ++g) {
+                GroupStats &s = stats[g];
+                if (s.count == 0) continue;
+            
+                // centroid of keypoints in this group
+                float cx = s.sumx / static_cast<float>(s.count);
+                float cy = s.sumy / static_cast<float>(s.count);
+            
+                // second pass: compute max distance from centroid in x and y
+                float max_dx = MIN_HALF;  // start with minimum half-size
+                float max_dy = MIN_HALF;
+            
+                for (size_t i = 0; i < keypoints.size(); ++i) {
+                    if (groups[i] != g) continue;
+                
+                    float x = keypoints[i].pt.x;
+                    float y = keypoints[i].pt.y;
+                
+                    float dx = std::fabs(x - cx);
+                    float dy = std::fabs(y - cy);
+                
+                    if (dx > max_dx) max_dx = dx;
+                    if (dy > max_dy) max_dy = dy;
+                }
+            
+                float width  = 2.0f * max_dx;
+                float height = 2.0f * max_dy;
+            
+                // box centered exactly at centroid
+                float x = cx - max_dx;
+                float y = cy - max_dy;
+            
+                cv::Rect2f box(x, y, width, height);
+            
+                if (box.area() <= 0) continue;
+            
+                // Draw rectangle in red
                 cv::rectangle(output, box, cv::Scalar(0, 0, 255), 2);
-
-                // Print location info
-                std::cout << "Bounding box:\n"
+            
+                // Center of the box (should match centroid)
+                float box_cx = box.x + box.width  / 2.0f;
+                float box_cy = box.y + box.height / 2.0f;
+            
+                std::cout << "Group " << g << " bounding box:\n"
                           << "  x:      " << box.x      << "\n"
                           << "  y:      " << box.y      << "\n"
                           << "  width:  " << box.width  << "\n"
-                          << "  height: " << box.height << "\n";
-
-                // Derived: center point
-                float cx = box.x + box.width  / 2.0f;
-                float cy = box.y + box.height / 2.0f;
-                std::cout << "  center: (" << cx << ", " << cy << ")\n";
-
-                // Write one row to CSV: folder,file,x,y,width,height
+                          << "  height: " << box.height << "\n"
+                          << "  box center:       (" << box_cx << ", " << box_cy << ")\n"
+                          << "  keypoint centroid:(" << cx     << ", " << cy     << ")\n";
+            
+                if (out) {
                     out << folder << ","
                         << file   << ","
-                        << box.x << ","
-                        << box.y << ","
-                        << box.width << ","
+                        << g      << ","
+                        << box.x  << ","
+                        << box.y  << ","
+                        << box.width  << ","
                         << box.height << "\n";
+                }
             }
         }
-
         return output;
     }
 
