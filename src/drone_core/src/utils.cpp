@@ -2,14 +2,17 @@
 #include <filesystem>
 #include <opencv2/opencv.hpp>
 #include <iostream>
-
+#include <queue>
+#include <cstddef>
+#include <vector>
+#include <cmath>
 
 
 
 using namespace std;
 using namespace cv;
 namespace fs = std::filesystem;
-
+using Box = std::vector<std::vector<int>>; 
 
     
 cv::Mat ImageProcessingPipeline::fetch_image(const std::string& filename) {
@@ -239,25 +242,114 @@ cv::Mat resize_scale(const cv::Mat& inputImage) {
     return outputImage;
 }
 
-std::map<int, std::vector<int>> group_blobs_by_vector_length(BlobData blobs, float threshold)
+std::vector<int> group_points(const BlobData& blobs, double radius)
 {
-    std::map<int, std::vector<int>> groups;
-    
-    for (size_t i = 0; i < blobs.numLabels; ++i) {
-        // Calculate length from origin
-        float length = std::sqrt(blobs.centroids.at<double>(i, 0) * blobs.centroids.at<double>(i, 0) + blobs.centroids.at<double>(i, 1) * blobs.centroids.at<double>(i, 1));
-        
-        // Determine which bucket this length falls into
-        int group_id = (length < threshold) ? 0 : 1;
-        
-        // Add blob index to the appropriate bucket
-        groups[group_id].push_back(i);
+    const std::size_t N = blobs.numLabels;
+    std::vector<int> labels(N, -1);
+    std::vector<char> visited(N, 0);
+
+    if (N <= 1) return labels;
+
+    const double r2 = radius * radius;
+    int current_label = 0;
+    visited[0] = 1; // mark background as visited
+    labels[0] = -1; // background label
+    for (std::size_t i = 1; i < N; ++i) {
+        if (visited[i]) continue;
+
+        std::queue<std::size_t> q;
+        q.push(i);
+        visited[i] = 1;
+        labels[i] = current_label;
+
+        while (!q.empty()) {
+            std::size_t idx = q.front();
+            q.pop();
+
+            // read centroid coordinates as plain doubles
+            const double px = blobs.centroids.at<double>(idx, 0);
+            const double py = blobs.centroids.at<double>(idx, 1);
+
+            for (std::size_t j = 0; j < N; ++j) {
+                if (visited[j]) continue;
+
+                const double qx = blobs.centroids.at<double>(j, 0);
+                const double qy = blobs.centroids.at<double>(j, 1);
+
+                const double dx = qx - px;
+                const double dy = qy - py;
+                const double dist2 = dx * dx + dy * dy;
+
+                if (dist2 <= r2) {
+                    visited[j] = 1;
+                    labels[j] = current_label;
+                    q.push(j);
+                }
+            }
+        }
+
+        ++current_label;
     }
-    
-    return groups;
+
+    return labels;
 }
 
+DetectionResult draw_square(const cv::Mat& image,
+                    const std::vector<int>& group_labels,
+                    const BlobData& blobs)
+{
+    cv::Mat output;
+    image.copyTo(output);
+    std::vector<Box> boxes_size;
+    // Determine number of groups
+    int max_group = *std::max_element(group_labels.begin(), group_labels.end());
 
+    // Prepare bounding boxes
+    std::vector<cv::Rect2d> boxes(max_group + 1, cv::Rect2d(DBL_MAX, DBL_MAX, -DBL_MAX, -DBL_MAX));
+
+    // Accumulate min/max for each group
+    for (size_t i = 1; i < blobs.numLabels; ++i) {
+        int g = group_labels[i];
+
+        double x = blobs.centroids.at<double>(i, 0);
+        double y = blobs.centroids.at<double>(i, 1);
+
+        boxes[g].x      = std::min(boxes[g].x, x);
+        boxes[g].y      = std::min(boxes[g].y, y);
+        boxes[g].width  = std::max(boxes[g].width,  x);
+        boxes[g].height = std::max(boxes[g].height, y);
+    }
+
+    // Draw rectangles
+    for (int g = 0; g <= max_group; ++g) {
+        if (boxes[g].width < 0) continue; // skip empty groups
+
+        double minX = boxes[g].x;
+        double minY = boxes[g].y;
+        double maxX = boxes[g].width;
+        double maxY = boxes[g].height;
+
+        // Compute box size
+        double w = maxX - minX;
+        double h = maxY - minY;
+
+        // Centroid of the group
+        double cx = (minX + maxX) / 2.0;
+        double cy = (minY + maxY) / 2.0;
+
+        // Enforce minimum size
+        w = std::max(w, 50.0);
+        h = std::max(h, 50.0);
+
+        cv::Point p1(cx - w / 2.0, cy - h / 2.0);
+        cv::Point p2(cx + w / 2.0, cy + h / 2.0);
+        Box box = {{p1.x, p1.y}, {p2.x, p2.y}};
+        boxes_size.push_back(box);
+        cv::rectangle(output, p1, p2, cv::Scalar(255, 0, 0), 2);
+    }
+
+    return {output, boxes_size};
+}
 
     //!! Just for testing
 

@@ -263,15 +263,16 @@ class seach_algorithm{
          red channel, applies median filtering,
         performs Canny edge detection, morphological operations, and blob detection. Finally, draws circles around detected blobs on the original image.
         */
-        int radius = 15;
+        double radius = 75.0;
         int kernel_size = 1;
         int connectivity = 4; // 4 for 30m 5 for 5m
         int saturationScale = 2;
-        float threshold = 20.0f;
+
         
         fs::path current = fs::current_path();
         fs::path inputPath = current.parent_path() / "drone_boys_images";
 
+       
         cv::Mat saturatedImage = colorManipulator.saturation(image, saturationScale);
         cv::Mat brightness_contrast_image = colorManipulator.brightnees_contrast(saturatedImage, cfg.brightness_contrast.contrast, cfg.brightness_contrast.brightness);
         cv::Mat RedEnhanced = colorManipulator.BGR_channel_changer(brightness_contrast_image, 0, 0);
@@ -298,7 +299,7 @@ class seach_algorithm{
         }
         
         if (needHeader) {
-            out << "Folder,Image,Label,Area,Perimeter,Circularity,Aspect_Ratio,Inertia,Solidity,Eccentricity\n";
+            out << "Folder,Image,Group,x,y,width,height\n";
         }
         
         ////Draw circles around detected blobs (excluding background aka label 0)
@@ -337,9 +338,27 @@ class seach_algorithm{
         }
         cv::putText(openingImage, "f = " + std::to_string(folder) + " i = " + std::to_string(file),cv::Point(10, openingImage.rows / 10),
                         cv::FONT_HERSHEY_PLAIN, 1.0, cv::Scalar(255,255,255), 2);
-        auto groups = group_blobs_by_vector_length(blobs, threshold);
-        
-        return openingImage;
+
+        auto groups = group_points(blobs, radius);
+        cout << "Number of groups formed: " << groups.size() << endl;
+        cout << "Number of blobs detected: " << blobs.numLabels -1 << endl;
+        for (size_t i = 0; i < groups.size(); ++i) {
+             std::cout << "Blob " << i
+              << " (x=" << blobs.centroids.at<double>(i,0)
+              << ", y=" << blobs.centroids.at<double>(i,1)
+              << ") -> group " << groups[i] << "\n";
+        }
+        auto result = draw_square(image, groups, blobs);
+        for (auto& box : result.boxes) {
+            out << folder << ","
+                << file   << ","
+                << groups[&box - &result.boxes[0]] << ","
+                << box[0][0] << ","
+                << box[0][1] << ","
+                << box[1][0] << ","
+                << box[1][1] << "\n";
+            }
+        return result.image;
     }
 
     cv::Mat sky_sorted_coloredshirt(cv::Mat& image, const Config& cfg) { 

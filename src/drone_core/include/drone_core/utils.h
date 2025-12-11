@@ -5,7 +5,9 @@
 #include <map>
 #include <cmath>
 
+
 using namespace cv;
+using Box = std::vector<std::vector<int>>; 
 
 struct CannyParameters {
     struct threshold {
@@ -66,7 +68,6 @@ struct Config {
 
 
 
-
 struct BlobData {
     cv::Mat labels;      // CV_32S matrix of labels
     cv::Mat stats;       // CV_32S matrix of stats
@@ -79,6 +80,11 @@ struct BlobData {
     std::vector<double> inertia;
     std::vector<double> solidity;
     std::vector<double> eccentricity;
+};
+
+struct DetectionResult {
+    cv::Mat image;
+    std::vector<Box> boxes;
 };
 
 class ImageProcessingPipeline {
@@ -99,3 +105,6 @@ class ImageProcessingPipeline {
 };
 void tuning(const cv::Mat& inputImage, int mode = 0);
 
+std::vector<int> group_points(const BlobData& blobs, double radius);
+
+DetectionResult draw_square(const cv::Mat& image, const std::vector<int>& group_labels, const BlobData& blobs);
