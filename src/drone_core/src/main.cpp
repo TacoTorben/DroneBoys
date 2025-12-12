@@ -71,7 +71,7 @@ class seach_algorithm{
                 }
                 cv::LUT(img, lut, img);
 
-                // Step 4: Bilateral filter
+                // Step 4: Bilateral filter 
                 cv::Mat output;
                 cv::bilateralFilter(img, output, 9, 75.0, 75.0);
                 img = output;
@@ -229,6 +229,7 @@ class seach_algorithm{
         fs::path current = fs::current_path();
         fs::path inputPath = current.parent_path() / "drone_boys_images";
 
+        cout << "Processing image: Folder " << folder << ", File " << file << endl;
         // Prepare CSV file for logging
         const fs::path csvPath = inputPath / ("data" + std::to_string(folder) + ".csv");
         bool needHeader = !fs::exists(csvPath) || fs::file_size(csvPath) == 0;
@@ -238,7 +239,7 @@ class seach_algorithm{
             std::cerr << "Could not open CSV file: " << csvPath << std::endl;
             // continue processing, but no CSV logging
         } else if (needHeader) {
-            out << "folder,file,x,y,width,height\n";
+            out;
         }
 
         // Pre-processing
@@ -251,12 +252,12 @@ class seach_algorithm{
             std::cout << "FAST Blackshirt processing" << std::endl;
         } else {
             std::cout << "FAST Coloredshirt processing" << std::endl;
-            image = noiseReducer.gamma_correction(image,find_gamma(image, 80, determine_intensity(image)));
+            image = noiseReducer.gamma_correction(image,find_gamma(image, 100, determine_intensity(image)));
             image = colorManipulator.saturation(image, 3);
         }
 
         // FAST detector setup
-        auto detector = cv::FastFeatureDetector::create(
+        auto detector = cv::FastFeatureDetector::create(    
             cfg.fast_parameters.threshold,
             cfg.fast_parameters.nonmaxSuppression
         );
@@ -367,14 +368,14 @@ class seach_algorithm{
                           << "  box center:       (" << box_cx << ", " << box_cy << ")\n"
                           << "  keypoint centroid:(" << cx     << ", " << cy     << ")\n";
             
-                if (out) {
+                for (const auto& g : groups) {
                     out << folder << ","
-                        << file   << ","
-                        << g      << ","
-                        << box.x  << ","
-                        << box.y  << ","
-                        << box.width  << ","
-                        << box.height << "\n";
+                    << file   << ","
+                    << g      << ","
+                    << box.x  << ","
+                    << box.y  << ","
+                    << box.x + box.width  << ","
+                    << box.y + box.height << "\n";
                 }
             }
         }
